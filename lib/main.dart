@@ -17,8 +17,8 @@ import 'app/splash.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await dotenv.load();
   await Firebase.initializeApp();
+  await dotenv.load();
   NotificationService();
   bool isUserLogin = await FirebaseService().checkUserAlreadyLogin();
   Stripe.publishableKey = Environment.stripePublishableKey;

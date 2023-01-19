@@ -23,7 +23,7 @@ class ConsultationConfirmController extends GetxController {
           title: 'Info'.tr,
           onConfirm: () => Get.back(),
           middleText: 'Payment for '.tr +
-              timeSlot.doctor!.doctorName! +
+              timeSlot.lawyer!.lawyerName! +
               ' will be delayed until the problem is resolved'.tr);
       EasyLoading.dismiss();
     });

@@ -8,7 +8,7 @@ class TimeSlotService {
     try {
       var userId = user.uid;
       var documentSnapshot = await FirebaseFirestore.instance
-          .collection('DoctorTimeslot')
+          .collection('LawyerTimeslot')
           .where('bookByWho.userId', isEqualTo: userId)
           .where('charged', isEqualTo: true)
           .get();
@@ -30,7 +30,7 @@ class TimeSlotService {
   Future<TimeSlot> getTimeSlotById(String timeslotId) async {
     try {
       var timeslotRef = await FirebaseFirestore.instance
-          .collection('DoctorTimeslot')
+          .collection('LawyerTimeslot')
           .doc(timeslotId)
           .get();
 
@@ -72,7 +72,7 @@ class TimeSlotService {
       TimeSlot timeSlot, double bookedAmount, int bookedDuration) async {
     try {
       await FirebaseFirestore.instance
-          .collection('DoctorTimeslot')
+          .collection('LawyerTimeslot')
           .doc(timeSlot.timeSlotId)
           .update(
               {'bookedAmount': bookedAmount, 'bookedDuration': bookedDuration});
@@ -84,7 +84,7 @@ class TimeSlotService {
   Future deleteTimeSlot(TimeSlot timeSlot) async {
     try {
       await FirebaseFirestore.instance
-          .collection('DoctorTimeslot')
+          .collection('LawyerTimeslot')
           .doc(timeSlot.timeSlotId)
           .delete();
       print('success delete timeslot');

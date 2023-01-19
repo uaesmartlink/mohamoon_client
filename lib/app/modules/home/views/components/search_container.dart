@@ -36,7 +36,7 @@ class SearchContainer extends StatelessWidget{
                        ),
                         const SizedBox(width: 7,),
                         Expanded(
-                          child: Text('Search Doctor'.tr,
+                          child: Text('Search Lawyer'.tr,
                               style: TextStyle(
                                   color: Color(0xFF677294),
                                   fontSize: (Get.locale==LocalizationService.locales[0])?15:13,

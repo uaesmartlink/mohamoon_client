@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'doctor_model.dart';
+import 'lawyer_model.dart';
 
 // class TimeSlot {
 //   TimeSlot(
@@ -8,8 +8,8 @@ import 'doctor_model.dart';
 //       this.duration,
 //       this.price,
 //       this.available,
-//       this.doctorid,
-//       this.doctor,
+//       this.lawyerid,
+//       this.lawyer,
 //       this.purchaseTime,
 //       this.status});
 //   static const String _timeSlotId = 'timeSlotId';
@@ -17,8 +17,8 @@ import 'doctor_model.dart';
 //   static const String _duration = 'duration';
 //   static const String _price = 'price';
 //   static const String _available = 'available';
-//   static const String _doctorId = 'doctorId';
-//   static const String _doctor = 'doctor';
+//   static const String _lawyerId = 'lawyerId';
+//   static const String _lawyer = 'lawyer';
 //   static const String _purchaseTime = 'purchaseTime';
 //   static const String _status = 'status';
 
@@ -27,8 +27,8 @@ import 'doctor_model.dart';
 //   int? duration;
 //   int? price;
 //   bool? available;
-//   String? doctorid;
-//   Doctor? doctor;
+//   String? lawyerid;
+//   Lawyer? lawyer;
 //   DateTime? purchaseTime;
 //   String? status;
 
@@ -39,9 +39,9 @@ import 'doctor_model.dart';
 //       duration: jsonData[_duration],
 //       price: jsonData[_price],
 //       available: jsonData[_available],
-//       doctorid: jsonData[_doctorId],
-//       doctor:
-//           jsonData[_doctor] != null ? Doctor.fromJson(jsonData[_doctor]) : null,
+//       lawyerid: jsonData[_lawyerId],
+//       lawyer:
+//           jsonData[_lawyer] != null ? Lawyer.fromJson(jsonData[_lawyer]) : null,
 //       purchaseTime: jsonData[_purchaseTime] != null
 //           ? (jsonData[_purchaseTime] as Timestamp).toDate()
 //           : null,
@@ -65,8 +65,8 @@ class TimeSlot {
       this.bookedDuration,
       this.price,
       this.available,
-      this.doctorid,
-      this.doctor,
+      this.lawyerid,
+      this.lawyer,
       this.purchaseTime,
       this.status});
 
@@ -77,7 +77,7 @@ class TimeSlot {
   static const String _bookedDuration = 'bookedDuration';
   static const String _bookedAmount = 'bookedAmount';
   static const String _available = 'available';
-  static const String _doctorId = 'doctorId';
+  static const String _lawyerId = 'lawyerId';
   static const String _bookByWho = 'bookByWho';
   static const String _purchaseTime = 'purchaseTime';
   static const String _status = 'status';
@@ -101,10 +101,10 @@ class TimeSlot {
   double? bookedAmount;
   @JsonKey(name: 'available')
   bool? available;
-  @JsonKey(name: 'doctorId')
-  String? doctorid;
-  @JsonKey(name: 'doctor', toJson: doctorToJson)
-  Doctor? doctor;
+  @JsonKey(name: 'lawyerId')
+  String? lawyerid;
+  @JsonKey(name: 'lawyer', toJson: lawyerToJson)
+  Lawyer? lawyer;
   @JsonKey(
       name: 'purchaseTime',
       fromJson: _dateTimeFromJson,
@@ -121,7 +121,7 @@ class TimeSlot {
   factory TimeSlot.fromFirestore(DocumentSnapshot doc) =>
       TimeSlot.fromJson(doc.data()! as Map<String, dynamic>)..id = doc.id;
 
-  static Map<String, dynamic>? doctorToJson(Doctor? doctor) => doctor?.toJson();
+  static Map<String, dynamic>? lawyerToJson(Lawyer? lawyer) => lawyer?.toJson();
 
   static DateTime? _dateTimeFromJson(Timestamp? timestamp) =>
       timestamp?.toDate();
@@ -137,7 +137,7 @@ class TimeSlot {
         _bookedDuration: timeSlot.bookedDuration,
         _bookedAmount: timeSlot.bookedAmount,
         _available: timeSlot.available,
-        _doctorId: timeSlot.doctorid,
+        _lawyerId: timeSlot.lawyerid,
       };
     } else {
       return {
@@ -147,7 +147,7 @@ class TimeSlot {
         _bookedDuration: timeSlot.bookedDuration,
         _bookedAmount: timeSlot.bookedAmount,
         _available: timeSlot.available,
-        _doctorId: timeSlot.doctorid,
+        _lawyerId: timeSlot.lawyerid,
       };
     }
   }

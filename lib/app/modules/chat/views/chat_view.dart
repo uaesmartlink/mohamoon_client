@@ -19,16 +19,16 @@ class ChatView extends GetView<ChatController> {
         leadingWidth: 25,
         title: InkWell(
           // onTap: () =>
-          //     Get.toNamed('/detail-doctor', arguments: controller.doctor),
+          //     Get.toNamed('/detail-lawyer', arguments: controller.lawyer),
           child: Row(
             children: [
               CircleAvatar(
                   backgroundImage:
-                      NetworkImage(controller.doctor.doctorPicture!)),
+                      NetworkImage(controller.lawyer.lawyerPicture!)),
               SizedBox(
                 width: 10,
               ),
-              Text(controller.doctor.doctorName!)
+              Text(controller.lawyer.lawyerName!)
             ],
           ),
         ),

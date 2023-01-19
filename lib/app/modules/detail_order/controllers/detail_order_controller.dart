@@ -3,7 +3,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 //import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
-import 'package:client_mohamoon/app/models/doctor_model.dart';
+import 'package:client_mohamoon/app/models/lawyer_model.dart';
 import 'package:client_mohamoon/app/models/order_detail_model.dart';
 import 'package:client_mohamoon/app/models/time_slot_model.dart';
 import 'package:client_mohamoon/app/service/notification_service.dart';
@@ -20,7 +20,7 @@ class DetailOrderController extends GetxController {
   final TimeSlotService timeSlotService = Get.find();
   List<OrderDetailModel> orderDetail = List.empty();
   TimeSlot selectedTimeSlot = Get.arguments[0];
-  Doctor doctor = Get.arguments[1];
+  Lawyer lawyer = Get.arguments[1];
   int duration = Get.arguments[2];
   List<TimeSlot> timeSlots = Get.arguments[3];
   PaymentService paymentService = Get.find();
@@ -47,7 +47,7 @@ class DetailOrderController extends GetxController {
 
     var orderDetail = OrderDetailModel(
         itemId: selectedTimeSlot.timeSlotId!,
-        itemName: 'Consultation with ${doctor.doctorName!}',
+        itemName: 'Consultation with ${lawyer.lawyerName!}',
         time: time,
         duration: '${duration} minute',
         price: currencySign + price.toString());
@@ -98,7 +98,7 @@ class DetailOrderController extends GetxController {
         googlePay: true,
         testEnv: true,
         merchantCountryCode: 'US',
-        merchantDisplayName: 'Helo Doctor',
+        merchantDisplayName: 'Helo Lawyer',
         paymentIntentClientSecret: clientSecret,
       ));
       EasyLoading.dismiss();

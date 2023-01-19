@@ -5,10 +5,10 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
-import 'package:client_mohamoon/app/models/doctor_model.dart';
+import 'package:client_mohamoon/app/models/lawyer_model.dart';
 import 'package:client_mohamoon/app/models/order_model.dart';
 import 'package:client_mohamoon/app/models/time_slot_model.dart';
-import 'package:client_mohamoon/app/service/doctor_service.dart';
+import 'package:client_mohamoon/app/service/lawyer_service.dart';
 import 'package:client_mohamoon/app/service/order_service.dart';
 import 'package:client_mohamoon/app/service/videocall_service.dart';
 
@@ -19,7 +19,7 @@ class AppointmentDetailController extends GetxController
   var videoCallStatus = false.obs;
   //ParseObject? room;
   TimeSlot selectedTimeslot = Get.arguments;
-  late Doctor doctor;
+  late Lawyer lawyer;
   late Order order;
   late String token;
   var database = FirebaseDatabase.instance.ref();
@@ -28,16 +28,16 @@ class AppointmentDetailController extends GetxController
   @override
   void onInit() async {
     super.onInit();
-    DoctorService().getDoctorDetail(selectedTimeslot.doctorid!).then(
+    LawyerService().getLawyerDetail(selectedTimeslot.lawyerid!).then(
       (doc) {
-        selectedTimeslot.doctor = doc;
-        doctor = doc;
+        selectedTimeslot.lawyer = doc;
+        lawyer = doc;
         change(selectedTimeslot, status: RxStatus.success());
         if (selectedTimeslot.status == 'refund') {
           Get.defaultDialog(
               title: 'Appointment Canceled'.tr,
               content: Text(
-                  'the doctor has canceled the appointment, and your payment has been refunded'
+                  'the lawyer has canceled the appointment, and your payment has been refunded'
                       .tr),
               onConfirm: () {
                 Get.back();
@@ -82,13 +82,13 @@ class AppointmentDetailController extends GetxController
       if (selectedTimeslot.status == 'refund') {
         Fluttertoast.showToast(
             msg:
-                'the doctor has canceled the appointment, and your payment has been refunded'
+                'the lawyer has canceled the appointment, and your payment has been refunded'
                     .tr,
             toastLength: Toast.LENGTH_LONG);
       } else {
         Fluttertoast.showToast(
             msg:
-                'the doctor has not started the meeting session, this button will automatically turn on when the doctor has started it'
+                'the lawyer has not started the meeting session, this button will automatically turn on when the lawyer has started it'
                     .tr,
             toastLength: Toast.LENGTH_LONG);
       }
@@ -109,6 +109,6 @@ class AppointmentDetailController extends GetxController
 
   void rescheduleAppointment() {
     Get.toNamed('/consultation-date-picker',
-        arguments: [selectedTimeslot.doctor, selectedTimeslot]);
+        arguments: [selectedTimeslot.lawyer, selectedTimeslot]);
   }
 }

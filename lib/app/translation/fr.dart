@@ -2,19 +2,19 @@ const Map<String, String> fr = {
   'App Name': 'Medecino',
   'Welcome Back,': 'Content de te revoir,',
   'Hi ': 'Salut ',
-  'Doctor Specialist': 'Médecin spécialiste',
-  'Top Rated Doctor': 'Médecin le mieux noté',
-  'Search Doctor': 'Rechercher un médecin',
+  'Lawyer Specialist': 'Médecin spécialiste',
+  'Top Rated Lawyer': 'Médecin le mieux noté',
+  'Search Lawyer': 'Rechercher un médecin',
   'View All': 'Voir tout',
   'error ': 'Erreur ',
-  'Top Rated Doctor is empty ': 'Le médecin le mieux noté est vide ',
+  'Top Rated Lawyer is empty ': 'Le médecin le mieux noté est vide ',
   'Home': 'Accueil',
-  'Doctor': 'Docteur',
+  'Lawyer': 'Docteur',
   'Appointment': 'Rendez-vous',
   'Chat': 'Discussion',
   'Online': 'Online',
-  'Online Doctors': 'Online Doctors',
-  'No Online Doctors': 'No Online Doctors',
+  'Online Lawyers': 'Online Lawyers',
+  'No Online Lawyers': 'No Online Lawyers',
   'Profile': 'Profile',
   'Appointment with ': 'Rendez-vous avec ',
   'at ': 'à ',
@@ -41,7 +41,7 @@ const Map<String, String> fr = {
   'What\'s Your New Email Address?': 'Quelle est votre nouvelle adresse email?',
   'New Email Address': 'Nouvelle adresse email',
   'App Version : ': 'App Version : ',
-  'No Doctor Registered in this Category':
+  'No Lawyer Registered in this Category':
       'Aucun médecin inscrit dans cette catégorie',
   'Price': 'Prix',
   'Book Consultation': 'Réservez votre consultation',
@@ -81,13 +81,13 @@ const Map<String, String> fr = {
   ' (Paid)': ' (Payé)',
   'Status': 'Etat',
   'Start Consultation': 'Commencer la consultation',
-  'the doctor has canceled the appointment, and your payment has been refunded':
+  'the lawyer has canceled the appointment, and your payment has been refunded':
       'le médecin a annulé le rendez-vous, votre paiement vous sera remboursé',
-  'the start consultation button will be active when the doctor starts the consultation':
+  'the start consultation button will be active when the lawyer starts the consultation':
       'le bouton commencer la consultation sera actif quand le médecin commence la consultation',
-  'the doctor has not started the meeting session, this button will automatically turn on when the doctor has started it':
+  'the lawyer has not started the meeting session, this button will automatically turn on when the lawyer has started it':
       'le médecin n\'a pas encore commencer la session, ce bouton va s\'allumer automatiquement des que le médecin commence',
-  'The doctor hasn\'t started the consultation yet':
+  'The lawyer hasn\'t started the consultation yet':
       'Le médecin n\'a pas encore commencé la consultation',
   'Photo': 'Photo',
   'File': 'Fichier',
@@ -97,7 +97,7 @@ const Map<String, String> fr = {
   'Consultation Confirmation': 'Confirmation de la consultation',
   'Has the consultation with the': 'Est-ce que la consultation avec',
   'been completed?': 'est complètement finie?',
-  'Payment for doctor ': 'Le paiement du médecin ',
+  'Payment for lawyer ': 'Le paiement du médecin ',
   ' will be made if you confirm this transaction':
       ' sera faite si vous confirmez cette transaction',
   'Yes & Give Review': 'Oui & notez',
@@ -112,7 +112,7 @@ const Map<String, String> fr = {
   'Please, explain the problem briefly': 'Expliquez brièvement le problème, s\'il vous plait',
   'Kindly explain your problem': 'Expliquez gentiment votre problème',
   'Send': 'Envoyer',
-  'Doctor no longger exist': 'Le médecin n\'existe plus',
+  'Lawyer no longger exist': 'Le médecin n\'existe plus',
   'Forgot Password': 'Mot de passe oublie\'',
   'Reset Password.?': 'Réinitialiser le mot de passe.?',
   'Enter Email address associated with your account':
@@ -125,7 +125,7 @@ const Map<String, String> fr = {
   'Don\'t have an account, ': 'Vous n\'avez pas de compte, ',
   'Register': 'Inscrivez-vous',
   'Login': 'Connexion',
-  'Review Doctor': 'Notez le medecin',
+  'Review Lawyer': 'Notez le medecin',
   'Your Review': 'Votre note',
   'Please wait for remote user to join': 'Svp attendez que l\'utilisateur distant se connecte',
   'Appointment Canceled': 'Rendez-vous annulé\'',

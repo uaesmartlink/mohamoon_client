@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:client_mohamoon/app/models/doctor_model.dart';
+import 'package:client_mohamoon/app/models/lawyer_model.dart';
 import 'package:client_mohamoon/app/models/review_model.dart';
 import 'package:client_mohamoon/app/models/time_slot_model.dart';
 import 'package:client_mohamoon/app/service/user_service.dart';
@@ -17,7 +17,7 @@ class ReviewService {
         'rating': rating,
         'timeSlotId': timeSlot.timeSlotId,
         'userId': UserService().currentUser!.uid,
-        'doctorId': timeSlot.doctorid,
+        'lawyerId': timeSlot.lawyerid,
         'user': {
           'displayName': UserService().currentUser!.displayName,
           'photoUrl': UserService().getProfilePicture(),
@@ -28,12 +28,12 @@ class ReviewService {
     }
   }
 
-  Future<List<ReviewModel>> getDoctorReview(
-      {required Doctor doctor, int limit = 4}) async {
+  Future<List<ReviewModel>> getLawyerReview(
+      {required Lawyer lawyer, int limit = 4}) async {
     try {
       var reviewRef = await FirebaseFirestore.instance
           .collection('Review')
-          .where('doctorId', isEqualTo: doctor.doctorId)
+          .where('lawyerId', isEqualTo: lawyer.lawyerId)
           .limit(limit)
           .get();
       List<ReviewModel> listReview = reviewRef.docs.map((doc) {

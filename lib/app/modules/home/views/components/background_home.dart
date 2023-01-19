@@ -50,7 +50,7 @@ class BackgroundHome extends StatelessWidget {
                                     ? 22
                                     : 20,
                           )),
-                      Text('Find your doctor'.tr,
+                      Text('Find your lawyer'.tr,
                           style: TextStyle(
                               color: Colors.white,
                               fontSize:

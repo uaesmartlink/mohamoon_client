@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
-import 'package:client_mohamoon/app/models/doctor_model.dart';
+import 'package:client_mohamoon/app/models/lawyer_model.dart';
 import 'package:client_mohamoon/app/service/chat_service.dart';
 //import '../../../service/user_service.dart';
 import '../controllers/list_chat_controller.dart';
@@ -53,8 +53,8 @@ class ListChatView extends GetView<ListChatController> {
 
   Widget _buildName(String name) => Text(name);
 
-  Widget _buildChatItem(types.Room room) => FutureBuilder<Doctor>(
-      future: ChatService().getDoctorByUserId(room.users[1].id),
+  Widget _buildChatItem(types.Room room) => FutureBuilder<Lawyer>(
+      future: ChatService().getLawyerByUserId(room.users[1].id),
       builder: (context, snapshot) {
         if (snapshot.data == null) {
           return SizedBox();
@@ -70,8 +70,8 @@ class ListChatView extends GetView<ListChatController> {
             ),
             child: Row(
               children: [
-                _buildAvatar(snapshot.data!.doctorPicture!),
-                _buildName(snapshot.data!.doctorName!),
+                _buildAvatar(snapshot.data!.lawyerPicture!),
+                _buildName(snapshot.data!.lawyerName!),
               ],
             ),
           ),

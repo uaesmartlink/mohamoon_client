@@ -13,7 +13,7 @@ class OnBoardingView extends GetView<OnBoardingController>{
           PageViewContent(
               image: 'assets/images/onboarding1.png',
               title: 'Find Trusted'.tr,
-              text: 'video/phone consult top doctors from your home/office/car : 24/7'.tr,
+              text: 'video/phone consult top lawyers from your home/office/car : 24/7'.tr,
               onTap: (){
                controller.pageController.nextPage(duration:Duration(milliseconds: 300) , curve: Curves.ease);
               }
@@ -21,7 +21,7 @@ class OnBoardingView extends GetView<OnBoardingController>{
           PageViewContent(
               image: 'assets/images/onboarding2.png',
               title: 'Choose Best'.tr,
-              text: 'Book the best doctors from multi specialist'.tr,
+              text: 'Book the best lawyers from multi specialist'.tr,
               onTap: (){
                 controller.pageController.nextPage(duration:Duration(milliseconds: 300) , curve: Curves.ease);
               }

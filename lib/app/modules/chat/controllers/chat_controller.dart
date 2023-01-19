@@ -11,7 +11,7 @@
 //import 'package:mime/mime.dart';
 //import 'package:open_file/open_file.dart';
 //import 'package:flutter/services.dart' show rootBundle;
-//import '../../../models/doctor_model.dart';
+//import '../../../models/lawyer_model.dart';
 /*
 class ChatController extends GetxController {
   var messages = <types.Message>[].obs;
@@ -19,7 +19,7 @@ class ChatController extends GetxController {
   var room = Get.arguments[0];
   final count = 0.obs;
   var isAttachmentUploading = false.obs;
-  Doctor doctor = Get.arguments[1];
+  Lawyer lawyer = Get.arguments[1];
   @override
   void onInit() {
     super.onInit();

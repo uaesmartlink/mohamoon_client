@@ -27,31 +27,31 @@ var mWelcomeTitleStyle = GoogleFonts.inter(
     fontWeight: FontWeight.w500, fontSize: 10, color: mSubtitleColor);
 var mUsernameTitleStyle = GoogleFonts.inter(
     fontWeight: FontWeight.w700, fontSize: 12, color: mTitleColor);
-var doctorNameTextStyle = GoogleFonts.inter(
+var lawyerNameTextStyle = GoogleFonts.inter(
     fontWeight: FontWeight.w700, fontSize: 12, color: mTitleColor);
 var specialistTextStyle = GoogleFonts.inter(
     fontWeight: FontWeight.w500, fontSize: 10, color: mSubtitleColor);
 var appbarTextStyle = GoogleFonts.inter(
     fontWeight: FontWeight.w500, fontSize: 15, color: mTitleColor);
 
-// Text Style for Doctor Category
-var doctorCategoryTextStyle = GoogleFonts.inter(
+// Text Style for Lawyer Category
+var lawyerCategoryTextStyle = GoogleFonts.inter(
     fontWeight: FontWeight.w500, fontSize: 15, color: Color(0xFF677294));
 
-// Text Style for Doctor Card
-var doctorNameStyle = GoogleFonts.inter(
+// Text Style for Lawyer Card
+var lawyerNameStyle = GoogleFonts.inter(
     fontWeight: FontWeight.w500, fontSize: 20, color: mTitleColor);
 var priceTextStyle = GoogleFonts.inter(
     fontWeight: FontWeight.w400, fontSize: 15, color: mSubtitleColor);
 var priceNumberTextStyle = GoogleFonts.inter(
     fontWeight: FontWeight.w500, fontSize: 15, color: Color(0xFF12908f));
 
-//Text Style Detail Doctor
+//Text Style Detail Lawyer
 var titleTextStyle = GoogleFonts.rubik(
     fontWeight: FontWeight.w500, fontSize: 16, color: mTitleColor);
 var subTitleTextStyle = GoogleFonts.poppins(
     fontWeight: FontWeight.w400, fontSize: 10, color: mSubtitleColor);
-var doctorCategoryStyle = GoogleFonts.poppins(
+var lawyerCategoryStyle = GoogleFonts.poppins(
     fontWeight: FontWeight.w400, fontSize: 10, color: mSubtitleColor);
 
 //Text Style for Detail Order

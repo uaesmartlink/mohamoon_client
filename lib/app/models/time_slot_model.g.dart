@@ -14,10 +14,10 @@ TimeSlot _$TimeSlotFromJson(Map<String, dynamic> json) => TimeSlot(
       bookedAmount: json['bookedAmount'] != null ? double.parse(json['price'].toString()) : 0.0,
       bookedDuration: json['bookedDuration'] as int?,
       available: json['available'] as bool?,
-      doctorid: json['doctorId'] as String?,
-      doctor: json['doctor'] == null
+      lawyerid: json['lawyerId'] as String?,
+      lawyer: json['lawyer'] == null
           ? null
-          : Doctor.fromJson(json['doctor'] as Map<String, dynamic>),
+          : Lawyer.fromJson(json['lawyer'] as Map<String, dynamic>),
       purchaseTime:
           TimeSlot._dateTimeFromJson(json['purchaseTime'] as Timestamp?),
       status: json['status'] as String?,
@@ -31,8 +31,8 @@ Map<String, dynamic> _$TimeSlotToJson(TimeSlot instance) => <String, dynamic>{
       'bookedDuration': instance.bookedDuration,
       'bookedAmount': instance.bookedAmount,
       'available': instance.available,
-      'doctorId': instance.doctorid,
-      'doctor': TimeSlot.doctorToJson(instance.doctor),
+      'lawyerId': instance.lawyerid,
+      'lawyer': TimeSlot.lawyerToJson(instance.lawyer),
       'purchaseTime': TimeSlot._dateTimeToJson(instance.purchaseTime),
       'status': instance.status,
     };

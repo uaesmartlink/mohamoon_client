@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:client_mohamoon/app/modules/appointment_detail/views/widgets/doctor_tile.dart';
+import 'package:client_mohamoon/app/modules/appointment_detail/views/widgets/lawyer_tile.dart';
 import 'package:client_mohamoon/app/modules/widgets/background_container.dart';
 import 'package:client_mohamoon/app/utils/styles/styles.dart';
 import 'package:client_mohamoon/app/utils/timeformat.dart';
@@ -46,9 +46,9 @@ class AppointmentDetailView extends GetView<AppointmentDetailController> {
                   SizedBox(
                     height: 10,
                   ),
-                  DoctorTile(
-                    imgUrl: timeSlot!.doctor!.doctorPicture!,
-                    name: timeSlot.doctor!.doctorName!,
+                  LawyerTile(
+                    imgUrl: timeSlot!.lawyer!.lawyerPicture!,
+                    name: timeSlot.lawyer!.lawyerName!,
                     orderTime: timeSlot.purchaseTime!,
                   ),
                   SizedBox(
@@ -137,7 +137,7 @@ class AppointmentDetailView extends GetView<AppointmentDetailController> {
                         text: 'Start Consultation'.tr,
                         active: controller.videoCallStatus.value,
                         nonActiveMsg:
-                            'the doctor has canceled the appointment, and your payment has been refunded'
+                            'the lawyer has canceled the appointment, and your payment has been refunded'
                                 .tr,
                       )),
                   SizedBox(
@@ -145,12 +145,12 @@ class AppointmentDetailView extends GetView<AppointmentDetailController> {
                   ),
                   controller.selectedTimeslot.status == 'refund'
                       ? Text(
-                          'the doctor has canceled the appointment, and your payment has been refunded'
+                          'the lawyer has canceled the appointment, and your payment has been refunded'
                               .tr,
                           style: Styles.greyTextInfoStyle,
                         )
                       : Text(
-                          'the start consultation button will be active when the doctor starts the consultation'
+                          'the start consultation button will be active when the lawyer starts the consultation'
                               .tr,
                           style: Styles.greyTextInfoStyle,
                         ),

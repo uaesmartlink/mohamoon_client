@@ -56,13 +56,13 @@ class AppointmentView extends GetView<AppointmentController> {
                              image: DecorationImage(
                              fit: BoxFit.cover,
                              image: CachedNetworkImageProvider(
-                                 listTimeslot[index].doctor!.doctorPicture!),
+                                 listTimeslot[index].lawyer!.lawyerPicture!),
                              ),
                              borderRadius: BorderRadius.all(Radius.circular(12.0)),
                            ),
                         ),
                         title: Text('Appointment with '.tr +
-                            listTimeslot[index].doctor!.doctorName!,
+                            listTimeslot[index].lawyer!.lawyerName!,
                           style: TextStyle(
                               fontSize: 14
                           ),

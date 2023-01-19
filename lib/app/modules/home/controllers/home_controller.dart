@@ -59,19 +59,19 @@ class HomeController extends GetxController {
     notificationService.testVideoNotification();
   }
 
-  void toOnlineDoctors() {
-    Get.toNamed('/online_doctors');
+  void toOnlineLawyers() {
+    Get.toNamed('/online_lawyers');
   }
 
-  void toDoctorCategory() {
-    Get.toNamed('/doctor-category');
+  void toLawyerCategory() {
+    Get.toNamed('/lawyer-category');
   }
 
-  void toTopRatedDoctor() {
-    Get.toNamed('/top-rated-doctor');
+  void toTopRatedLawyer() {
+    Get.toNamed('/top-rated-lawyer');
   }
 
-  void toSearchDoctor() {
-    Get.toNamed('/search-doctor');
+  void toSearchLawyer() {
+    Get.toNamed('/search-lawyer');
   }
 }

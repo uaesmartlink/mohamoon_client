@@ -5,7 +5,7 @@ import '../models/charge.dart';
 class ChargeService {
   Future chargeBalance(Charge charge) async {
     /* var chargeSabed = await FirebaseFirestore.instance
-        .collection('DoctorTimeslot')
+        .collection('LawyerTimeslot')
         .add(charage);*/
     try {
       CollectionReference charges =

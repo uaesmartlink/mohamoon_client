@@ -22,8 +22,8 @@ class BalanceController extends GetxController {
   AuthService authService = Get.find();
   UserService userService = Get.find();
   String bunlde = Platform.isAndroid
-      ? "com.seventeen.doctor_client_app"
-      : "dancingwhale.halloDoctor";
+      ? "com.seventeen.lawyer_client_app"
+      : "dancingwhale.halloLawyer";
   String productionSecreteKey = Platform.isAndroid
       ? "sk_live_OeS9yWvZ6mXTUzwPBhMbQ30F"
       : "sk_live_MUbB9HVkS6XZzyPQA2LRdlKo";
@@ -78,7 +78,7 @@ class BalanceController extends GetxController {
       //       googlePay: true,
       //       testEnv: true,
       //       merchantCountryCode: 'US',
-      //       merchantDisplayName: 'Helo Doctor',
+      //       merchantDisplayName: 'Helo Lawyer',
       //       paymentIntentClientSecret: clientSecret,
       //     ));
       // await Stripe.instance.presentPaymentSheet();

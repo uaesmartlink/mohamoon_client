@@ -14,24 +14,24 @@ import 'package:client_mohamoon/app/modules/consultation_date_picker/bindings/co
 import 'package:client_mohamoon/app/modules/consultation_date_picker/views/consultation_date_picker_view.dart';
 import 'package:client_mohamoon/app/modules/dashboard/bindings/dashboard_binding.dart';
 import 'package:client_mohamoon/app/modules/dashboard/views/dashboard_view.dart';
-import 'package:client_mohamoon/app/modules/detail_doctor/bindings/detail_doctor_binding.dart';
-import 'package:client_mohamoon/app/modules/detail_doctor/views/detail_doctor_view.dart';
+import 'package:client_mohamoon/app/modules/detail_lawyer/bindings/detail_lawyer_binding.dart';
+import 'package:client_mohamoon/app/modules/detail_lawyer/views/detail_lawyer_view.dart';
 import 'package:client_mohamoon/app/modules/detail_order/bindings/detail_order_binding.dart';
 import 'package:client_mohamoon/app/modules/detail_order/views/detail_order_view.dart';
-import 'package:client_mohamoon/app/modules/doctor_category/bindings/doctor_category_binding.dart';
-import 'package:client_mohamoon/app/modules/doctor_category/views/doctor_category_view.dart';
+import 'package:client_mohamoon/app/modules/lawyer_category/bindings/lawyer_category_binding.dart';
+import 'package:client_mohamoon/app/modules/lawyer_category/views/lawyer_category_view.dart';
 import 'package:client_mohamoon/app/modules/forgot_password/bindings/forgot_password_binding.dart';
 import 'package:client_mohamoon/app/modules/forgot_password/views/forgot_password_view.dart';
 import 'package:client_mohamoon/app/modules/home/bindings/home_binding.dart';
 import 'package:client_mohamoon/app/modules/home/views/home_view.dart';
 import 'package:client_mohamoon/app/modules/list_chat/bindings/list_chat_binding.dart';
 import 'package:client_mohamoon/app/modules/list_chat/views/list_chat_view.dart';
-import 'package:client_mohamoon/app/modules/list_doctor/bindings/list_doctor_binding.dart';
-import 'package:client_mohamoon/app/modules/list_doctor/views/list_doctor_view.dart';
+import 'package:client_mohamoon/app/modules/list_lawyer/bindings/list_lawyer_binding.dart';
+import 'package:client_mohamoon/app/modules/list_lawyer/views/list_lawyer_view.dart';
 import 'package:client_mohamoon/app/modules/login/bindings/login_binding.dart';
 import 'package:client_mohamoon/app/modules/login/views/login_view.dart';
-import 'package:client_mohamoon/app/modules/online_doctors/bindings/online_doctors_bindings.dart';
-import 'package:client_mohamoon/app/modules/online_doctors/views/online_doctors_view.dart';
+import 'package:client_mohamoon/app/modules/online_lawyers/bindings/online_lawyers_bindings.dart';
+import 'package:client_mohamoon/app/modules/online_lawyers/views/online_lawyers_view.dart';
 import 'package:client_mohamoon/app/modules/payment_success/bindings/payment_success_binding.dart';
 import 'package:client_mohamoon/app/modules/payment_success/views/payment_success_view.dart';
 import 'package:client_mohamoon/app/modules/profile/bindings/profile_binding.dart';
@@ -42,10 +42,10 @@ import 'package:client_mohamoon/app/modules/reset_password/bindings/reset_passwo
 import 'package:client_mohamoon/app/modules/reset_password/views/reset_password_view.dart';
 import 'package:client_mohamoon/app/modules/review/bindings/review_binding.dart';
 import 'package:client_mohamoon/app/modules/review/views/review_view.dart';
-import 'package:client_mohamoon/app/modules/search_doctor/bindings/search_doctor_binding.dart';
-import 'package:client_mohamoon/app/modules/search_doctor/views/search_doctor_view.dart';
-import 'package:client_mohamoon/app/modules/top_rated_doctor/bindings/top_rated_doctor_binding.dart';
-import 'package:client_mohamoon/app/modules/top_rated_doctor/views/top_rated_doctor_view.dart';
+import 'package:client_mohamoon/app/modules/search_lawyer/bindings/search_lawyer_binding.dart';
+import 'package:client_mohamoon/app/modules/search_lawyer/views/search_lawyer_view.dart';
+import 'package:client_mohamoon/app/modules/top_rated_lawyer/bindings/top_rated_lawyer_binding.dart';
+import 'package:client_mohamoon/app/modules/top_rated_lawyer/views/top_rated_lawyer_view.dart';
 import 'package:client_mohamoon/app/modules/video_call/bindings/video_call_binding.dart';
 import 'package:client_mohamoon/app/modules/video_call/views/video_call_view.dart';
 import '../modules/onboarding_page/bindings/onboarding_binding.dart';
@@ -95,19 +95,19 @@ class AppPages {
       binding: DashboardBinding(),
     ),
     GetPage(
-      name: _Paths.DOCTOR_CATEGORY,
-      page: () => DoctorCategoryView(),
-      binding: DoctorCategoryBinding(),
+      name: _Paths.LAWYER_CATEGORY,
+      page: () => LawyerCategoryView(),
+      binding: LawyerCategoryBinding(),
     ),
     GetPage(
-      name: _Paths.LIST_DOCTOR,
-      page: () => ListDoctorView(),
-      binding: ListDoctorBinding(),
+      name: _Paths.LIST_LAWYER,
+      page: () => ListLawyerView(),
+      binding: ListLawyerBinding(),
     ),
     GetPage(
-      name: _Paths.DETAIL_DOCTOR,
-      page: () => DetailDoctorView(),
-      binding: DetailDoctorBinding(),
+      name: _Paths.DETAIL_LAWYER,
+      page: () => DetailLawyerView(),
+      binding: DetailLawyerBinding(),
     ),
     GetPage(
       name: _Paths.CONSULTATION_DATE_PICKER,
@@ -150,14 +150,14 @@ class AppPages {
       binding: ForgotPasswordBinding(),
     ),
     GetPage(
-      name: _Paths.TOP_RATED_DOCTOR,
-      page: () => TopRatedDoctorView(),
-      binding: TopRatedDoctorBinding(),
+      name: _Paths.TOP_RATED_LAWYER,
+      page: () => TopRatedLawyerView(),
+      binding: TopRatedLawyerBinding(),
     ),
     GetPage(
-      name: _Paths.SEARCH_DOCTOR,
-      page: () => SearchDoctorView(),
-      binding: SearchDoctorBinding(),
+      name: _Paths.SEARCH_LAWYER,
+      page: () => SearchLawyerView(),
+      binding: SearchLawyerBinding(),
     ),
     GetPage(
       name: _Paths.CONSULTATION_CONFIRM,
@@ -175,9 +175,9 @@ class AppPages {
       binding: ListChatBinding(),
     ),
     GetPage(
-      name: _Paths.online_doctors,
-      page: () => OnlineDoctorsView(),
-      binding: OnlineDoctorsBindings(),
+      name: _Paths.online_lawyers,
+      page: () => OnlineLawyersView(),
+      binding: OnlineLawyersBindings(),
     ),
     GetPage(
       name: _Paths.onBoarding,

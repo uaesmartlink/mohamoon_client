@@ -12,9 +12,9 @@ abstract class Routes {
   static const REGISTER = _Paths.REGISTER;
   static const RESET_PASSWORD = _Paths.RESET_PASSWORD;
   static const DASHBOARD = _Paths.DASHBOARD;
-  static const DOCTOR_CATEGORY = _Paths.DOCTOR_CATEGORY;
-  static const LIST_DOCTOR = _Paths.LIST_DOCTOR;
-  static const DETAIL_DOCTOR = _Paths.DETAIL_DOCTOR;
+  static const LAWYER_CATEGORY = _Paths.LAWYER_CATEGORY;
+  static const LIST_LAWYER = _Paths.LIST_LAWYER;
+  static const DETAIL_LAWYER = _Paths.DETAIL_LAWYER;
   static const CONSULTATION_DATE_PICKER = _Paths.CONSULTATION_DATE_PICKER;
   static const DETAIL_ORDER = _Paths.DETAIL_ORDER;
   static const PAYMENT_SUCCESS = _Paths.PAYMENT_SUCCESS;
@@ -23,12 +23,12 @@ abstract class Routes {
   static const APPOINTMENT_DETAIL = _Paths.APPOINTMENT_DETAIL;
   static const REVIEW = _Paths.REVIEW;
   static const FORGOT_PASSWORD = _Paths.FORGOT_PASSWORD;
-  static const TOP_RATED_DOCTOR = _Paths.TOP_RATED_DOCTOR;
-  static const SEARCH_DOCTOR = _Paths.SEARCH_DOCTOR;
+  static const TOP_RATED_LAWYER = _Paths.TOP_RATED_LAWYER;
+  static const SEARCH_LAWYER = _Paths.SEARCH_LAWYER;
   static const CONSULTATION_CONFIRM = _Paths.CONSULTATION_CONFIRM;
   static const CHAT = _Paths.CHAT;
   static const LIST_CHAT = _Paths.LIST_CHAT;
-  static const online_doctors = _Paths.online_doctors;
+  static const online_lawyers = _Paths.online_lawyers;
   static const onBoarding = _Paths.onBoarding;
   static const balance = _Paths.balance;
 }
@@ -40,9 +40,9 @@ abstract class _Paths {
   static const REGISTER = '/register';
   static const RESET_PASSWORD = '/reset-password';
   static const DASHBOARD = '/dashboard';
-  static const DOCTOR_CATEGORY = '/doctor-category';
-  static const LIST_DOCTOR = '/list-doctor';
-  static const DETAIL_DOCTOR = '/detail-doctor';
+  static const LAWYER_CATEGORY = '/lawyer-category';
+  static const LIST_LAWYER = '/list-lawyer';
+  static const DETAIL_LAWYER = '/detail-lawyer';
   static const CONSULTATION_DATE_PICKER = '/consultation-date-picker';
   static const DETAIL_ORDER = '/detail-order';
   static const PAYMENT_SUCCESS = '/payment-success';
@@ -51,12 +51,12 @@ abstract class _Paths {
   static const APPOINTMENT_DETAIL = '/appointment-detail';
   static const REVIEW = '/review';
   static const FORGOT_PASSWORD = '/forgot-password';
-  static const TOP_RATED_DOCTOR = '/top-rated-doctor';
-  static const SEARCH_DOCTOR = '/search-doctor';
+  static const TOP_RATED_LAWYER = '/top-rated-lawyer';
+  static const SEARCH_LAWYER = '/search-lawyer';
   static const CONSULTATION_CONFIRM = '/consultation-confirm';
   static const CHAT = '/chat';
   static const LIST_CHAT = '/list-chat';
-  static const online_doctors = '/online_doctors';
+  static const online_lawyers = '/online_lawyers';
   static const onBoarding = '/onboarding_page';
   static const balance = '/balance_page';
 }

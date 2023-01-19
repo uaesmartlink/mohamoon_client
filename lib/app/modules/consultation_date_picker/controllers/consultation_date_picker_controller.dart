@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
-import 'package:client_mohamoon/app/models/doctor_model.dart';
+import 'package:client_mohamoon/app/models/lawyer_model.dart';
 import 'package:client_mohamoon/app/models/time_slot_model.dart';
-import 'package:client_mohamoon/app/service/doctor_service.dart';
+import 'package:client_mohamoon/app/service/lawyer_service.dart';
 import 'package:client_mohamoon/app/service/timeslot_service.dart';
 
 enum TimeSlotStatus { startUp, unselected, selected }
@@ -15,7 +15,7 @@ class ConsultationDatePickerController extends GetxController
   List<TimeSlot> tempTimeSlot = List.empty(growable: true);
   late List<TimeSlot> selectedDateTimeslot = List.empty();
   var selectedTimeSlot = TimeSlot().obs;
-  Doctor doctor = Get.arguments[0];
+  Lawyer lawyer = Get.arguments[0];
   bool isReschedule = false;
   late int price;
   DateTime date = DateTime.now();
@@ -26,7 +26,7 @@ class ConsultationDatePickerController extends GetxController
   @override
   void onInit() {
     super.onInit();
-    price = doctor.doctorPrice!;
+    price = lawyer.lawyerPrice!;
     durations.add('15 minutes\n       \$${price / 4}');
     durations.add('30 minutes\n       \$${price / 2}');
     durations.add('45 minutes\n       \$${price / 4 * 3}');
@@ -34,7 +34,7 @@ class ConsultationDatePickerController extends GetxController
     print(price);
     if (Get.arguments[1] != null) isReschedule = true;
     //print('is Reschedule $isReschedule');
-    DoctorService().getDoctorTimeSlot(doctor).then((timeSlot) {
+    LawyerService().getLawyerTimeSlot(lawyer).then((timeSlot) {
       allTimeSlot = timeSlot;
       tempTimeSlot = timeSlot;
       updateScheduleAtDate(
@@ -112,7 +112,7 @@ class ConsultationDatePickerController extends GetxController
           '/detail-order',
           arguments: [
             selectedTimeSlot.value,
-            doctor,
+            lawyer,
             (durationSelectedIndex + 1) * 15,
             timesSlot,
           ],

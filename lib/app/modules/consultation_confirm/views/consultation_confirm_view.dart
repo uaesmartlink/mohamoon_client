@@ -26,7 +26,7 @@ class ConsultationConfirmView extends GetView<ConsultationConfirmController> {
                   children: [
                     Text(
                       'Has the consultation with the'.tr +
-                          controller.timeSlot.doctor!.doctorName! +
+                          controller.timeSlot.lawyer!.lawyerName! +
                           'been completed?'.tr,
                       style: GoogleFonts.nunito(fontSize: 25),
                     ),
@@ -37,8 +37,8 @@ class ConsultationConfirmView extends GetView<ConsultationConfirmController> {
                         onTap: () {
                           Get.defaultDialog(
                               title: 'Confirm'.tr,
-                              middleText: 'Payment for doctor '.tr +
-                                  controller.timeSlot.doctor!.doctorName! +
+                              middleText: 'Payment for lawyer '.tr +
+                                  controller.timeSlot.lawyer!.lawyerName! +
                                   ' will be made if you confirm this transaction'
                                       .tr,
                               textCancel: 'Cancel'.tr,

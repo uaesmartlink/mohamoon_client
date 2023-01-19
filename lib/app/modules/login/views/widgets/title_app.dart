@@ -19,7 +19,7 @@ class TitleApp extends StatelessWidget {
         ),
         const SizedBox(height: 5,),
         Text(
-          'You can search a doctor and book an appointment'.tr,
+          'You can search a lawyer and book an appointment'.tr,
           style: TextStyle(
               fontSize: 12,
               color: Colors.white),

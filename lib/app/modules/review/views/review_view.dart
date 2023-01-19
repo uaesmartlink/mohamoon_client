@@ -14,7 +14,7 @@ class ReviewView extends GetView<ReviewController> {
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Review Doctor'.tr),
+          title: Text('Review Lawyer'.tr),
           centerTitle: true,
         ),
         body: SingleChildScrollView(
@@ -29,9 +29,9 @@ class ReviewView extends GetView<ReviewController> {
                     leading: CircleAvatar(
                       radius: 40,
                       backgroundImage: CachedNetworkImageProvider(
-                          controller.timeSlot.doctor!.doctorPicture!),
+                          controller.timeSlot.lawyer!.lawyerPicture!),
                     ),
-                    title: Text(controller.timeSlot.doctor!.doctorName!),
+                    title: Text(controller.timeSlot.lawyer!.lawyerName!),
                   ),
                  /* Divider(),
                   TextField(

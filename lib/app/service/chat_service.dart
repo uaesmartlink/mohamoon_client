@@ -1,14 +1,14 @@
-import 'package:client_mohamoon/app/service/doctor_service.dart';
+import 'package:client_mohamoon/app/service/lawyer_service.dart';
 import 'package:client_mohamoon/app/service/user_service.dart';
 
-import '../models/doctor_model.dart';
+import '../models/lawyer_model.dart';
 
 class ChatService {
-  Future<Doctor> getDoctorByUserId(String userId) async {
+  Future<Lawyer> getLawyerByUserId(String userId) async {
     try {
       var user = await UserService().getUsernameById(userId);
-      var doctor = await DoctorService().getDoctorDetail(user!.doctorId!);
-      return doctor;
+      var lawyer = await LawyerService().getLawyerDetail(user!.lawyerId!);
+      return lawyer;
     } catch (e) {
       return Future.error(e.toString());
     }

@@ -269,11 +269,12 @@ class RegisterView extends GetView<RegisterController> {
                                   },
                                 ),
                                 border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10.0),
-                                    borderSide: BorderSide(
-                                      width: 0,
-                                      style: BorderStyle.none,
-                                    )),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  borderSide: BorderSide(
+                                    width: 0,
+                                    style: BorderStyle.none,
+                                  ),
+                                ),
                                 fillColor: Colors.grey[200],
                                 filled: true),
                           )),

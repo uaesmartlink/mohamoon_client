@@ -2,22 +2,22 @@ const Map<String, String> en = {
   'App Name': 'Tatbeb',
   'Welcome Back,': 'Welcome Back,',
   'Hi ': 'Hi ',
-  'Doctor Specialist': 'Doctor Specialist',
-  'Top Rated Doctor': 'Top Rated Doctor',
-  'Search Doctor': 'Search Doctor',
+  'Lawyer Specialist': 'Lawyer Specialist',
+  'Top Rated Lawyer': 'Top Rated Lawyer',
+  'Search Lawyer': 'Search Lawyer',
   'View All': 'View All',
   'error ': 'error ',
-  'Top Rated Doctor is empty ': 'Top Rated Doctor is empty ',
+  'Top Rated Lawyer is empty ': 'Top Rated Lawyer is empty ',
   'Home': 'Home',
-  'Doctor': 'Doctor',
+  'Lawyer': 'Lawyer',
   'Appointment': 'Appointment',
   'Chat': 'Chat',
   'Online': 'Online',
-  'Online Doctors': 'Online Doctors',
+  'Online Lawyers': 'Online Lawyers',
   'Choose a duration for consulting ': 'Choose a duration for consulting ',
-  'Doctor is available until': 'Doctor is available until',
+  'Lawyer is available until': 'Lawyer is available until',
   'Consulting will cost = ': 'Consulting will cost = ',
-  'No Online Doctors': 'No Online Doctors',
+  'No Online Lawyers': 'No Online Lawyers',
   'Charge Balance': 'Charge Balance',
   'Your Balance': 'Your Balance',
   'Purchase consulting credits and consult more with our packages':
@@ -33,11 +33,11 @@ const Map<String, String> en = {
   'Languages': 'Languages',
   'Privacy&Policy': 'Privacy&Policy',
   'Buy Package': 'Buy Package',
-  'You can search a doctor and book an appointment':
-      'You can search a doctor and book an appointment',
+  'You can search a lawyer and book an appointment':
+      'You can search a lawyer and book an appointment',
   'Welcome, ': 'Welcome, ',
   'Quick consultation': 'Quick consultation',
-  'Find your doctor': 'Find your doctor',
+  'Find your lawyer': 'Find your lawyer',
   'Chose a language for your app': 'Chose a language for your app',
   'Profile': 'Profile',
   'Appointment with ': 'Appointment with ',
@@ -57,10 +57,10 @@ const Map<String, String> en = {
   'Upload a photo of yourself ': 'Upload a photo of yourself ',
   'Update': 'Update',
   'Name must be  3 or more characters': 'Name must be  3 or more characters',
-  'video/phone consult top doctors from your home/office/car : 24/7':
-      'video/phone consult top doctors from your home/office/car : 24/7',
-  'Book the best doctors from multi specialist':
-      'Book the best doctors from multi specialist',
+  'video/phone consult top lawyers from your home/office/car : 24/7':
+      'video/phone consult top lawyers from your home/office/car : 24/7',
+  'Book the best lawyers from multi specialist':
+      'Book the best lawyers from multi specialist',
   'Save time and money': 'Save time and money',
   'Choose Best': 'Choose Best',
   'Find Trusted': 'Find Trusted',
@@ -73,8 +73,8 @@ const Map<String, String> en = {
   'What\'s Your New Email Address?': 'What\'s Your New Email Address?',
   'New Email Address': 'New Email Address',
   'App Version : ': 'App Version : ',
-  'No Doctor Registered in this Category':
-      'No Doctor Registered in this Category',
+  'No Lawyer Registered in this Category':
+      'No Lawyer Registered in this Category',
   'Price': 'Price',
   'Book Consultation': 'Book Consultation',
   'Biography': 'Biography',
@@ -113,14 +113,14 @@ const Map<String, String> en = {
   ' (Paid)': ' (Paid)',
   'Status': 'Status',
   'Start Consultation': 'Start Consultation',
-  'the doctor has canceled the appointment, and your payment has been refunded':
-      'the doctor has canceled the appointment, and your payment has been refunded',
-  'the start consultation button will be active when the doctor starts the consultation':
-      'the start consultation button will be active when the doctor starts the consultation',
-  'the doctor has not started the meeting session, this button will automatically turn on when the doctor has started it':
-      'the doctor has not started the meeting session, this button will automatically turn on when the doctor has started it',
-  'The doctor hasn\'t started the consultation yet':
-      'The doctor hasn\'t started the consultation yet',
+  'the lawyer has canceled the appointment, and your payment has been refunded':
+      'the lawyer has canceled the appointment, and your payment has been refunded',
+  'the start consultation button will be active when the lawyer starts the consultation':
+      'the start consultation button will be active when the lawyer starts the consultation',
+  'the lawyer has not started the meeting session, this button will automatically turn on when the lawyer has started it':
+      'the lawyer has not started the meeting session, this button will automatically turn on when the lawyer has started it',
+  'The lawyer hasn\'t started the consultation yet':
+      'The lawyer hasn\'t started the consultation yet',
   'Photo': 'Photo',
   'File': 'File',
   'Cancel': 'Cancel',
@@ -129,7 +129,7 @@ const Map<String, String> en = {
   'Consultation Confirmation': 'Consultation Confirmation',
   'Has the consultation with the': 'Has the consultation with the',
   'been completed?': 'been completed?',
-  'Payment for doctor ': 'Payment for doctor ',
+  'Payment for lawyer ': 'Payment for lawyer ',
   ' will be made if you confirm this transaction':
       ' will be made if you confirm this transaction',
   'Yes & Give Review': 'Yes & Give Review',
@@ -144,7 +144,7 @@ const Map<String, String> en = {
   'Please, explain the problem briefly': 'Please, explain the problem briefly',
   'Kindly explain your problem': 'Kindly explain your problem',
   'Send': 'Send',
-  'Doctor no longger exist': 'Doctor no longger exist',
+  'Lawyer no longger exist': 'Lawyer no longger exist',
   'Forgot Password': 'Forgot Password',
   'Reset Password.?': 'Reset Password.?',
   'Enter Email address associated with your account':
@@ -164,7 +164,7 @@ const Map<String, String> en = {
   'You cant book this duration,not enough time':
       'You cant book this duration,not enough time',
   'Login': 'Login',
-  'Review Doctor': 'Review Doctor',
+  'Review Lawyer': 'Review Lawyer',
   'Your Review': 'Your Review',
   'Please wait for remote user to join': 'Please wait for remote user to join',
   'Appointment Canceled': 'Appointment Canceled',

@@ -1,51 +1,51 @@
-import 'doctor_category_model.dart';
+import 'lawyer_category_model.dart';
 
-// class Doctor {
-//   Doctor(
-//       {this.doctorId,
-//       this.doctorName,
-//       this.doctorPicture,
-//       this.doctorPrice,
-//       this.doctorShortBiography,
-//       this.doctorCategory,
-//       this.doctorHospital,
+// class Lawyer {
+//   Lawyer(
+//       {this.lawyerId,
+//       this.lawyerName,
+//       this.lawyerPicture,
+//       this.lawyerPrice,
+//       this.lawyerShortBiography,
+//       this.lawyerCategory,
+//       this.lawyerHospital,
 //       this.accountStatus});
-//   static const String _doctorId = 'doctorId';
-//   static const String _doctorName = 'doctorName';
-//   static const String _doctorPicture = 'doctorPicture';
-//   static const String _doctorPrice = 'doctorBasePrice';
-//   static const String _doctorShortBiography = 'doctorBiography';
-//   static const String _doctorCategory = 'doctorCategory';
-//   static const String _doctorHospital = 'doctorHospital';
+//   static const String _lawyerId = 'lawyerId';
+//   static const String _lawyerName = 'lawyerName';
+//   static const String _lawyerPicture = 'lawyerPicture';
+//   static const String _lawyerPrice = 'lawyerBasePrice';
+//   static const String _lawyerShortBiography = 'lawyerBiography';
+//   static const String _lawyerCategory = 'lawyerCategory';
+//   static const String _lawyerHospital = 'lawyerHospital';
 //   static const String _accountStatus = 'accountStatus';
-//   String? doctorId;
-//   String? doctorName;
-//   String? doctorPicture;
-//   int? doctorPrice;
-//   String? doctorShortBiography;
-//   DoctorCategory? doctorCategory;
-//   String? doctorHospital;
+//   String? lawyerId;
+//   String? lawyerName;
+//   String? lawyerPicture;
+//   int? lawyerPrice;
+//   String? lawyerShortBiography;
+//   LawyerCategory? lawyerCategory;
+//   String? lawyerHospital;
 //   String? accountStatus;
 
-//   factory Doctor.fromJson(Map<String, dynamic> data) {
-//     return Doctor(
-//         doctorId: data[_doctorId],
-//         doctorName: data[_doctorName],
-//         doctorPicture: data[_doctorPicture],
-//         doctorPrice: data[_doctorPrice],
-//         doctorShortBiography: data[_doctorShortBiography],
-//         doctorCategory: data[_doctorCategory] != null
-//             ? DoctorCategory.fromJson(data[_doctorCategory])
+//   factory Lawyer.fromJson(Map<String, dynamic> data) {
+//     return Lawyer(
+//         lawyerId: data[_lawyerId],
+//         lawyerName: data[_lawyerName],
+//         lawyerPicture: data[_lawyerPicture],
+//         lawyerPrice: data[_lawyerPrice],
+//         lawyerShortBiography: data[_lawyerShortBiography],
+//         lawyerCategory: data[_lawyerCategory] != null
+//             ? LawyerCategory.fromJson(data[_lawyerCategory])
 //             : null,
-//         doctorHospital: data[_doctorHospital],
+//         lawyerHospital: data[_lawyerHospital],
 //         accountStatus: data[_accountStatus]);
 //   }
 //    Map<String, dynamic> toJson() => {
-//         _doctorId: doctorId,
-//         _doctorName: doctorName,
-//         _doctorPicture: doctorPicture,
-//         _doctorPrice: doctorPrice,
-//         _doctorShortBiography: doctorShortBiography,_doctorCategory: doctorCategory
+//         _lawyerId: lawyerId,
+//         _lawyerName: lawyerName,
+//         _lawyerPicture: lawyerPicture,
+//         _lawyerPrice: lawyerPrice,
+//         _lawyerShortBiography: lawyerShortBiography,_lawyerCategory: lawyerCategory
 //       };
 // }
 

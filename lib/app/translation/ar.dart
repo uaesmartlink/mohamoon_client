@@ -2,22 +2,22 @@ const Map<String, String> ar = {
   'App Name': 'تطبيب',
   'Welcome Back,': 'مرحبا بعودتك',
   'Hi ': 'مرحبا ',
-  'Doctor Specialist': 'الاختصاصات',
-  'Top Rated Doctor': 'الأعلى تقييماً',
-  'Search Doctor': 'ابحث عن دكتور',
+  'Lawyer Specialist': 'الاختصاصات',
+  'Top Rated Lawyer': 'الأعلى تقييماً',
+  'Search Lawyer': 'ابحث عن دكتور',
   'View All': 'عرض الكل',
   'error ': 'خطأ ',
-  'Top Rated Doctor is empty ': 'لا يوجد نتائج ',
+  'Top Rated Lawyer is empty ': 'لا يوجد نتائج ',
   'Home': 'الرئيسية',
-  'Doctor': 'الطبيب',
+  'Lawyer': 'الطبيب',
   'Appointment': 'المواعيد',
   'Chat': 'المحادثات',
   'Online': 'متصل',
-  'Online Doctors': 'الاطباء المتصلين',
+  'Online Lawyers': 'الاطباء المتصلين',
   'Choose a duration for consulting ': 'اختر مدة للاستشارة ',
-  'Doctor is available until': 'الطبيب متاح حتى',
+  'Lawyer is available until': 'الطبيب متاح حتى',
   'Consulting will cost = ': 'تكلفة الاستشارات =',
-  'No Online Doctors': 'لا يوجد أطباء متصلين',
+  'No Online Lawyers': 'لا يوجد أطباء متصلين',
   'Charge Balance': 'اشحن رصيدك',
   'Your Balance': 'رصيدك',
   'Purchase consulting credits and consult more with our packages':
@@ -33,11 +33,11 @@ const Map<String, String> ar = {
   'Languages': 'اللغة',
   'Privacy&Policy': 'سياسة الخصوصية',
   'Buy Package': 'شراء الباقة',
-  'You can search a doctor and book an appointment':
+  'You can search a lawyer and book an appointment':
       'يمكنك البحث عن طبيب وحجز موعد',
   'Welcome, ': 'مرحباً ,',
-  'Quick consultation': 'استشارة سريعة',
-  'Find your doctor': 'ابحث عن طبيبك',
+  'Quick Consultation': 'استشارة سريعة',
+  'Find your lawyer': 'ابحث عن طبيبك',
   'Chose a language for your app': 'اختر اللغة التي تريدها',
   'Profile': 'الملف الشخصي',
   'Appointment with ': 'موعد مع ',
@@ -57,9 +57,9 @@ const Map<String, String> ar = {
   'Upload a photo of yourself ': 'قم بتحميل صورة لنفسك ',
   'Update': 'تحديث',
   'Name must be  3 or more characters': 'يجب أن يتكون الاسم من 3 أحرف أو أكثر',
-  'video/phone consult top doctors from your home/office/car : 24/7':
+  'video/phone consult top lawyers from your home/office/car : 24/7':
       'استشر أفضل الأطباء عبر الفيديو من منزلك /مكتبك/سيارتك 24/7',
-  'Book the best doctors from multi specialist':
+  'Book the best lawyers from multi specialist':
       'احجز موعر مع أفضل الأطباء من جميع الاختصاصات',
   'Save time and money': 'وفر الوقت و المال ',
   'Choose Best': 'اختر الأفضل',
@@ -73,7 +73,7 @@ const Map<String, String> ar = {
   'What\'s Your New Email Address?': 'ما هو عنوان بريدك الإلكتروني الجديد؟',
   'New Email Address': 'عنوان البريد الإلكتروني الجديد',
   'App Version : ': 'نسخة التطبيق : ',
-  'No Doctor Registered in this Category': 'لا يوجد طبيب مسجل في هذه الفئة',
+  'No Lawyer Registered in this Category': 'لا يوجد طبيب مسجل في هذه الفئة',
   'Price': 'السعر',
   'Book Consultation': 'احجز استشارة',
   'Biography': 'سيرة شخصية',
@@ -112,13 +112,13 @@ const Map<String, String> ar = {
   ' (Paid)': '(مدفوع)',
   'Status': 'الحالة',
   'Start Consultation': 'ابدأ الاستشارة',
-  'the doctor has canceled the appointment, and your payment has been refunded':
+  'the lawyer has canceled the appointment, and your payment has been refunded':
       'ألغى الطبيب الموعد ، وتم رد مدفوعاتك',
-  'the start consultation button will be active when the doctor starts the consultation':
+  'the start consultation button will be active when the lawyer starts the consultation':
       'سيكون زر بدء الاستشارة نشطًا عندما يبدأ الطبيب الاستشارة',
-  'the doctor has not started the meeting session, this button will automatically turn on when the doctor has started it':
+  'the lawyer has not started the meeting session, this button will automatically turn on when the lawyer has started it':
       'لم يبدأ الطبيب جلسة الاجتماع ، سيتم تشغيل هذا الزر تلقائيًا عند بدء الطبيب',
-  'The doctor hasn\'t started the consultation yet':
+  'The lawyer hasn\'t started the consultation yet':
       'لم يبدأ الطبيب الاستشارة بعد',
   'Photo': 'صورة',
   'File': 'ملف',
@@ -128,7 +128,7 @@ const Map<String, String> ar = {
   'Consultation Confirmation': 'تأكيد الاستشارة',
   'Has the consultation with the': 'الاستشارة ستكون مع',
   'been completed?': 'تم الانتهاء؟',
-  'Payment for doctor ': 'الدفع للطبيب',
+  'Payment for lawyer ': 'الدفع للطبيب',
   ' will be made if you confirm this transaction': 'إذا قمت بتأكيد هذه الصفقة',
   'Yes & Give Review': 'نعم , قدم مراجعة',
   'No, there is a problem': 'لا ، هناك مشكلة',
@@ -141,7 +141,7 @@ const Map<String, String> ar = {
   'Please, explain the problem briefly': 'من فضلك اشرح المشكلة باختصار',
   'Kindly explain your problem': 'يرجى شرح مشكلتك',
   'Send': 'ارسال',
-  'Doctor no longger exist': 'لم يعد الطبيب موجودًا',
+  'Lawyer no longger exist': 'لم يعد الطبيب موجودًا',
   'Forgot Password': 'هل نسيت كلمة المرور ؟',
   'Reset Password.?': 'إعادة تعيين كلمة المرور.',
   'Enter Email address associated with your account':
@@ -162,7 +162,7 @@ const Map<String, String> ar = {
   'You cant book this duration,not enough time':
       'لايوجد وقت كاف لحجز هذه المدة',
   'Login': 'تسجيل الدخول',
-  'Review Doctor': 'اكتب مراجعة للطبيب',
+  'Review Lawyer': 'اكتب مراجعة للطبيب',
   'Your Review': 'مراجعتك',
   'Please wait for remote user to join':
       'الرجاء انتظار المستخدم البعيد للانضمام',

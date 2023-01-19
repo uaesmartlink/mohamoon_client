@@ -1,5 +1,5 @@
 class UserModel {
-  UserModel({this.fullName,this.phone,this.gender,this.age,this.displayName, this.photoUrl,this.balance, this.userId, this.doctorId});
+  UserModel({this.fullName,this.phone,this.gender,this.age,this.displayName, this.photoUrl,this.balance, this.userId, this.lawyerId});
   String? fullName;
   String? phone;
   String? gender;
@@ -8,7 +8,7 @@ class UserModel {
   String? photoUrl;
   double? balance;
   String? userId;
-  String? doctorId;
+  String? lawyerId;
 
   factory UserModel.fromJson(Map<String, dynamic> jsonData) {
     return UserModel(
@@ -20,6 +20,6 @@ class UserModel {
         photoUrl: jsonData['photoUrl'],
         balance: double.parse(jsonData['balance'].toString()),
         userId: jsonData['userId'],
-        doctorId: jsonData['doctorId']);
+        lawyerId: jsonData['lawyerId']);
   }
 }

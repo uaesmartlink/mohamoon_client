@@ -5,7 +5,7 @@ import 'package:client_mohamoon/app/modules/balance/views/balance_view.dart';
 import 'package:flutter_exit_app/flutter_exit_app.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-//import 'package:client_mohamoon/app/modules/doctor_category/views/doctor_category_view.dart';
+//import 'package:client_mohamoon/app/modules/lawyer_category/views/lawyer_category_view.dart';
 import 'package:client_mohamoon/app/modules/home/views/home_view.dart';
 
 //import 'package:client_mohamoon/app/modules/list_chat/views/list_chat_view.dart';

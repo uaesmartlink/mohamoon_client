@@ -163,8 +163,8 @@ class _TapPaymentState extends State<TapPayment> {
   Future<void> configureApp() async {
     GoSellSdkFlutter.configureApp(
       bundleId: Platform.isAndroid
-          ? "com.seventeen.doctor_client_app"
-          : "dancingwhale.halloDoctor",
+          ? "com.seventeen.lawyer_client_app"
+          : "dancingwhale.halloLawyer",
       productionSecreteKey: Platform.isAndroid
           ? "sk_live_OeS9yWvZ6mXTUzwPBhMbQ30F"
           : "sk_live_MUbB9HVkS6XZzyPQA2LRdlKo",
