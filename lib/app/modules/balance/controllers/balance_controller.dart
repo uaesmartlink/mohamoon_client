@@ -37,6 +37,8 @@ class BalanceController extends GetxController {
   @override
   void onInit() async {
     super.onInit();
+    print("Hi");
+
     userId = userService.currentUser!.uid;
     balance.value = (await userService.getUserBalance(userId))!;
   }

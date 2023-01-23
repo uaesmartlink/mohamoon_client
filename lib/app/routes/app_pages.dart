@@ -20,6 +20,8 @@ import 'package:client_mohamoon/app/modules/detail_order/bindings/detail_order_b
 import 'package:client_mohamoon/app/modules/detail_order/views/detail_order_view.dart';
 import 'package:client_mohamoon/app/modules/lawyer_category/bindings/lawyer_category_binding.dart';
 import 'package:client_mohamoon/app/modules/lawyer_category/views/lawyer_category_view.dart';
+import 'package:client_mohamoon/app/modules/country/bindings/country_binding.dart';
+import 'package:client_mohamoon/app/modules/country/views/country_view.dart';
 import 'package:client_mohamoon/app/modules/forgot_password/bindings/forgot_password_binding.dart';
 import 'package:client_mohamoon/app/modules/forgot_password/views/forgot_password_view.dart';
 import 'package:client_mohamoon/app/modules/home/bindings/home_binding.dart';
@@ -98,6 +100,11 @@ class AppPages {
       name: _Paths.LAWYER_CATEGORY,
       page: () => LawyerCategoryView(),
       binding: LawyerCategoryBinding(),
+    ),
+    GetPage(
+      name: _Paths.COUNTRY,
+      page: () => CountryView(),
+      binding: CountryBinding(),
     ),
     GetPage(
       name: _Paths.LIST_LAWYER,

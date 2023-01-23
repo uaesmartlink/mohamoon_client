@@ -4,17 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:client_mohamoon/app/modules/dashboard/views/dashboard_view.dart';
 
-//import 'package:client_mohamoon/app/models/lawyer_model.dart';
 import 'package:client_mohamoon/app/modules/home/views/components/background_home.dart';
 import 'package:client_mohamoon/app/modules/home/views/components/icon_card.dart';
 
-//import 'package:client_mohamoon/app/modules/home/views/components/list_lawyer_card.dart';
 import 'package:client_mohamoon/app/modules/home/views/components/search_container.dart';
 
-//import 'package:client_mohamoon/app/service/lawyer_service.dart';
 import 'package:client_mohamoon/app/utils/constants/style_constants.dart';
 
-//import 'package:client_mohamoon/app/utils/localization.dart';
 import '../../../utils/search/search_lawyer_delegate.dart';
 import '../controllers/home_controller.dart';
 
@@ -68,7 +64,7 @@ class HomeView extends GetView<HomeController> {
                           color1: Color(0xFF76e6da),
                           color2: Color(0xFF1b4170),
                           onTap: () {
-                            controller.toLawyerCategory();
+                            controller.toCountry();
                             // controller.testNotify();
                           },
                         ),

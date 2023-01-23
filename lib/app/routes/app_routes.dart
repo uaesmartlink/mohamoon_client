@@ -41,6 +41,7 @@ abstract class _Paths {
   static const RESET_PASSWORD = '/reset-password';
   static const DASHBOARD = '/dashboard';
   static const LAWYER_CATEGORY = '/lawyer-category';
+  static const COUNTRY = '/country';
   static const LIST_LAWYER = '/list-lawyer';
   static const DETAIL_LAWYER = '/detail-lawyer';
   static const CONSULTATION_DATE_PICKER = '/consultation-date-picker';

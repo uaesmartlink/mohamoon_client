@@ -27,6 +27,7 @@ class HomeController extends GetxController {
   @override
   void onInit() async {
     super.onInit();
+    print("Hello");
     EasyLoading.instance.maskType = EasyLoadingMaskType.black;
     userPicture.value = userService.getProfilePicture()!;
     listImageCarousel = await CarouselService().getListCarouselUrl();
@@ -63,8 +64,8 @@ class HomeController extends GetxController {
     Get.toNamed('/online_lawyers');
   }
 
-  void toLawyerCategory() {
-    Get.toNamed('/lawyer-category');
+  void toCountry() {
+    Get.toNamed('/country');
   }
 
   void toTopRatedLawyer() {

@@ -58,11 +58,15 @@ class BackgroundContainer extends StatelessWidget {
                           color: Colors.white,
                           borderRadius: BorderRadius.all(Radius.circular(9)),
                         ),
-                        child: Icon(
-                          Icons.arrow_back_ios,
-                          color: Color(0xFF1b4170),
-                          size: 15,
-                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 7),
+                          child:Icon(
+                            Icons.arrow_back_ios,
+                            color: Color(0xFF1b4170),
+                            size: 15,
+                          ),
+                        ) ,
+
                       ),
                     ),
                   Text(text,

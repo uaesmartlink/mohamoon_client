@@ -19,7 +19,72 @@ class LawyerCategoryView extends GetView<LawyerCategoryController> {
             children: [
               Padding(
                 padding: EdgeInsets.all(20),
-                child: DropdownButtonApp(),
+                child: controller.obx(
+                  (listCategory) => Padding(
+                    padding: const EdgeInsets.only(bottom: 170),
+                    child: GridView.builder(
+                        scrollDirection: Axis.vertical,
+                        shrinkWrap: true,
+                        padding: const EdgeInsets.all(20),
+                        itemCount: listCategory!.length,
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          crossAxisSpacing: 15,
+                          mainAxisSpacing: 15,
+                          childAspectRatio: 3 / 4,
+                        ),
+                        itemBuilder: (context, index) {
+                          return InkWell(
+                            onTap: () {
+                              Get.toNamed('/list-lawyer', arguments: [
+                                listCategory[index],
+                                controller.country
+                              ]);
+                            },
+                            child: Container(
+                              padding: const EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(20)),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black12,
+                                      blurRadius: 10,
+                                    )
+                                  ]),
+                              child: Column(
+                                children: [
+                                  Expanded(
+                                      flex: 5,
+                                      child: Container(
+                                        child: CachedNetworkImage(
+                                            imageUrl:
+                                                listCategory[index].iconUrl!),
+                                      )),
+                                  Expanded(
+                                    flex: 4,
+                                    child: Container(
+                                      padding: EdgeInsets.only(top: 20),
+                                      child: Text(
+                                        (Get.locale ==
+                                                LocalizationService.locales[0])
+                                            ? listCategory[index].categoryName!
+                                            : listCategory[index]
+                                                .categoryTranslation!,
+                                        style:
+                                            Constants.lawyerCategoryTextStyle,
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        }),
+                  ),
+                ),
               ),
             ],
           )),

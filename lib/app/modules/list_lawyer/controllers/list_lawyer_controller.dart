@@ -3,9 +3,12 @@ import 'package:client_mohamoon/app/models/lawyer_category_model.dart';
 import 'package:client_mohamoon/app/models/lawyer_model.dart';
 import 'package:client_mohamoon/app/service/lawyer_service.dart';
 
+import '../../../models/country_model.dart';
+
 class ListLawyerController extends GetxController
     with StateMixin<List<Lawyer>> {
-  LawyerCategory lawyerCategory = Get.arguments;
+  LawyerCategory lawyerCategory = Get.arguments[0];
+  Country country = Get.arguments[1];
   final count = 0.obs;
   @override
   void onInit() {
