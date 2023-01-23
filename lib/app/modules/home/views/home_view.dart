@@ -23,7 +23,7 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     final CarouselController carouselController = CarouselController();
     return Scaffold(
-      backgroundColor: mBackgroundColor,
+      backgroundColor: Constants.mBackgroundColor,
       body: BackgroundHome(
         text: controller.userService.currentUser!.displayName!,
         widget1: InkWell(

@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../utils/localization.dart';
+import 'package:client_mohamoon/app/utils/constants/style_constants.dart';
 
 class BackgroundContainer extends StatelessWidget {
   final Widget widget;
+  final Widget? widgetHead;
   final String text;
   final IconData? icon;
   final VoidCallback? onTap;
@@ -15,6 +17,7 @@ class BackgroundContainer extends StatelessWidget {
       {Key? key,
       required this.widget,
       required this.text,
+      this.widgetHead,
       this.icon,
       this.onTap,
       this.isArrowBack,
@@ -35,11 +38,11 @@ class BackgroundContainer extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                   gradient: const LinearGradient(
-                      begin: Alignment.bottomLeft,
-                      end: Alignment.topRight,
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
                       colors: [
-                    Color(0xFF76e6da),
-                    Color(0xFF1b4170),
+                    Constants.secondaryColor,
+                    Constants.primaryColor,
                   ])),
               child: Row(
                 children: [
@@ -86,7 +89,7 @@ class BackgroundContainer extends StatelessWidget {
           Positioned(
             left: 0,
             top: 111,
-              child: Container(
+            child: Container(
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
                 padding: (isPadding == null)
@@ -94,12 +97,10 @@ class BackgroundContainer extends StatelessWidget {
                     : null,
                 decoration: BoxDecoration(
                   color: Colors.white,
-
                 ),
-                child: widget,
-              ),
+                child: widget
             ),
-
+          ),
         ],
       ),
     );

@@ -35,7 +35,7 @@ const Map<String, String> ar = {
   'Buy Package': 'شراء الباقة',
   'You can search a lawyer and book an appointment':
       'يمكنك البحث عن طبيب وحجز موعد',
-  'Welcome, ': 'مرحباً ,',
+  'Welcome,': 'مرحباً ,',
   'Quick Consultation': 'استشارة سريعة',
   'Find your lawyer': 'ابحث عن طبيبك',
   'Chose a language for your app': 'اختر اللغة التي تريدها',

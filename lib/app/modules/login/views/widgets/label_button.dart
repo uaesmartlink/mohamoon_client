@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:client_mohamoon/app/utils/styles/styles.dart';
+import 'package:client_mohamoon/app/utils/constants/style_constants.dart';
 
 class LabelButton extends StatelessWidget {
   const LabelButton(
@@ -32,9 +33,9 @@ class LabelButton extends StatelessWidget {
             Text(
               subTitle,
               style: TextStyle(
-                  color: Color(0xFF125a9a),
+                  color: Constants.mFillColor,
                   fontSize: 18,
-                  fontWeight: FontWeight.w600),
+                  fontWeight: FontWeight.w900),
             ),
           ],
         ),

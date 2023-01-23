@@ -43,12 +43,12 @@ class LawyerCard extends StatelessWidget {
                         fit: BoxFit.fitWidth,
                         child: Text(
                           lawyerName!,
-                          style: lawyerNameTextStyle,
+                          style: Constants.lawyerNameTextStyle,
                         ),
                       ),
                       Text(
                         lawyerSpecialty!,
-                        style: specialistTextStyle,
+                        style: Constants.specialistTextStyle,
                       ),
                       RatingBarIndicator(
                           rating: 4.5,
@@ -68,7 +68,7 @@ class LawyerCard extends StatelessWidget {
                           margin: EdgeInsets.only(left: 10, right: 10),
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
-                              color: Colors.blue[400],
+                              color: Constants.thirdlyColor,
                               borderRadius: BorderRadius.circular(8)),
                           child: Text(
                             "Book Appointment".tr,

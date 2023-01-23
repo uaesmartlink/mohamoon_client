@@ -10,6 +10,7 @@ import 'dart:io';
 import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:client_mohamoon/app/utils/constants/style_constants.dart';
 
 class BalanceView extends GetView<BalanceController> {
   BalanceView({Key? key}) : super(key: key);
@@ -55,7 +56,7 @@ class BalanceView extends GetView<BalanceController> {
                         Container(
                           padding: const EdgeInsets.all(15),
                           decoration: BoxDecoration(
-                            color: Color(0xFF125a9a),
+                            color: Constants.thirdlyColor,
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: Obx(
@@ -334,7 +335,7 @@ class _TapPaymentState extends State<TapPayment> {
             child: Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: Color(0xFF125a9a),
+                color: Constants.thirdlyColor,
                 borderRadius: BorderRadius.circular(17),
               ),
               child: Text(

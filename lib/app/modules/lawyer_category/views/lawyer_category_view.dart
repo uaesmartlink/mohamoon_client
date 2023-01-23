@@ -6,72 +6,23 @@ import 'package:client_mohamoon/app/utils/constants/style_constants.dart';
 import '../../../utils/localization.dart';
 import '../../dashboard/views/dashboard_view.dart';
 import '../controllers/lawyer_category_controller.dart';
+import './wedgets/select_country.dart';
 
 class LawyerCategoryView extends GetView<LawyerCategoryController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: BackgroundContainer(
-        text: 'Lawyer Specialist'.tr,
-        isPadding: 0,
-        widget: controller.obx((listCategory) => Padding(
-              padding: const EdgeInsets.only(bottom: 170),
-              child: GridView.builder(
-                  padding: const EdgeInsets.all(20),
-                  itemCount: listCategory!.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 15,
-                    mainAxisSpacing: 15,
-                    childAspectRatio: 3 / 4,
-                  ),
-                  itemBuilder: (context, index) {
-                    return InkWell(
-                      onTap: () {
-                        Get.toNamed('/list-lawyer',
-                            arguments: listCategory[index]);
-                      },
-                      child: Container(
-                          padding: const EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(20)),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black12,
-                                  blurRadius: 10,
-                                )
-                              ]),
-                          child: Column(
-                            children: [
-                              Expanded(
-                                  flex: 5,
-                                  child: Container(
-                                    child: CachedNetworkImage(
-                                        imageUrl: listCategory[index].iconUrl!),
-                                  )),
-                              Expanded(
-                                flex: 4,
-                                child: Container(
-                                  padding: EdgeInsets.only(top: 20),
-                                  child: Text(
-                                    (Get.locale ==
-                                            LocalizationService.locales[0])
-                                        ? listCategory[index].categoryName!
-                                        : listCategory[index]
-                                            .categoryTranslation!,
-                                    style: lawyerCategoryTextStyle,
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          )),
-                    );
-                  }),
-            )),
-      ),
+          text: 'Lawyer Specialist'.tr,
+          isPadding: 0,
+          widget: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.all(20),
+                child: DropdownButtonApp(),
+              ),
+            ],
+          )),
       bottomNavigationBar: DashboardView(),
     );
   }

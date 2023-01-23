@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../utils/localization.dart';
+import 'package:client_mohamoon/app/utils/constants/style_constants.dart';
 
 class BackgroundHome extends StatelessWidget {
   final Widget widget1;
@@ -29,11 +30,11 @@ class BackgroundHome extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                   gradient: const LinearGradient(
-                      begin: Alignment.bottomLeft,
-                      end: Alignment.topRight,
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
                       colors: [
-                    Color(0xFF76e6da),
-                    Color(0xFF1b4170),
+                        Constants.primaryColor,
+                        Constants.secondaryColor,
                   ])),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -31,7 +31,7 @@ class DetailOrderView extends GetView<DetailOrderController> {
                       style: GoogleFonts.poppins(
                           fontWeight: FontWeight.w600,
                           fontSize: 14,
-                          color: mTitleColor),
+                          color: Constants.mTitleColor),
                     ),
                     Text(
                       'before making a payment, make sure the items below are correct'
@@ -39,7 +39,7 @@ class DetailOrderView extends GetView<DetailOrderController> {
                       style: GoogleFonts.poppins(
                           fontWeight: FontWeight.w400,
                           fontSize: 12,
-                          color: mSubtitleColor),
+                          color: Constants.mSubtitleColor),
                     ),
                     SizedBox(
                       height: 10,
@@ -66,7 +66,7 @@ class DetailOrderView extends GetView<DetailOrderController> {
                               style: GoogleFonts.poppins(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 17,
-                                  color: mTitleColor),
+                                  color: Constants.mTitleColor),
                             ),
                           )
                         ],
@@ -101,7 +101,7 @@ class DetailOrderView extends GetView<DetailOrderController> {
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(50)),
-                          color: Color(0xFF125a9a),
+                          color: Constants.thirdlyColor,
                         ),
                         child: Text(
                           'Confirm'.tr,
@@ -143,7 +143,7 @@ class DetailOrderView extends GetView<DetailOrderController> {
   List<DataCell> getCells(List<dynamic> cells) => cells
       .map((e) => DataCell(Text(
             '$e',
-            style: tableCellText,
+            style: Constants.tableCellText,
           )))
       .toList();
 

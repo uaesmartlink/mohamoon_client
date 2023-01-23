@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:client_mohamoon/app/utils/constants/style_constants.dart';
 
 class LogContainer extends StatelessWidget{
 
@@ -12,11 +13,11 @@ class LogContainer extends StatelessWidget{
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
           gradient:const LinearGradient(
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
               colors: [
-                Color(0xFF1b4170),
-                Color(0xFF76e6da),
+                Constants.secondaryColor,
+                Constants.primaryColor,
               ]
           )
       ),

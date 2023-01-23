@@ -9,7 +9,7 @@ class SearchLawyerDelegat extends SearchDelegate<Lawyer> {
   List<Widget>? buildActions(BuildContext context) {
     return [
       IconButton(
-        icon: Icon(Icons.close),
+        icon: Icon(Icons.remove_circle_outline_outlined),
         onPressed: () {
           query = "";
         },

@@ -7,6 +7,7 @@ import 'package:client_mohamoon/app/modules/login/views/widgets/title_app.dart';
 import 'package:client_mohamoon/app/modules/widgets/submit_button.dart';
 import '../../widgets/log_container.dart';
 import '../controllers/login_controller.dart';
+import 'package:client_mohamoon/app/utils/constants/style_constants.dart';
 
 class LoginView extends GetView<LoginController> {
   @override
@@ -31,13 +32,15 @@ class LoginView extends GetView<LoginController> {
                     child: Column(
                       children: [
                         TextFormField(
+
+
                           textInputAction: TextInputAction.next,
                           onEditingComplete: () {
                             node.nextFocus();
                           },
                           validator: ((value) {
-                            if (value!.length < 3) {
-                              return 'Name must be more than two characters'.tr;
+                            if (value!.length == 0) {
+                              return 'Email is Required'.tr;
                             } else {
                               return null;
                             }
@@ -76,7 +79,7 @@ class LoginView extends GetView<LoginController> {
                                       controller.passwordVisible
                                           ? Icons.visibility
                                           : Icons.visibility_off,
-                                      color: Colors.blueAccent),
+                                      color: Constants.primaryColor),
                                   onPressed: () {
                                     controller.passwordIconVisibility();
                                   },
@@ -147,12 +150,11 @@ class LoginView extends GetView<LoginController> {
                       },
                     ),
                   ),
-                  SizedBox(height: 17),
                   LabelButton(
                     onTap: () {
                       Get.toNamed('/register');
                     },
-                    title: 'Don\'t have an account, '.tr,
+                    title: 'Don\'t have an account,'.tr,
                     subTitle: 'Register'.tr,
                   ),
                 ],

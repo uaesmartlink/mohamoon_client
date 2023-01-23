@@ -37,7 +37,7 @@ class ConsultationDatePickerView
                     alignment: Alignment.centerLeft,
                     child: Text(
                       'Chose Date'.tr,
-                      style: titleTextStyle,
+                      style: Constants.titleTextStyle,
                     ),
                   ),
                   SizedBox(
@@ -69,7 +69,7 @@ class ConsultationDatePickerView
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Chose Duration'.tr,
-                    style: titleTextStyle,
+                    style: Constants.titleTextStyle,
                   ),
                 ),
                 DurationTest(controller),
@@ -94,7 +94,7 @@ class ConsultationDatePickerView
                       alignment: Alignment.centerLeft,
                       child: Text(
                         'Chose Time'.tr,
-                        style: titleTextStyle,
+                        style: Constants.titleTextStyle,
                       ),
                     ),
                     SizedBox(height: 10),

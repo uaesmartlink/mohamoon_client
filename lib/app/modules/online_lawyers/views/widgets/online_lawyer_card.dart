@@ -74,7 +74,7 @@ class OnlineLawyerCard extends StatelessWidget {
                           fit: BoxFit.fitWidth,
                           child: Text(
                             lawyerName,
-                            style: lawyerNameStyle,
+                            style: Constants.lawyerNameStyle,
                           ),
                         ),
                       ),

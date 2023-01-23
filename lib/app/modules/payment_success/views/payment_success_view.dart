@@ -46,7 +46,7 @@ class PaymentSuccessView extends GetView<PaymentSuccessController> {
                   style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w400,
                       fontSize: 12,
-                      color: mSubtitleColor),
+                      color: Constants.mSubtitleColor),
                   textAlign: TextAlign.center,
                 ),
                 Divider(

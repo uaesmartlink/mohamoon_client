@@ -5,13 +5,11 @@ import 'package:client_mohamoon/app/modules/balance/views/balance_view.dart';
 import 'package:flutter_exit_app/flutter_exit_app.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-//import 'package:client_mohamoon/app/modules/lawyer_category/views/lawyer_category_view.dart';
 import 'package:client_mohamoon/app/modules/home/views/home_view.dart';
 
-//import 'package:client_mohamoon/app/modules/list_chat/views/list_chat_view.dart';
 import 'package:client_mohamoon/app/modules/profile/views/profile_view.dart';
 import '../controllers/dashboard_controller.dart';
-
+import 'package:client_mohamoon/app/utils/constants/style_constants.dart';
 class DashboardView extends GetView<DashboardController> {
   final List<Widget> bodyContent = [
     HomeView(),
@@ -89,7 +87,7 @@ class MyNavegateBar extends StatelessWidget{
       textDirection: TextDirection.ltr,
       child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
-          selectedItemColor: Color(0xFF1a3e6c),
+          selectedItemColor: Constants.thirdlyColor,
           unselectedItemColor: Colors.grey[500],
           iconSize: 30,
           items: [

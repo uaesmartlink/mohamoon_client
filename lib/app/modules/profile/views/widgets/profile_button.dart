@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import '../../../../utils/localization.dart';
-
+import 'package:client_mohamoon/app/utils/constants/style_constants.dart';
 class ProfileButton extends StatelessWidget {
   /// Icon data
   const ProfileButton(
@@ -37,7 +37,7 @@ class ProfileButton extends StatelessWidget {
               Icon(
                 icon,
                 size: 25,
-                color: Color(0xFF1b4170),
+                color: Constants.iconsColor,
               ),
               const SizedBox(
                 width: 30,
@@ -46,7 +46,7 @@ class ProfileButton extends StatelessWidget {
                   text,
                   style: TextStyle(
                       fontSize: (Get.locale==LocalizationService.locales[0])?16:14,
-                      color: Color(0xFF1b4170),
+                      color: Constants.iconsColor,
                   )
               ),
               Spacer(),

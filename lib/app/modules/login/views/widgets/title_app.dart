@@ -11,7 +11,7 @@ class TitleApp extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          'Welcome, '.tr,
+          'Welcome,'.tr,
           style: TextStyle(
               fontSize: 30,
               fontWeight: FontWeight.bold,

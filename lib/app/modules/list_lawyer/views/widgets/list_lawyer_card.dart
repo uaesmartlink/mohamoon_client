@@ -10,6 +10,7 @@ class LawyerCard extends StatelessWidget {
   final String lawyerPrice;
   final String lawyerCategory;
   final VoidCallback onTap;
+
   const LawyerCard(
       {Key? key,
       required this.lawyerPhotoUrl,
@@ -17,13 +18,13 @@ class LawyerCard extends StatelessWidget {
       required this.lawyerHospital,
       required this.lawyerPrice,
       required this.lawyerCategory,
-        required this.onTap})
+      required this.onTap})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top:20),
+      margin: const EdgeInsets.only(top: 20),
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -32,8 +33,7 @@ class LawyerCard extends StatelessWidget {
               color: Colors.black12,
               blurRadius: 40,
             )
-          ]
-      ),
+          ]),
       child: IntrinsicHeight(
         child: Column(
           children: [
@@ -42,15 +42,15 @@ class LawyerCard extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(13),
                   child: Container(
-                        height: 100,
-                        width: 100,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: NetworkImage(lawyerPhotoUrl)),
-                          borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                        ),
-                      ),
+                    height: 100,
+                    width: 100,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: NetworkImage(lawyerPhotoUrl)),
+                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                    ),
+                  ),
                 ),
                 Expanded(
                   child: SingleChildScrollView(
@@ -62,7 +62,7 @@ class LawyerCard extends StatelessWidget {
                           fit: BoxFit.fitWidth,
                           child: Text(
                             lawyerName,
-                            style: lawyerNameStyle,
+                            style: Constants.lawyerNameStyle,
                           ),
                         ),
                         TextWithIcon(
@@ -82,12 +82,13 @@ class LawyerCard extends StatelessWidget {
                                 itemBuilder: (context, index) => Icon(
                                       Icons.star,
                                       color: Colors.amber,
-                                    )
+                                    )),
+                            const SizedBox(
+                              width: 17,
                             ),
-                            const SizedBox(width: 17,),
                             Text(
                               '$lawyerPrice/hr',
-                              style: priceNumberTextStyle,
+                              style: Constants.priceNumberTextStyle,
                             )
                           ],
                         )
@@ -104,8 +105,9 @@ class LawyerCard extends StatelessWidget {
                 height: 40,
                 margin: EdgeInsets.all(13),
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(12)),
-                    color: Color(0xFF125a9a),),
+                  borderRadius: BorderRadius.all(Radius.circular(12)),
+                  color: Constants.thirdlyColor,
+                ),
                 child: Text(
                   'Book Consultation'.tr,
                   style: TextStyle(color: Colors.white),

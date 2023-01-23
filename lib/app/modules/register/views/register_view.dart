@@ -8,6 +8,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../widgets/log_container.dart';
 import '../controllers/register_controller.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:client_mohamoon/app/utils/constants/style_constants.dart';
 
 class RegisterView extends GetView<RegisterController> {
   static const List<String> gender = ['male', 'female'];
