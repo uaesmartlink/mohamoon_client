@@ -24,6 +24,8 @@ class DetailLawyerController extends GetxController with StateMixin<Lawyer> {
   void onClose() {}
   void increment() => count.value++;
 
+
+
   void toChatLawyer() async {
     String lawyerUserId = await LawyerService().getUserId(selectedLawyer);
     if (lawyerUserId.isEmpty) {

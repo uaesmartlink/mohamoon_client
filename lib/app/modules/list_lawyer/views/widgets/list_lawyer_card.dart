@@ -8,8 +8,18 @@ class LawyerCard extends StatelessWidget {
   final String lawyerName;
   final String lawyerHospital;
   final String lawyerPrice;
-  final String lawyerCategory;
+  final List<dynamic> categories;
   final VoidCallback onTap;
+
+  String listToString(List<dynamic> categories){
+    String res = "";
+    for (var element in categories) {
+      res += "$element, ";
+    }
+    res = res.substring(0, res.length - 2);
+
+    return res;
+  }
 
   const LawyerCard(
       {Key? key,
@@ -17,7 +27,7 @@ class LawyerCard extends StatelessWidget {
       required this.lawyerName,
       required this.lawyerHospital,
       required this.lawyerPrice,
-      required this.lawyerCategory,
+      required this.categories,
       required this.onTap})
       : super(key: key);
 
@@ -25,7 +35,7 @@ class LawyerCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(top: 20),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(20)),
           boxShadow: [
@@ -66,7 +76,7 @@ class LawyerCard extends StatelessWidget {
                           ),
                         ),
                         TextWithIcon(
-                          text: lawyerCategory,
+                          text: listToString(categories) ,
                           imageAsset: 'assets/icons/Stethoscope.png',
                         ),
                         TextWithIcon(
@@ -155,4 +165,6 @@ class TextWithIcon extends StatelessWidget {
       ),
     );
   }
+
+
 }

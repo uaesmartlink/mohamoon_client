@@ -6,13 +6,23 @@ import 'package:client_mohamoon/app/utils/constants/style_constants.dart';
 class OnlineLawyerCard extends StatelessWidget {
   final String lawyerPhotoUrl;
   final String lawyerName;
-  final String lawyerCategory;
+  final List<dynamic> categories;
   final VoidCallback onTap;
+
+  String listToString(List<dynamic> categories){
+    String res = "";
+    for (var element in categories) {
+      res += "$element, ";
+    }
+    res = res.substring(0, res.length - 2);
+
+    return res;
+  }
   const OnlineLawyerCard(
       {Key? key,
         required this.lawyerPhotoUrl,
         required this.lawyerName,
-        required this.lawyerCategory,
+        required this.categories,
         required this.onTap})
       : super(key: key);
 
@@ -79,7 +89,7 @@ class OnlineLawyerCard extends StatelessWidget {
                         ),
                       ),
                       Text(
-                         lawyerCategory,
+                         listToString(categories),
                          style: TextStyle(
                            color: Color(0xFF0faa9a),
                          ),

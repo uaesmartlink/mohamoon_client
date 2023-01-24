@@ -14,8 +14,7 @@ class CountryView extends GetView<CountryController> {
       body: BackgroundContainer(
         text: 'Countries'.tr,
         isPadding: 0,
-        widget:  Column(
-          children: [
+        widget:
             Padding(
               padding: EdgeInsets.all(20),
               child: controller.obx(
@@ -26,7 +25,7 @@ class CountryView extends GetView<CountryController> {
                       shrinkWrap: true,
                       padding: const EdgeInsets.all(10),
                       itemCount: listCountry!.length,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                         crossAxisSpacing: 15,
                         mainAxisSpacing: 15,
@@ -39,7 +38,7 @@ class CountryView extends GetView<CountryController> {
                                 arguments: listCountry[index]);
                           },
                           child: Container(
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.all(Radius.circular(20)),
                                 boxShadow: [
@@ -54,7 +53,7 @@ class CountryView extends GetView<CountryController> {
                                     flex: 5,
 
                                     child: Container(
-                                      padding: EdgeInsets.only(top: 20),
+                                      padding: const EdgeInsets.only(top: 20),
                                       child: CachedNetworkImage(
                                           imageUrl: listCountry[index].iconUrl!),
                                     )),
@@ -79,9 +78,7 @@ class CountryView extends GetView<CountryController> {
                 ),
               ),
             ),
-          ],
         ),
-      ),
       bottomNavigationBar: DashboardView(),
     );
   }

@@ -26,7 +26,7 @@ class OnlineLawyersView extends GetView<OnlineLawyersController> {
                   return OnlineLawyerCard(
                       lawyerPhotoUrl: onlineLawyers[index].lawyerPicture!,
                       lawyerName: onlineLawyers[index].lawyerName!,
-                      lawyerCategory: onlineLawyers[index].lawyerCategory!.categoryName!,
+                      categories: onlineLawyers[index].categories!,
                       onTap:(){
                         var timeslot=controller.timeSlotOfLawyers[index].timeSlot;
                         int duration=controller.timeSlotOfLawyers[index].duration!;

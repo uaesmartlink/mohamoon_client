@@ -15,19 +15,18 @@ class LawyerCategoryView extends GetView<LawyerCategoryController> {
       body: BackgroundContainer(
           text: 'Lawyer Specialist'.tr,
           isPadding: 0,
-          widget: Column(
-            children: [
+          widget:
               Padding(
                 padding: EdgeInsets.all(20),
                 child: controller.obx(
                   (listCategory) => Padding(
-                    padding: const EdgeInsets.only(bottom: 170),
+                    padding: const EdgeInsets.only(bottom: 200),
                     child: GridView.builder(
                         scrollDirection: Axis.vertical,
                         shrinkWrap: true,
                         padding: const EdgeInsets.all(20),
                         itemCount: listCategory!.length,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
                           crossAxisSpacing: 15,
                           mainAxisSpacing: 15,
@@ -43,7 +42,7 @@ class LawyerCategoryView extends GetView<LawyerCategoryController> {
                             },
                             child: Container(
                               padding: const EdgeInsets.all(10),
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                   color: Colors.white,
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(20)),
@@ -85,9 +84,7 @@ class LawyerCategoryView extends GetView<LawyerCategoryController> {
                         }),
                   ),
                 ),
-              ),
-            ],
-          )),
+              ),),
       bottomNavigationBar: DashboardView(),
     );
   }

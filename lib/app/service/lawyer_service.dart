@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:client_mohamoon/app/models/lawyer_category_model.dart';
 import 'package:client_mohamoon/app/models/lawyer_model.dart';
 import 'package:client_mohamoon/app/models/time_slot_model.dart';
+import 'package:client_mohamoon/app/models/country_model.dart';
 
 class LawyerService {
   //Added by N
@@ -36,18 +37,18 @@ class LawyerService {
       QuerySnapshot lawyerScheduleRef = await FirebaseFirestore.instance
           .collection('LawyerTimeslot')
           .where('lawyerId', isEqualTo: lawyer.lawyerId)
-          .where('timeSlot',isGreaterThanOrEqualTo: DateTime.now())
+          .where('timeSlot', isGreaterThanOrEqualTo: DateTime.now())
           .orderBy('timeSlot')
           .get();
-      for(var doc in lawyerScheduleRef.docs){
+      for (var doc in lawyerScheduleRef.docs) {
         var data = doc.data() as Map<String, dynamic>;
         data['timeSlotId'] = doc.reference.id;
         TimeSlot timeSlot = TimeSlot.fromJson(data);
-        if(timeSlot.available == true){
+        if (timeSlot.available == true) {
           listTimeslot.add(timeSlot);
         }
       }
-     /* var listTimeslot = lawyerScheduleRef.docs.map((doc) {
+      /* var listTimeslot = lawyerScheduleRef.docs.map((doc) {
         var data = doc.data() as Map<String, dynamic>;
         data['timeSlotId'] = doc.reference.id;
         TimeSlot timeSlot = TimeSlot.fromJson(data);
@@ -77,27 +78,28 @@ class LawyerService {
   }
 
   Future<List<Lawyer>> getListLawyerByCategory(
-      LawyerCategory lawyerCategory) async {
+      LawyerCategory lawyerCategory, Country country) async {
     try {
       List<Lawyer> listLawyer = [];
       var listLawyerQuery;
       if (lawyerCategory.categoryName == "All Lawyers") {
-        listLawyerQuery =
-            await FirebaseFirestore.instance.collection('Lawyers')
-                .where('accountStatus', isEqualTo: 'active')
-                .get();
+        listLawyerQuery = await FirebaseFirestore.instance
+            .collection('Lawyers')
+            .where('accountStatus', isEqualTo: 'active')
+            .get();
       } else {
         listLawyerQuery = await FirebaseFirestore.instance
             .collection('Lawyers')
-            .where('lawyerCategory.categoryId',
-                isEqualTo: lawyerCategory.categoryId)
+            .where('lawyerCountry', isEqualTo: country.countryName)
             .where('accountStatus', isEqualTo: 'active')
+            .where('categories', arrayContains: lawyerCategory.categoryName)
             .get();
       }
       if (listLawyerQuery.docs.isEmpty) return [];
       listLawyerQuery.docs.map((doc) {
         var data = doc.data();
         data['lawyerId'] = doc.reference.id;
+
         Lawyer lawyer = Lawyer.fromJson(data);
         listLawyer.add(lawyer);
       }).toList();
@@ -155,8 +157,7 @@ class LawyerService {
         if (!lawyerName.isEmpty) {
           if (!lawyer.lawyerName!
               .toLowerCase()
-              .contains(lawyerName.toLowerCase()))
-            listLawyer.remove(lawyer);
+              .contains(lawyerName.toLowerCase())) listLawyer.remove(lawyer);
         }
       });
       listLawyer.removeWhere((element) => element.accountStatus != 'active');

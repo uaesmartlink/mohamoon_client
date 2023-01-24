@@ -13,8 +13,13 @@ class ListLawyerController extends GetxController
   @override
   void onInit() {
     super.onInit();
+    print("----");
+    print(lawyerCategory.categoryName);
+    print(country.countryName);
+    print("----");
+
     //print('lawyer category Name : ${lawyerCategory.categoryName!}');
-    LawyerService().getListLawyerByCategory(lawyerCategory).then((value) {
+    LawyerService().getListLawyerByCategory(lawyerCategory,country).then((value) {
       if (value.isEmpty) return change([], status: RxStatus.empty());
       //print('lawyer : $value');
       change(value, status: RxStatus.success());

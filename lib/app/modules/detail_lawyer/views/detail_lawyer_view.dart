@@ -19,7 +19,7 @@ class DetailLawyerView extends GetView<DetailLawyerController> {
                   children: [
                     LawyerCard(
                       lawyerName: lawyer!.lawyerName!,
-                      lawyerCategory: lawyer.lawyerCategory!.categoryName!,
+                      categories: lawyer.categories!,
                       lawyerPrice: currencySign + lawyer.lawyerPrice.toString(),
                       lawyerPhotoUrl: lawyer.lawyerPicture!,
                       lawyerHospital: lawyer.lawyerHospital!,

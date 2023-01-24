@@ -24,8 +24,8 @@ class TopRatedLawyerView extends GetView<TopRatedLawyerController> {
                       itemBuilder: (context, index) {
                         return LawyerCard(
                             lawyerName: listLawyer[index].lawyerName!,
-                            lawyerCategory:
-                                listLawyer[index].lawyerCategory!.categoryName!,
+                            categories:
+                                listLawyer[index].categories!,
                             lawyerPrice: currencySign +
                                 listLawyer[index].lawyerPrice.toString(),
                             lawyerPhotoUrl: listLawyer[index].lawyerPicture!,

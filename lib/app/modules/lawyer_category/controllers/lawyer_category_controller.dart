@@ -11,7 +11,6 @@ class LawyerCategoryController extends GetxController
   @override
   void onInit() {
     super.onInit();
-    print(country);
     LawyerCategoryService().getListLawyerCategory().then((value) {
       change(value, status: RxStatus.success());
     }).catchError((err) {

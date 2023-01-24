@@ -12,9 +12,11 @@ import '../controllers/list_lawyer_controller.dart';
 class ListLawyerView extends GetView<ListLawyerController> {
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
+
       body: BackgroundContainer(
-            text:'Lawyer'.tr,
+            text:'Lawyers'.tr,
             widget: controller.obx(
                 (listLawyer) => Padding(
                   padding: const EdgeInsets.only(bottom: 180),
@@ -24,8 +26,8 @@ class ListLawyerView extends GetView<ListLawyerController> {
                         itemBuilder: (context, index) {
                           return LawyerCard(
                               lawyerName: listLawyer[index].lawyerName!,
-                              lawyerCategory:
-                                  listLawyer[index].lawyerCategory!.categoryName!,
+                              categories:
+                                  listLawyer[index].categories!,
                               lawyerPrice: currencySign +
                                   listLawyer[index].lawyerPrice.toString(),
                               lawyerPhotoUrl: listLawyer[index].lawyerPicture!,
