@@ -9,12 +9,12 @@ class LawyerTile extends StatelessWidget {
     Key? key,
     required this.imgUrl,
     required this.name,
-    required this.orderTime,
+    required this.appointmentTime,
   }) : super(key: key);
 
   final String imgUrl;
   final String name;
-  final DateTime orderTime;
+  final DateTime appointmentTime;
 
   @override
   Widget build(BuildContext context) {
@@ -67,8 +67,8 @@ class LawyerTile extends StatelessWidget {
                 ),
                 FittedBox(
                   child: Text(
-                    'Order at : '.tr +
-                        TimeFormat().formatDate(orderTime.toLocal()),
+                    'Appointment at : '.tr +
+                        TimeFormat().formatDate(appointmentTime.toLocal()),
                     style: GoogleFonts.nunito(
                         fontWeight: FontWeight.w700, color: Colors.grey),
                     maxLines: 2,

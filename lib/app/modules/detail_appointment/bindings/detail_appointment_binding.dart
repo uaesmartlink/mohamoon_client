@@ -1,14 +1,14 @@
 import 'package:get/get.dart';
 import 'package:client_mohamoon/app/service/payment_service.dart';
 import '../../../service/timeslot_service.dart';
-import '../controllers/detail_order_controller.dart';
+import '../controllers/detail_appointment_controller.dart';
 import '../../balance/controllers/balance_controller.dart';
 
-class DetailOrderBinding extends Bindings {
+class DetailAppointmentBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<DetailOrderController>(
-      () => DetailOrderController(),
+    Get.lazyPut<DetailAppointmentController>(
+      () => DetailAppointmentController(),
     );
     Get.lazyPut<PaymentService>(
       () => PaymentService(),

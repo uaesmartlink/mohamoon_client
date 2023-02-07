@@ -49,7 +49,7 @@ class AppointmentDetailView extends GetView<AppointmentDetailController> {
                   LawyerTile(
                     imgUrl: timeSlot!.lawyer!.lawyerPicture!,
                     name: timeSlot.lawyer!.lawyerName!,
-                    orderTime: timeSlot.purchaseTime!,
+                    appointmentTime: timeSlot.purchaseTime!,
                   ),
                   SizedBox(
                     height: 10,

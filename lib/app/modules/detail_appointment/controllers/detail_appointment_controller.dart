@@ -4,7 +4,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:client_mohamoon/app/models/lawyer_model.dart';
-import 'package:client_mohamoon/app/models/order_detail_model.dart';
+import 'package:client_mohamoon/app/models/appointment_detail_model.dart';
 import 'package:client_mohamoon/app/models/time_slot_model.dart';
 import 'package:client_mohamoon/app/service/notification_service.dart';
 import 'package:client_mohamoon/app/service/payment_service.dart';
@@ -14,11 +14,11 @@ import 'package:client_mohamoon/app/utils/constants/constants.dart';
 import 'package:intl/intl.dart';
 import '../../balance/views/balance_view.dart';
 
-class DetailOrderController extends GetxController {
+class DetailAppointmentController extends GetxController {
   final username = ''.obs;
   final UserService userService = Get.find();
   final TimeSlotService timeSlotService = Get.find();
-  List<OrderDetailModel> orderDetail = List.empty();
+  List<AppointmentDetailModel> appointmentDetail = List.empty();
   TimeSlot selectedTimeSlot = Get.arguments[0];
   Lawyer lawyer = Get.arguments[1];
   int duration = Get.arguments[2];
@@ -41,17 +41,17 @@ class DetailOrderController extends GetxController {
   @override
   void onClose() {}
 
-  OrderDetailModel buildOrderDetail() {
+  AppointmentDetailModel buildAppointmentDetail() {
     var formatter = DateFormat('yyyy-MM-dd hh:mm');
     var time = formatter.format(selectedTimeSlot.timeSlot!);
 
-    var orderDetail = OrderDetailModel(
+    var appointmentDetail = AppointmentDetailModel(
         itemId: selectedTimeSlot.timeSlotId!,
         itemName: 'Consultation with ${lawyer.lawyerName!}',
         time: time,
         duration: '${duration} minute',
         price: currencySign + price.toString());
-    return orderDetail;
+    return appointmentDetail;
   }
 
   void makePayment() async {

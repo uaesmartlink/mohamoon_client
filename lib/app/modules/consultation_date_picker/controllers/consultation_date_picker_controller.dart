@@ -109,7 +109,7 @@ class ConsultationDatePickerController extends GetxController
             print(schedule[i].timeSlot);
         }
         Get.toNamed(
-          '/detail-order',
+          '/detail-appointment',
           arguments: [
             selectedTimeSlot.value,
             lawyer,

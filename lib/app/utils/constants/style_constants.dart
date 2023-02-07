@@ -12,7 +12,7 @@ class Constants {
   static const mGreyColor = Color(0xFFB4B0B0);
   static const mTitleColor = Color(0xFF333333);
   static const mSubtitleColor = Color(0xFF8E8E8E);
-  static const mBorderColor = Color(0xFFE8E8F3);
+  static const mBappointmentColor = Color(0xFFE8E8F3);
   static const mFillColor = Color(0xFFFFFFFF);
   static const mCardTitleColor = Color(0xFFE00D0D);
   static const mCardSubtitleColor = mTitleColor;
@@ -58,7 +58,7 @@ class Constants {
   static var lawyerCategoryStyle = GoogleFonts.poppins(
       fontWeight: FontWeight.w400, fontSize: 10, color: mSubtitleColor);
 
-//Text Style for Detail Order
+//Text Style for Detail Appointment
   static var tableColumHeader = GoogleFonts.poppins(
       fontWeight: FontWeight.w600, fontSize: 15, color: mTitleColor);
 

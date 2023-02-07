@@ -1,10 +1,10 @@
-class OrderDetailModel {
+class AppointmentDetailModel {
   final String itemId;
   final String itemName;
   final String time;
   final String duration;
   final String price;
-  OrderDetailModel(
+  AppointmentDetailModel(
       {required this.itemId,
       required this.itemName,
       required this.time,

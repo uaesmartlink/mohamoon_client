@@ -92,7 +92,7 @@ class ListUser extends GetView<ChatController> {
   }
 
   String getUserName(types.User user) =>
-      '${user.displayName ?? ''} ${user.lastName ?? ''}'.trim();
+      '${user.firstName ?? ''} ${user.lastName ?? ''}'.trim();
 }
 
 const colors = [

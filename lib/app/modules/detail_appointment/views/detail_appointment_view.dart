@@ -2,24 +2,24 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:client_mohamoon/app/models/order_detail_model.dart';
+import 'package:client_mohamoon/app/models/appointment_detail_model.dart';
 import 'package:client_mohamoon/app/modules/widgets/background_container.dart';
 import 'package:client_mohamoon/app/utils/constants/constants.dart';
 import 'package:client_mohamoon/app/utils/constants/style_constants.dart';
 import '../../dashboard/views/dashboard_view.dart';
-import '../controllers/detail_order_controller.dart';
+import '../controllers/detail_appointment_controller.dart';
 //import 'package:flutter_svg/flutter_svg.dart';
 
 enum ChosePayment { addCard, creditCard }
 
-class DetailOrderView extends GetView<DetailOrderController> {
+class DetailAppointmentView extends GetView<DetailAppointmentController> {
   final String assetName = 'assets/icons/powered-by-stripe.svg';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: BackgroundContainer(
-        text: 'Detail Order'.tr,
+        text: 'Detail Appointment'.tr,
         widget: Padding(
           padding: const EdgeInsets.all(12),
           child: Container(
@@ -50,7 +50,7 @@ class DetailOrderView extends GetView<DetailOrderController> {
                       padding: EdgeInsets.all(5),
                       child: Column(
                         children: [
-                          detailOrderTable(),
+                          detailAppointmentTable(),
                           SizedBox(
                             height: 20,
                           ),
@@ -117,12 +117,12 @@ class DetailOrderView extends GetView<DetailOrderController> {
     );
   }
 
-  Widget detailOrderTable() {
+  Widget detailAppointmentTable() {
     final column = ['Item'.tr, 'Duration'.tr, 'Time'.tr, 'Price'.tr];
-    final listOrderItem = [controller.buildOrderDetail()];
+    final listAppointmentItem = [controller.buildAppointmentDetail()];
     return DataTable(
       columns: getColumn(column),
-      rows: getRows(listOrderItem),
+      rows: getRows(listAppointmentItem),
       columnSpacing: 5,
     );
   }
@@ -134,8 +134,8 @@ class DetailOrderView extends GetView<DetailOrderController> {
           )))
       .toList();
 
-  List<DataRow> getRows(List<OrderDetailModel> orderDetailItem) =>
-      orderDetailItem.map((e) {
+  List<DataRow> getRows(List<AppointmentDetailModel> appointmentDetailItem) =>
+      appointmentDetailItem.map((e) {
         final cells = [e.itemName, controller.duration, e.time, controller.price];
         return DataRow(cells: getCells(cells));
       }).toList();

@@ -212,7 +212,7 @@ class _TapPaymentState extends State<TapPayment> {
               payment: "payment",
               track: "track",
               transaction: "trans_910101",
-              order: "order_262625"),
+              order: "appointment_262625"),
           // payment Descriptor
           paymentStatementDescriptor: "paymentStatementDescriptor",
           // Save Card Switch

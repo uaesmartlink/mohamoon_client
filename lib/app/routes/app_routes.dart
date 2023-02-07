@@ -45,7 +45,7 @@ abstract class _Paths {
   static const LIST_LAWYER = '/list-lawyer';
   static const DETAIL_LAWYER = '/detail-lawyer';
   static const CONSULTATION_DATE_PICKER = '/consultation-date-picker';
-  static const DETAIL_ORDER = '/detail-order';
+  static const DETAIL_ORDER = '/detail-appointment';
   static const PAYMENT_SUCCESS = '/payment-success';
   static const VIDEO_CALL = '/video-call';
   static const APPOINTMENT = '/appointment';

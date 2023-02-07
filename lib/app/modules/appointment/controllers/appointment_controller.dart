@@ -23,12 +23,12 @@ class AppointmentController extends GetxController
 
   Future<void> getListAppointment() async {
     try {
-      var listOrderedTimeslot = await _appointmentService
+      var listAppointmentedTimeslot = await _appointmentService
           .getListAppointment(userService.currentUser!);
-      if (listOrderedTimeslot.isEmpty) {
+      if (listAppointmentedTimeslot.isEmpty) {
         return change([], status: RxStatus.empty());
       }
-      change(listOrderedTimeslot, status: RxStatus.success());
+      change(listAppointmentedTimeslot, status: RxStatus.success());
     } catch (err) {
       change([], status: RxStatus.error(err.toString()));
     }

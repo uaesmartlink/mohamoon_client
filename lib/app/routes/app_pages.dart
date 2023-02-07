@@ -16,8 +16,8 @@ import 'package:client_mohamoon/app/modules/dashboard/bindings/dashboard_binding
 import 'package:client_mohamoon/app/modules/dashboard/views/dashboard_view.dart';
 import 'package:client_mohamoon/app/modules/detail_lawyer/bindings/detail_lawyer_binding.dart';
 import 'package:client_mohamoon/app/modules/detail_lawyer/views/detail_lawyer_view.dart';
-import 'package:client_mohamoon/app/modules/detail_order/bindings/detail_order_binding.dart';
-import 'package:client_mohamoon/app/modules/detail_order/views/detail_order_view.dart';
+import 'package:client_mohamoon/app/modules/detail_appointment/bindings/detail_appointment_binding.dart';
+import 'package:client_mohamoon/app/modules/detail_appointment/views/detail_appointment_view.dart';
 import 'package:client_mohamoon/app/modules/lawyer_category/bindings/lawyer_category_binding.dart';
 import 'package:client_mohamoon/app/modules/lawyer_category/views/lawyer_category_view.dart';
 import 'package:client_mohamoon/app/modules/country/bindings/country_binding.dart';
@@ -123,8 +123,8 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.DETAIL_ORDER,
-      page: () => DetailOrderView(),
-      binding: DetailOrderBinding(),
+      page: () => DetailAppointmentView(),
+      binding: DetailAppointmentBinding(),
     ),
     GetPage(
       name: _Paths.PAYMENT_SUCCESS,

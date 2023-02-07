@@ -227,7 +227,7 @@ class RegisterView extends GetView<RegisterController> {
                     },
                     decoration: InputDecoration(
                         hintText: 'Email',
-                        border: OutlineInputBorder(
+                       border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10.0),
                             borderSide: BorderSide(
                               width: 0,

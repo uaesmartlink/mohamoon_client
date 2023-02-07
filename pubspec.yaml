@@ -22,7 +22,7 @@ version: 1.0.0+1
 environment:
   sdk: '>=2.18.2 <3.0.0'
 
-# Dependencies specify other packages that your package needs in order to work.
+# Dependencies specify other packages that your package needs in appointment to work.
 # To automatically upgrade your package dependencies to the latest versions
 # consider running `flutter pub upgrade --major-versions`. Alternatively,
 # dependencies can be manually updated by changing the version numbers below to
@@ -76,7 +76,7 @@ dependencies:
   jiffy: ^5.0.0
   agora_rtc_engine: ^5.2.0
   permission_handler: ^9.2.0
-  flutter_callkit_incoming: ^1.0.2+1
+  custom_flutter_callkit_incoming: ^1.2.3
   json_serializable: ^6.2.0
   json_annotation: ^4.5.0
   image_cropper: ^2.0.3

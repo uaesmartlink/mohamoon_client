@@ -34,7 +34,7 @@ class DetailLawyerController extends GetxController with StateMixin<Lawyer> {
     }
     final otherUser = types.User(
         id: lawyerUserId,
-        displayName: selectedLawyer.lawyerName,
+        firstName: selectedLawyer.lawyerName,
         imageUrl: selectedLawyer.lawyerPicture);
     final room = await FirebaseChatCore.instance.createRoom(otherUser);
     Get.toNamed('/chat', arguments: [room, selectedLawyer]);

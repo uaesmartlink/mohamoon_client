@@ -37,7 +37,7 @@ class ReviewView extends GetView<ReviewController> {
                   TextField(
                     controller: controller.textEditingReviewController,
                     decoration: InputDecoration(
-                        border: OutlineInputBorder(),
+                        order: OutlineInputBorder(),
                         hintText: 'Your Review'.tr),
                     maxLines: 10,
                     textInputAction: TextInputAction.done,

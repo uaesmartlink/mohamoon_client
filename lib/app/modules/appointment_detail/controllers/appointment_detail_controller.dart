@@ -6,10 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:client_mohamoon/app/models/lawyer_model.dart';
-import 'package:client_mohamoon/app/models/order_model.dart';
+import 'package:client_mohamoon/app/models/appointment_model.dart';
 import 'package:client_mohamoon/app/models/time_slot_model.dart';
 import 'package:client_mohamoon/app/service/lawyer_service.dart';
-import 'package:client_mohamoon/app/service/order_service.dart';
+import 'package:client_mohamoon/app/service/appointment_service.dart';
 import 'package:client_mohamoon/app/service/videocall_service.dart';
 
 class AppointmentDetailController extends GetxController
@@ -20,7 +20,7 @@ class AppointmentDetailController extends GetxController
   //ParseObject? room;
   TimeSlot selectedTimeslot = Get.arguments;
   late Lawyer lawyer;
-  late Order order;
+  late Appointment appointment;
   late String token;
   var database = FirebaseDatabase.instance.ref();
   late StreamSubscription _roomStreaming;
@@ -99,9 +99,9 @@ class AppointmentDetailController extends GetxController
     Get.toNamed('/consultation-confirm', arguments: selectedTimeslot);
   }
 
-  Future getOrder() async {
+  Future getAppointment() async {
     try {
-      order = await OrderService().getSuccessOrder(selectedTimeslot);
+      appointment = await AppointmentService().getSuccessAppointment(selectedTimeslot);
     } catch (err) {
       Fluttertoast.showToast(msg: err.toString());
     }

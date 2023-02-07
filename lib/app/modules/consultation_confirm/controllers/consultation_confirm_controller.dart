@@ -3,7 +3,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:client_mohamoon/app/models/time_slot_model.dart';
-import 'package:client_mohamoon/app/service/order_service.dart';
+import 'package:client_mohamoon/app/service/appointment_service.dart';
 import 'package:client_mohamoon/app/service/problem_service.dart';
 import 'package:client_mohamoon/app/service/timeslot_service.dart';
 
@@ -36,7 +36,7 @@ class ConsultationConfirmController extends GetxController {
       print(timeSlotId);
       await TimeSlotService().updateTimeslotAvailable(timeSlotId);
       print("****");
-      await OrderService().confirmOrder(timeSlot,timeSlotId);
+      await AppointmentService().confirmAppointment(timeSlot,timeSlotId);
       print("----");
       EasyLoading.dismiss();
       Get.offNamedUntil('/review', ModalRoute.withName('/appointment-detail'),

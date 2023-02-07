@@ -191,7 +191,7 @@ class OnlineLawyersController extends GetxController
       timeSlotOfLawyers[selected].price = price;
       timeSlotOfLawyers[selected].duration = duration;
       Get.toNamed(
-        '/detail-order',
+        '/detail-appointment',
         arguments: [
           timeSlotOfLawyers[selected],
           allLawyer[selected],

@@ -12,6 +12,7 @@ import 'package:mime/mime.dart';
 import 'package:open_file/open_file.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import '../../../models/lawyer_model.dart';
+
 class ChatController extends GetxController {
   var messages = <types.Message>[].obs;
   late types.User user;
@@ -19,6 +20,7 @@ class ChatController extends GetxController {
   final count = 0.obs;
   var isAttachmentUploading = false.obs;
   Lawyer lawyer = Get.arguments[1];
+
   @override
   void onInit() {
     super.onInit();
@@ -113,7 +115,9 @@ class ChatController extends GetxController {
     types.PreviewData previewData,
   ) {
     final index = messages.indexWhere((element) => element.id == message.id);
-    final updatedMessage = messages[index].copyWith(previewData: previewData);
+    final updatedMessage = messages[index].copyWith(
+      // previewData: previewData,
+    );
 
     WidgetsBinding.instance?.addPostFrameCallback((_) {
       messages[index] = updatedMessage;
@@ -138,4 +142,3 @@ class ChatController extends GetxController {
     this.messages.value = messages;
   }
 }
-
