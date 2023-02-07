@@ -1,18 +1,17 @@
-//import 'dart:convert';
-//import 'dart:io';
-//import 'package:file_picker/file_picker.dart';
-//import 'package:firebase_storage/firebase_storage.dart';
-//import 'package:flutter/material.dart';
-//import 'package:flutter_firebase_chat_core/flutter_firebase_chat_core.dart';
-//import 'package:get/get.dart';
-//import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
-//import 'package:client_mohamoon/app/service/user_service.dart';
-//import 'package:image_picker/image_picker.dart';
-//import 'package:mime/mime.dart';
-//import 'package:open_file/open_file.dart';
-//import 'package:flutter/services.dart' show rootBundle;
-//import '../../../models/lawyer_model.dart';
-/*
+import 'dart:convert';
+import 'dart:io';
+import 'package:file_picker/file_picker.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_firebase_chat_core/flutter_firebase_chat_core.dart';
+import 'package:get/get.dart';
+import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
+import 'package:client_mohamoon/app/service/user_service.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:mime/mime.dart';
+import 'package:open_file/open_file.dart';
+import 'package:flutter/services.dart' show rootBundle;
+import '../../../models/lawyer_model.dart';
 class ChatController extends GetxController {
   var messages = <types.Message>[].obs;
   late types.User user;
@@ -140,4 +139,3 @@ class ChatController extends GetxController {
   }
 }
 
- */

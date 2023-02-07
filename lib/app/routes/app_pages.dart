@@ -6,8 +6,8 @@ import 'package:client_mohamoon/app/modules/appointment_detail/bindings/appointm
 import 'package:client_mohamoon/app/modules/appointment_detail/views/appointment_detail_view.dart';
 import 'package:client_mohamoon/app/modules/balance/bindings/balance_binding.dart';
 import 'package:client_mohamoon/app/modules/balance/views/balance_view.dart';
-//import 'package:client_mohamoon/app/modules/chat/bindings/chat_binding.dart';
-//import 'package:client_mohamoon/app/modules/chat/views/chat_view.dart';
+import 'package:client_mohamoon/app/modules/chat/bindings/chat_binding.dart';
+import 'package:client_mohamoon/app/modules/chat/views/chat_view.dart';
 import 'package:client_mohamoon/app/modules/consultation_confirm/bindings/consultation_confirm_binding.dart';
 import 'package:client_mohamoon/app/modules/consultation_confirm/views/consultation_confirm_view.dart';
 import 'package:client_mohamoon/app/modules/consultation_date_picker/bindings/consultation_date_picker_binding.dart';
@@ -171,11 +171,11 @@ class AppPages {
       page: () => ConsultationConfirmView(),
       binding: ConsultationConfirmBinding(),
     ),
-    /*GetPage(
+    GetPage(
       name: _Paths.CHAT,
       page: () => ChatView(),
       binding: ChatBinding(),
-    ),*/
+    ),
     GetPage(
       name: _Paths.LIST_CHAT,
       page: () => ListChatView(),

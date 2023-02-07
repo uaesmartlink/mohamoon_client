@@ -19,6 +19,7 @@ class OnlineLawyersController extends GetxController
   double? price = 2.5;
   int? duration = 0;
 
+  
   @override
   void onInit() async {
     super.onInit();
