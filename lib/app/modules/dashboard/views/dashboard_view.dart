@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:client_mohamoon/app/modules/appointment/views/appointment_view.dart';
 import 'package:client_mohamoon/app/modules/balance/views/balance_view.dart';
+import 'package:client_mohamoon/app/modules/list_chat/views/list_chat_view.dart';
 import 'package:flutter_exit_app/flutter_exit_app.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -15,6 +16,7 @@ class DashboardView extends GetView<DashboardController> {
     HomeView(),
     AppointmentView(),
     BalanceView(),
+    ListChatView(),
     ProfileView()
   ];
   DateTime? currentBackPressTime;
@@ -27,7 +29,10 @@ class DashboardView extends GetView<DashboardController> {
           String? routeName = ModalRoute.of(context)?.settings.name;
           if (routeName == "/appointment" ||
               routeName == "/balance_page" ||
-              routeName == "/profile") {
+              routeName == "/profile" ||
+              routeName == "/profile" ||
+              routeName == "/list-chat"
+          ) {
             Get.toNamed('/home');
             controller.selectedIndex = 0;
             return false;
@@ -109,6 +114,11 @@ class MyNavegateBar extends StatelessWidget{
                 label: ''),
             BottomNavigationBarItem(
                 icon: Icon(
+                  Icons.message,
+                ),
+                label: ''),
+            BottomNavigationBarItem(
+                icon: Icon(
                   Icons.person,
                 ),
                 label: ''),
@@ -136,8 +146,14 @@ class MyNavegateBar extends StatelessWidget{
                 }
               case 3:
                 {
-                  Get.toNamed('/profile');
+                  Get.toNamed('/list-chat');
                   controller.selectedIndex = 3;
+                  break;
+                }
+              case 4:
+                {
+                  Get.toNamed('/profile');
+                  controller.selectedIndex = 4;
                   break;
                 }
             }
