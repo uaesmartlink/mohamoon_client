@@ -323,4 +323,23 @@ class NotificationService {
         androidAllowWhileIdle: true);
     printInfo(info: 'set local notification 10 before notification happen');
   }
+
+  Future notificationStartAppointment(String lawyerName, String userId,
+      String roomName, String token, String timeSlotId) async {
+    try {
+      var callable = FirebaseFunctions.instance
+          .httpsCallable('notificationStartAppointment');
+      await callable({
+        'lawyerName': lawyerName,
+        'userId': userId,
+        'roomName': roomName,
+        'token': token,
+        'timeSlotId': timeSlotId
+      });
+      printInfo(info: 'notification user id : ' + userId);
+      print('Notification start appointment send');
+    } catch (e) {
+      return Future.error(e.toString());
+    }
+  }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:client_mohamoon/app/utils/styles/styles.dart';
+import 'package:client_mohamoon/app/utils/constants/style_constants.dart';
 
 // ignore: must_be_immutable
 class VideoCallButton extends Container {
@@ -17,14 +18,14 @@ class VideoCallButton extends Container {
   final String nonActiveMsg;
 
   VideoCallButton(
-      {required this.function,
-      required this.text,
-      this.splashColor = Colors.blueGrey,
-      this.fontSize = 16,
-      this.color = Colors.blue,
-      this.textColor = Colors.white,
-      this.active = false,
-      required this.nonActiveMsg});
+      {super.key, required this.function,
+        required this.text,
+        this.splashColor = Colors.blueGrey,
+        this.fontSize = 16,
+        this.color = Constants.primaryColor,
+        this.textColor = Constants.secondaryColor,
+        this.active = false,
+        required this.nonActiveMsg});
 
   @override
   Widget build(BuildContext context) {
@@ -32,18 +33,18 @@ class VideoCallButton extends Container {
       onTap: active
           ? function
           : () {
-              Fluttertoast.showToast(msg: nonActiveMsg);
-            },
+        Fluttertoast.showToast(msg: nonActiveMsg);
+      },
       child: Container(
         width: Get.width,
-        padding: EdgeInsets.symmetric(vertical: 15),
+        padding: const EdgeInsets.symmetric(vertical: 15),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(5)),
+          borderRadius: const BorderRadius.all(Radius.circular(5)),
           boxShadow: <BoxShadow>[
             BoxShadow(
                 color: Colors.grey.shade200,
-                offset: Offset(2, 4),
+                offset: const Offset(2, 4),
                 blurRadius: 5,
                 spreadRadius: 2)
           ],
@@ -51,23 +52,23 @@ class VideoCallButton extends Container {
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
             colors: active == true
-                ? [Styles.secondaryBlueColor, Styles.primaryBlueColor]
+                ? [Constants.secondaryColor, Constants.primaryColor]
                 : [Colors.grey, Colors.grey],
           ),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
+            const Icon(
               Icons.video_call_rounded,
               color: Colors.white,
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
             Text(
               text,
-              style: TextStyle(fontSize: 20, color: Colors.white),
+              style: const TextStyle(fontSize: 20, color: Colors.white),
             ),
           ],
         ),

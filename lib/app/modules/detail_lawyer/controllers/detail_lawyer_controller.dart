@@ -1,4 +1,4 @@
-import 'package:flutter_firebase_chat_core/flutter_firebase_chat_core.dart';
+// import 'package:flutter_firebase_chat_core/flutter_firebase_chat_core.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:client_mohamoon/app/models/lawyer_model.dart';
@@ -36,7 +36,7 @@ class DetailLawyerController extends GetxController with StateMixin<Lawyer> {
         id: lawyerUserId,
         firstName: selectedLawyer.lawyerName,
         imageUrl: selectedLawyer.lawyerPicture);
-    final room = await FirebaseChatCore.instance.createRoom(otherUser);
-    Get.toNamed('/chat', arguments: [room, selectedLawyer]);
+    /*   final room = await FirebaseChatCore.instance.createRoom(otherUser);
+    Get.toNamed('/chat', arguments: [room, selectedLawyer]);*/
   }
 }

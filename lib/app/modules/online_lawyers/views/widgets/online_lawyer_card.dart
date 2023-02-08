@@ -9,7 +9,7 @@ class OnlineLawyerCard extends StatelessWidget {
   final List<dynamic> categories;
   final VoidCallback onTap;
 
-  String listToString(List<dynamic> categories){
+  String listToString(List<dynamic> categories) {
     String res = "";
     for (var element in categories) {
       res += "$element, ";
@@ -18,18 +18,19 @@ class OnlineLawyerCard extends StatelessWidget {
 
     return res;
   }
-  const OnlineLawyerCard(
-      {Key? key,
-        required this.lawyerPhotoUrl,
-        required this.lawyerName,
-        required this.categories,
-        required this.onTap})
-      : super(key: key);
+
+  const OnlineLawyerCard({
+    Key? key,
+    required this.lawyerPhotoUrl,
+    required this.lawyerName,
+    required this.categories,
+    required this.onTap,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top:20),
+      margin: const EdgeInsets.only(top: 20),
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -38,8 +39,7 @@ class OnlineLawyerCard extends StatelessWidget {
               color: Colors.black12,
               blurRadius: 40,
             )
-          ]
-      ),
+          ]),
       child: IntrinsicHeight(
         child: Column(
           children: [
@@ -63,10 +63,8 @@ class OnlineLawyerCard extends StatelessWidget {
                           child: Container(
                             height: 17,
                             width: 17,
-                            decoration:BoxDecoration(
-                                color: Colors.green,
-                                shape: BoxShape.circle
-                            ) ,
+                            decoration: BoxDecoration(
+                                color: Colors.green, shape: BoxShape.circle),
                           ),
                         )
                       ],
@@ -89,20 +87,19 @@ class OnlineLawyerCard extends StatelessWidget {
                         ),
                       ),
                       Text(
-                         listToString(categories),
-                         style: TextStyle(
-                           color: Color(0xFF0faa9a),
-                         ),
+                        listToString(categories),
+                        style: TextStyle(
+                          color: Color(0xFF0faa9a),
+                        ),
                       ),
-                          RatingBarIndicator(
-                              rating: 4.5,
-                              itemCount: 5,
-                              itemSize: 20,
-                              itemBuilder: (context, index) => Icon(
+                      RatingBarIndicator(
+                          rating: 4.5,
+                          itemCount: 5,
+                          itemSize: 20,
+                          itemBuilder: (context, index) => Icon(
                                 Icons.star,
                                 color: Colors.amber,
-                              )
-                          ),
+                              )),
                     ],
                   ),
                 ),
@@ -116,7 +113,8 @@ class OnlineLawyerCard extends StatelessWidget {
                 margin: EdgeInsets.all(13),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(12)),
-                  color: Color(0xFF125a9a),),
+                  color: Color(0xFF125a9a),
+                ),
                 child: Text(
                   'Start Consultation'.tr,
                   style: TextStyle(color: Colors.white),

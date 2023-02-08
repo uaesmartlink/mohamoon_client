@@ -19,132 +19,132 @@ class DetailAppointmentView extends GetView<DetailAppointmentController> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BackgroundContainer(
-        text: 'Detail Appointment'.tr,
+        text: 'Detail Order'.tr,
         widget: Padding(
           padding: const EdgeInsets.all(12),
-          child: Container(
-            child:Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Hi '.tr + controller.username.value,
+                style: GoogleFonts.poppins(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 14,
+                    color: Constants.mTitleColor),
+              ),
+              Text(
+                'before making a payment, make sure the items below are correct'
+                    .tr,
+                style: GoogleFonts.poppins(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12,
+                    color: Constants.mSubtitleColor),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Container(
+                height: 200,
+                width: double.infinity,
+                padding: const EdgeInsets.all(5),
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10),
+                  ),
+                ),
+                child: Column(
                   children: [
-                    Text(
-                      'Hi '.tr + controller.username.value,
-                      style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 14,
-                          color: Constants.mTitleColor),
-                    ),
-                    Text(
-                      'before making a payment, make sure the items below are correct'
-                          .tr,
-                      style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 12,
-                          color: Constants.mSubtitleColor),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Container(
-                      height: 200,
-                      width: double.infinity,
-                      padding: EdgeInsets.all(5),
-                      child: Column(
-                        children: [
-                          detailAppointmentTable(),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Container(
-                            width: double.infinity,
-                            height: 20,
-                            alignment: Alignment.centerRight,
-                            padding: EdgeInsets.only(right: 30),
-                            child: Text(
-                              'Total : '.tr +
-                                  currencySign +
-                                  controller.price.toString(),
-                              style: GoogleFonts.poppins(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 17,
-                                  color: Constants.mTitleColor),
-                            ),
-                          )
-                        ],
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
+                    detailOrderTable(),
+                    const SizedBox(
                       height: 20,
                     ),
-                    InkWell(
-                      onTap: () {
-                        Get.defaultDialog(
-                          title: 'Test Mode',
-                          content: Text(
-                            'This is a testing mode, to make a payment in test mode, please enter the number 42 consecutively in the credit card details, E.g. credit card: 424242424244242',
-                          ),
-                          textConfirm: 'Make Payment With Stripe',
-                          onConfirm: () {
-                            Get.back();
-                            controller.makePayment();
-                          },
-                        );
-                        //
-                      },
-                      child: Container(
-                        height: 50,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(50)),
-                          color: Constants.thirdlyColor,
-                        ),
-                        child: Text(
-                          'Confirm'.tr,
-                          style: TextStyle(color: Colors.white),
-                        ),
+                    Container(
+                      width: double.infinity,
+                      height: 20,
+                      alignment: Alignment.centerRight,
+                      padding: EdgeInsets.only(right: 30),
+                      child: Text(
+                        'Total : '.tr +
+                            currencySign +
+                            controller.price.toString(),
+                        style: GoogleFonts.poppins(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 17,
+                            color: Constants.mTitleColor),
                       ),
                     )
                   ],
-                )),
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              InkWell(
+                onTap: () {
+                  Get.defaultDialog(
+                    title: 'Test Mode',
+                    content: const Text(
+                      'This is a testing mode, to make a payment in test mode, please enter the number 42 consecutively in the credit card details, E.g. credit card: 424242424244242',
+                    ),
+                    textConfirm: 'Make Payment With Stripe',
+                    onConfirm: () {
+                      Get.back();
+                      controller.makePayment();
+                    },
+                  );
+                  //
+                },
+                child: Container(
+                  height: 50,
+                  alignment: Alignment.center,
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(50)),
+                    color: Constants.thirdlyColor,
+                  ),
+                  child: Text(
+                    'Confirm'.tr,
+                    style: const TextStyle(color: Colors.white),
+                  ),
+                ),
+              )
+            ],
           ),
         ),
+      ),
       bottomNavigationBar: DashboardView(),
     );
   }
 
-  Widget detailAppointmentTable() {
+  Widget detailOrderTable() {
     final column = ['Item'.tr, 'Duration'.tr, 'Time'.tr, 'Price'.tr];
-    final listAppointmentItem = [controller.buildAppointmentDetail()];
+    final listOrderItem = [controller.buildOrderDetail()];
     return DataTable(
       columns: getColumn(column),
-      rows: getRows(listAppointmentItem),
+      rows: getRows(listOrderItem),
       columnSpacing: 5,
     );
   }
 
-  List<DataColumn> getColumn(List<String> column) => column
-      .map((e) => DataColumn(
-              label: Container(
-            child: Text(e),
-          )))
-      .toList();
+  List<DataColumn> getColumn(List<String> column) =>
+      column.map((e) => DataColumn(label: Text(e))).toList();
 
-  List<DataRow> getRows(List<AppointmentDetailModel> appointmentDetailItem) =>
-      appointmentDetailItem.map((e) {
-        final cells = [e.itemName, controller.duration, e.time, controller.price];
+  List<DataRow> getRows(List<AppointmentDetailModel> orderDetailItem) =>
+      orderDetailItem.map((e) {
+        final cells = [
+          e.itemName,
+          controller.duration,
+          e.time,
+          controller.price
+        ];
         return DataRow(cells: getCells(cells));
       }).toList();
 
   List<DataCell> getCells(List<dynamic> cells) => cells
       .map((e) => DataCell(Text(
-            '$e',
-            style: Constants.tableCellText,
-          )))
+    '$e',
+    style: Constants.tableCellText,
+  )))
       .toList();
 
 /*Widget bottomSheetPaymenMethod() {

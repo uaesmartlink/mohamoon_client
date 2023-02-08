@@ -33,27 +33,23 @@ class AppointmentDetailView extends GetView<AppointmentDetailController> {
           child: Padding(
             padding: EdgeInsets.all(10),
             child: controller.obx(
-              (timeSlot) => Column(
+                  (timeSlot) => Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(top: 10),
+                    margin: EdgeInsets.only(top: 5),
                     child: Text(
                       'Appointment With'.tr,
                       style: Styles.appointmentDetailTextStyle,
                     ),
                   ),
-                  SizedBox(
-                    height: 10,
-                  ),
+
                   LawyerTile(
                     imgUrl: timeSlot!.lawyer!.lawyerPicture!,
                     name: timeSlot.lawyer!.lawyerName!,
                     appointmentTime: timeSlot.purchaseTime!,
                   ),
-                  SizedBox(
-                    height: 10,
-                  ),
+
                   Container(
                     margin: EdgeInsets.only(top: 10),
                     child: Text(
@@ -78,7 +74,7 @@ class AppointmentDetailView extends GetView<AppointmentDetailController> {
                           )
                         ],
                         color: Colors.white),
-                    padding: EdgeInsets.all(20),
+                    padding: EdgeInsets.all(10),
                     child: Column(
                       children: [
                         Table(
@@ -131,29 +127,27 @@ class AppointmentDetailView extends GetView<AppointmentDetailController> {
                     ),
                   ),
                   Obx(() => VideoCallButton(
-                        function: () {
-                          controller.startVideoCall();
-                        },
-                        text: 'Start Consultation'.tr,
-                        active: controller.videoCallStatus.value,
-                        nonActiveMsg:
-                            'the lawyer has canceled the appointment, and your payment has been refunded'
-                                .tr,
-                      )),
-                  SizedBox(
-                    height: 10,
-                  ),
+                    function: () {
+                      controller.startVideoCall();
+                    },
+                    text: 'Start Consultation'.tr,
+                    active: controller.videoCallStatus.value,
+                    nonActiveMsg:
+                    'the lawyer has canceled the appointment, and your payment has been refunded'
+                        .tr,
+                  )),
+
                   controller.selectedTimeslot.status == 'refund'
                       ? Text(
-                          'the lawyer has canceled the appointment, and your payment has been refunded'
-                              .tr,
-                          style: Styles.greyTextInfoStyle,
-                        )
+                    'the lawyer has canceled the appointment, and your payment has been refunded'
+                        .tr,
+                    style: Styles.greyTextInfoStyle,
+                  )
                       : Text(
-                          'the start consultation button will be active when the lawyer starts the consultation'
-                              .tr,
-                          style: Styles.greyTextInfoStyle,
-                        ),
+                    'the start consultation button will be active when the lawyer starts the consultation'
+                        .tr,
+                    style: Styles.greyTextInfoStyle,
+                  ),
                 ],
               ),
             ),

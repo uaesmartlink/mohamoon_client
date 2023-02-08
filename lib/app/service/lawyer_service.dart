@@ -27,8 +27,6 @@ class LawyerService {
     }
   }
 
-  //End by N
-
   //Get list of Lawyer schedule base on lawyer id
   Future<List<TimeSlot>> getLawyerTimeSlot(Lawyer lawyer) async {
     try {
@@ -72,11 +70,44 @@ class LawyerService {
         .doc(lawyerId)
         .get();
     Lawyer lawyer =
-        Lawyer.fromJson(lawyerSnapshot.data() as Map<String, dynamic>);
+    Lawyer.fromJson(lawyerSnapshot.data() as Map<String, dynamic>);
     lawyer.lawyerId = lawyerId;
     return lawyer;
   }
 
+  Future<List<Lawyer>> getOnlineLawyers() async {
+    print("Hello");
+    List<Lawyer> list = [];
+    var listLawyerQuery = await FirebaseFirestore.instance
+        .collection('Lawyers')
+        .where('isOnline', isEqualTo: true)
+        .where('accountStatus', isEqualTo: 'active' )
+        .get();
+
+    listLawyerQuery.docs.map((doc) {
+      var data = doc.data();
+      data['lawyerId'] = doc.reference.id;
+      Lawyer lawyer = Lawyer.fromJson(data);
+      print(lawyer.lawyerName);
+      list.add(lawyer);
+    }).toList();
+
+    return list;
+  }
+  Future<Lawyer> getLawyerById(String id) async{
+
+    try{
+      var lawyer = await FirebaseFirestore.instance
+          .collection('Lawyers')
+          .where('lawyerId', isEqualTo: id)
+          .get();
+      //print('doc element${user.docs.length}');
+      if (lawyer.docs.isEmpty) return Lawyer();
+      return lawyer.docs.elementAt(0) as Lawyer;
+    } catch (e) {
+      return Future.error(e.toString());
+    }
+  }
   Future<List<Lawyer>> getListLawyerByCategory(
       LawyerCategory lawyerCategory, Country country) async {
     try {
@@ -118,7 +149,7 @@ class LawyerService {
           .get();
       List<String> listIdTopRatedLawyer = topRatedLawyer.docs.map((doc) {
         String myList =
-            (doc.data()['lawyerId'] as String).replaceAll(RegExp(r"\s+"), "");
+        (doc.data()['lawyerId'] as String).replaceAll(RegExp(r"\s+"), "");
         return myList;
       }).toList();
 
@@ -145,7 +176,7 @@ class LawyerService {
     try {
       //print('lawyer name : $lawyerName');
       var lawyerRef =
-          await FirebaseFirestore.instance.collection('Lawyers').get();
+      await FirebaseFirestore.instance.collection('Lawyers').get();
       List<Lawyer> listLawyer = [];
       lawyerRef.docs.forEach((element) {
         var data = element.data();

@@ -19,11 +19,16 @@ class OnlineLawyersController extends GetxController
   double? price = 2.5;
   int? duration = 0;
 
-  
   @override
   void onInit() async {
     super.onInit();
-    getLawyerOnline();
+    getOnlineLawyers();
+  }
+
+  Future<void> getOnlineLawyers() async {
+    print("Hiii");
+    allLawyer = await LawyerService().getOnlineLawyers();
+    change(allLawyer, status: RxStatus.success());
   }
 
   Future<void> getLawyerOnline() async {
@@ -35,7 +40,7 @@ class OnlineLawyersController extends GetxController
         var timeSlotFormat = DateFormat.yMd().format(timeSlot[i].timeSlot!);
         var hourSlotFormat = DateFormat.H().format(timeSlot[i].timeSlot!);
         var minutesSlotFormat =
-            int.parse(DateFormat.m().format(timeSlot[i].timeSlot!));
+        int.parse(DateFormat.m().format(timeSlot[i].timeSlot!));
         var minuteSlotFormat = timeSlot[i].duration! + minutesSlotFormat;
 
         if (minutesSlotFormat > 59) {
@@ -144,10 +149,10 @@ class OnlineLawyersController extends GetxController
   }
 
   calculateTime(
-    selectedDuration,
-    timeslot,
-    timeslotDuration,
-  ) {
+      selectedDuration,
+      timeslot,
+      timeslotDuration,
+      ) {
     return 0;
     /* var minuteNowFormat = int.parse(
         DateFormat.m().format(DateTime.now()));
@@ -181,22 +186,22 @@ class OnlineLawyersController extends GetxController
   }
 
   onTap(
-    int selected,
-    price,
-    duration,
-    timeslot,
-    timeslotDuration,
-  ) {
+      int selected,
+      price,
+      duration,
+      // timeslot,
+      // timeslotDuration,
+      ) {
     if (price != 0) {
-      timeSlotOfLawyers[selected].price = price;
-      timeSlotOfLawyers[selected].duration = duration;
+      // timeSlotOfLawyers[selected].price = price;
+      // timeSlotOfLawyers[selected].duration = duration;
       Get.toNamed(
-        '/detail-appointment',
+        '/appointment-detail',
         arguments: [
-          timeSlotOfLawyers[selected],
+          null,
           allLawyer[selected],
           15,
-          timeSlotOfLawyers
+          null
         ],
       );
     } else {
