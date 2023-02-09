@@ -24,7 +24,7 @@ class FirebaseService {
       'uid': uid,
       'balance':0.0,
       'email': user.email,
-      'lastLogin': user.metadata.lastSignInTime!.millisecondsSinceEpoch,
+      'lastLogin': user.metadata.lastSignInTime!..millisecondsSinceEpoch,
       'createdAt': user.metadata.creationTime!.millisecondsSinceEpoch,
       'role': 'user'
     });

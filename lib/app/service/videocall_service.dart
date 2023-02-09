@@ -36,8 +36,10 @@ class VideoCallService {
     try {
       print("VVV");
       var callable = FirebaseFunctions.instance.httpsCallable('generateToken');
-      final results =
-      await callable({'channelName': roomName, 'role': 'publisher'});
+      print("XXX");
+      print(roomName);
+      print('publisher');
+      final results = await callable({'channelName': roomName, 'role': 'publisher'});
       print("VVV");
 
       var clientSecret = results.data;

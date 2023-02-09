@@ -13,7 +13,8 @@ import 'package:client_mohamoon/app/service/lawyer_service.dart';
 import 'package:client_mohamoon/app/service/appointment_service.dart';
 import 'package:client_mohamoon/app/service/videocall_service.dart';
 import 'package:client_mohamoon/app/service/notification_service.dart';
-
+import 'package:flutter_firebase_chat_core/flutter_firebase_chat_core.dart';
+import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 class AppointmentDetailController extends GetxController
     with StateMixin<TimeSlot> {
   NotificationService notificationService = Get.find<NotificationService>();
@@ -154,4 +155,26 @@ class AppointmentDetailController extends GetxController
     Get.toNamed('/consultation-date-picker',
         arguments: [selectedTimeslot.lawyer, selectedTimeslot]);
   }
+
+  void toChatDoctor() async {
+    // String lawyerUserId = await LawyerService().getUserId(lawyer);
+    print(lawyer.lawyerId);
+    print(lawyer.lawyerName);
+    print(lawyer.lawyerPicture);
+    if (lawyer.lawyerId!.isEmpty) {
+      Fluttertoast.showToast(msg: 'Lawyer no longger exist'.tr);
+      return;
+    }
+    final otherUser = types.User(
+      id: lawyer.lawyerId!,
+      firstName: lawyer.lawyerName,
+      imageUrl: lawyer.lawyerPicture,
+    );
+
+    final room = await FirebaseChatCore.instance.createRoom(
+      otherUser,
+    );
+    Get.toNamed('/chat', arguments: [room, lawyer]);
+  }
+
 }

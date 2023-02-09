@@ -9,31 +9,34 @@ import '../controllers/appointment_detail_controller.dart';
 import 'widgets/videocall_button.dart';
 
 class AppointmentDetailView extends GetView<AppointmentDetailController> {
+  /*InkWell(
+                        onTap: () => controller.toChatDoctor(),
+                        child: Container(
+                          width: 50,
+                          height: 50,
+                          decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(50)),
+                          ),
+                          child: Icon(
+                            Icons.message_rounded,
+                            color: Colors.white,
+                          ),
+                        ),
+                      )*/
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: BackgroundContainer(
-        onTap: (){
-          Get.defaultDialog(
-              title: 'Reschedule Appointment'.tr,
-              content: Text(
-                'You can only reschedule this appointment once, Are you sure want to reschedule this appointment'
-                    .tr,
-                textAlign: TextAlign.center,
-              ),
-              onCancel: () {},
-              onConfirm: () {
-                Get.back();
-                controller.rescheduleAppointment();
-              });
+        onTap: () {
+          // controller.toChatDoctor();
         },
-        text:'Consultation Detail'.tr,
-        icon: Icons.change_circle,
+        text: 'Consultation Detail'.tr,
+        // icon: Icons.message_rounded,
         widget: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.all(10),
             child: controller.obx(
-                  (timeSlot) => Column(
+              (timeSlot) => Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
@@ -43,13 +46,11 @@ class AppointmentDetailView extends GetView<AppointmentDetailController> {
                       style: Styles.appointmentDetailTextStyle,
                     ),
                   ),
-
                   LawyerTile(
                     imgUrl: timeSlot!.lawyer!.lawyerPicture!,
                     name: timeSlot.lawyer!.lawyerName!,
                     appointmentTime: timeSlot.purchaseTime!,
                   ),
-
                   Container(
                     margin: EdgeInsets.only(top: 10),
                     child: Text(
@@ -81,7 +82,8 @@ class AppointmentDetailView extends GetView<AppointmentDetailController> {
                           children: [
                             TableRow(children: [
                               SizedBox(
-                                  height: 50, child: Text('Appointment Time'.tr)),
+                                  height: 50,
+                                  child: Text('Appointment Time'.tr)),
                               SizedBox(
                                   height: 50,
                                   child: Text(TimeFormat().formatDate(
@@ -91,7 +93,8 @@ class AppointmentDetailView extends GetView<AppointmentDetailController> {
                               SizedBox(height: 50, child: Text('Duration'.tr)),
                               SizedBox(
                                   height: 50,
-                                  child: Text(': ${controller.selectedTimeslot.bookedDuration}${' Minute'.tr}')),
+                                  child: Text(
+                                      ': ${controller.selectedTimeslot.bookedDuration}${' Minute'.tr}')),
                             ]),
                             TableRow(
                               children: [
@@ -127,27 +130,26 @@ class AppointmentDetailView extends GetView<AppointmentDetailController> {
                     ),
                   ),
                   Obx(() => VideoCallButton(
-                    function: () {
-                      controller.startVideoCall();
-                    },
-                    text: 'Start Consultation'.tr,
-                    active: controller.videoCallStatus.value,
-                    nonActiveMsg:
-                    'the lawyer has canceled the appointment, and your payment has been refunded'
-                        .tr,
-                  )),
-
+                        function: () {
+                          controller.startVideoCall();
+                        },
+                        text: 'Start Consultation'.tr,
+                        active: controller.videoCallStatus.value,
+                        nonActiveMsg:
+                            'the lawyer has canceled the appointment, and your payment has been refunded'
+                                .tr,
+                      )),
                   controller.selectedTimeslot.status == 'refund'
                       ? Text(
-                    'the lawyer has canceled the appointment, and your payment has been refunded'
-                        .tr,
-                    style: Styles.greyTextInfoStyle,
-                  )
+                          'the lawyer has canceled the appointment, and your payment has been refunded'
+                              .tr,
+                          style: Styles.greyTextInfoStyle,
+                        )
                       : Text(
-                    'the start consultation button will be active when the lawyer starts the consultation'
-                        .tr,
-                    style: Styles.greyTextInfoStyle,
-                  ),
+                          'the start consultation button will be active when the lawyer starts the consultation'
+                              .tr,
+                          style: Styles.greyTextInfoStyle,
+                        ),
                 ],
               ),
             ),

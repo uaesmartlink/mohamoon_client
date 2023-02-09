@@ -30,7 +30,6 @@ class DashboardView extends GetView<DashboardController> {
           if (routeName == "/appointment" ||
               routeName == "/balance_page" ||
               routeName == "/profile" ||
-              routeName == "/profile" ||
               routeName == "/list-chat"
           ) {
             Get.toNamed('/home');
@@ -112,11 +111,11 @@ class MyNavegateBar extends StatelessWidget{
                   Icons.payment_rounded,
                 ),
                 label: ''),
-            BottomNavigationBarItem(
+          /*  BottomNavigationBarItem(
                 icon: Icon(
                   Icons.message,
                 ),
-                label: ''),
+                label: ''),*/
             BottomNavigationBarItem(
                 icon: Icon(
                   Icons.person,
@@ -144,16 +143,16 @@ class MyNavegateBar extends StatelessWidget{
                   controller.selectedIndex = 2;
                   break;
                 }
-              case 3:
+            /*  case 3:
                 {
                   Get.toNamed('/list-chat');
                   controller.selectedIndex = 3;
                   break;
-                }
-              case 4:
+                }*/
+              case 3:
                 {
                   Get.toNamed('/profile');
-                  controller.selectedIndex = 4;
+                  controller.selectedIndex = 3;
                   break;
                 }
             }
