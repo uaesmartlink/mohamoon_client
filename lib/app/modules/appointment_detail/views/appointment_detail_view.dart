@@ -9,7 +9,7 @@ import '../controllers/appointment_detail_controller.dart';
 import 'widgets/videocall_button.dart';
 
 class AppointmentDetailView extends GetView<AppointmentDetailController> {
-  /*InkWell(
+                  /*InkWell(
                         onTap: () => controller.toChatDoctor(),
                         child: Container(
                           width: 50,

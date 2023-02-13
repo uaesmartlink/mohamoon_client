@@ -56,9 +56,9 @@ class HomeController extends GetxController {
     notificationService.testNotification();
   }
 
-  void testViedoNotify() {
-    notificationService.testVideoNotification();
-  }
+  // void testViedoNotify() {
+  //   notificationService.testVideoNotification();
+  // }
 
   void toOnlineLawyers() {
     Get.toNamed('/online_lawyers');

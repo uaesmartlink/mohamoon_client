@@ -94,6 +94,7 @@ class LawyerService {
 
     return list;
   }
+
   Future<Lawyer> getLawyerById(String id) async{
 
     try{

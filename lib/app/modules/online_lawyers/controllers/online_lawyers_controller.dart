@@ -201,7 +201,6 @@ class OnlineLawyersController extends GetxController
           null,
           allLawyer[selected],
           15,
-          null
         ],
       );
     } else {

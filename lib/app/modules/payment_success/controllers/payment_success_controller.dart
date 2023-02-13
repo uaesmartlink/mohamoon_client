@@ -9,8 +9,8 @@ class PaymentSuccessController extends GetxController
     with GetSingleTickerProviderStateMixin {
   final count = 0.obs;
   late AnimationController animController;
-  TimeSlot timeSlot = Get.arguments[0];
-  double price = Get.arguments[1];
+  double price = Get.arguments[0];
+  int duration = Get.arguments[1];
   @override
   void onInit() {
     super.onInit();
@@ -29,6 +29,6 @@ class PaymentSuccessController extends GetxController
   void goHome() {
     Get.offAllNamed('home');
     Get.find<DashboardController>().selectedIndex = 0;
-    Get.find<AppointmentController>().getListAppointment();
+    Get.lazyPut(()=>AppointmentController());
   }
 }

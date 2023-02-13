@@ -12,9 +12,10 @@ Lawyer _$LawyerFromJson(Map<String, dynamic> json) => Lawyer(
       lawyerPicture: json['lawyerPicture'] as String?,
       lawyerPrice: json['lawyerBasePrice'] as int?,
       lawyerShortBiography: json['lawyerBiography'] as String?,
-      categories: json['categories']  as dynamic,
+      categories: json['categories'] as dynamic,
       lawyerHospital: json['lawyerHospital'] as String?,
       accountStatus: json['accountStatus'] as String?,
+      isOnline: json['isOnline'] as bool?,
     );
 
 Map<String, dynamic> _$LawyerToJson(Lawyer instance) => <String, dynamic>{
@@ -26,4 +27,5 @@ Map<String, dynamic> _$LawyerToJson(Lawyer instance) => <String, dynamic>{
       'lawyerCategory': instance.categories,
       'lawyerHospital': instance.lawyerHospital,
       'accountStatus': instance.accountStatus,
+      'isOnline': instance.isOnline,
     };

@@ -75,8 +75,10 @@ class DetailAppointmentController extends GetxController {
       print(balance);*/
       if (balance! >= price!) {
         if (selectedTimeSlot != null) {
+          print("HELLO: MakePayment");
           await paymentService.makePayment(selectedTimeSlot.timeSlotId!,
               userService.getUserId(), price, duration);
+          print("HELLO: Done");
           for (int i = 0; i < timeSlots.length; i++) {
             print(timeSlots[i].timeSlot);
             await timeSlotService.deleteTimeSlot(timeSlots[i]);
@@ -84,7 +86,7 @@ class DetailAppointmentController extends GetxController {
           EasyLoading.dismiss();
           Get.offNamed(
             '/payment-success',
-            arguments: price,
+            arguments: [price,duration],
           );
           notificationService
               .setNotificationAppointment(selectedTimeSlot.timeSlot!);
@@ -104,6 +106,7 @@ class DetailAppointmentController extends GetxController {
             arguments: [
               null,
               lawyer,
+              0,
             ],
           );
         }

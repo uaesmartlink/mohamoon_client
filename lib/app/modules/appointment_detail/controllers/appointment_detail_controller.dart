@@ -35,9 +35,7 @@ class AppointmentDetailController extends GetxController
   @override
   void onInit() async {
     super.onInit();
-    print("AAA");
     if (selectedTimeslot != null) {
-      print("CCC");
       LawyerService().getLawyerDetail(selectedTimeslot.lawyerid!).then(
             (doc) {
           selectedTimeslot.lawyer = doc;
@@ -108,10 +106,11 @@ class AppointmentDetailController extends GetxController
       };
 
       await VideoCallService().createRoom(selectedTimeslot.timeSlotId!, roomData);
-
+      String lawyerId = await LawyerService().getUserId(lawyer);
+      print("lawyerId: " + lawyerId);
       notificationService.notificationStartAppointment(
-          selectedTimeslot.lawyer!.lawyerName!,
-          UserService().getUserId(),
+          UserService().currentUser!.displayName!,
+          lawyerId,
           selectedTimeslot.timeSlotId!,
           token,
           selectedTimeslot.timeSlotId!);
