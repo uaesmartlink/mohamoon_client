@@ -87,14 +87,14 @@ class AppointmentDetailView extends GetView<AppointmentDetailController> {
                               SizedBox(
                                   height: 50,
                                   child: Text(TimeFormat().formatDate(
-                                      controller.selectedTimeslot.timeSlot!))),
+                                      controller.selectedTimeslot!.timeSlot!))),
                             ]),
                             TableRow(children: [
                               SizedBox(height: 50, child: Text('Duration'.tr)),
                               SizedBox(
                                   height: 50,
                                   child: Text(
-                                      ': ${controller.selectedTimeslot.bookedDuration}${' Minute'.tr}')),
+                                      ': ${controller.selectedTimeslot!.bookedDuration}${' Minute'.tr}')),
                             ]),
                             TableRow(
                               children: [
@@ -105,7 +105,7 @@ class AppointmentDetailView extends GetView<AppointmentDetailController> {
                                 SizedBox(
                                   height: 50,
                                   child: Text(
-                                    ': \$${controller.selectedTimeslot.bookedAmount}${' (Paid)'.tr}',
+                                    ': \$${controller.selectedTimeslot!.bookedAmount}${' (Paid)'.tr}',
                                   ),
                                 ),
                               ],
@@ -119,7 +119,7 @@ class AppointmentDetailView extends GetView<AppointmentDetailController> {
                                 SizedBox(
                                   height: 50,
                                   child: Text(
-                                    controller.selectedTimeslot.status ?? '',
+                                    controller.selectedTimeslot!.status ?? '',
                                   ),
                                 ),
                               ],
@@ -139,7 +139,7 @@ class AppointmentDetailView extends GetView<AppointmentDetailController> {
                             'the lawyer has canceled the appointment, and your payment has been refunded'
                                 .tr,
                       )),
-                  controller.selectedTimeslot.status == 'refund'
+                  controller.selectedTimeslot!.status == 'refund'
                       ? Text(
                           'the lawyer has canceled the appointment, and your payment has been refunded'
                               .tr,

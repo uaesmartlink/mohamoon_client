@@ -5,7 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:custom_flutter_callkit_incoming/flutter_callkit_incoming.dart';
+import 'package:flutter_callkit_incoming/flutter_callkit_incoming.dart';
 
 import 'package:get/get.dart';
 import 'package:client_mohamoon/app/models/time_slot_model.dart';
@@ -47,7 +47,7 @@ Future<void> _firebaseMessaggingBackgroundHandler(RemoteMessage message) async {
     'textDecline': 'Decline',
     'textMissedCall': 'Missed call',
     'textCallback': 'Call back',
-    'duration': 150,
+    'duration': 30000,
     // 'duration': 30000,
     'extra': <String, dynamic>{
       'roomName': message.data['roomName'],
@@ -77,8 +77,8 @@ Future<void> _firebaseMessaggingBackgroundHandler(RemoteMessage message) async {
       'audioSessionPreferredIOBufferDuration': 0.005,
       'supportsDTMF': true,
       'supportsHolding': true,
-      'supportsGrouping': false,
-      'supportsUngrouping': false,
+      'supportsGrouping': true,
+      'supportsUngrouping': true,
       'ringtonePath': 'system_ringtone_default'
     }
   };
@@ -226,7 +226,7 @@ class NotificationService {
       'textDecline': 'Decline',
       'textMissedCall': 'Missed call',
       'textCallback': 'Call back',
-      'duration': 300,
+      'duration': 30000,
       'extra': <String, dynamic>{
         'roomName': roomName,
         'token': token,
@@ -254,8 +254,8 @@ class NotificationService {
         'audioSessionPreferredIOBufferDuration': 0.005,
         'supportsDTMF': true,
         'supportsHolding': true,
-        'supportsGrouping': false,
-        'supportsUngrouping': false,
+        'supportsGrouping': true,
+        'supportsUngrouping': true,
         'ringtonePath': 'system_ringtone_default'
       }
     };

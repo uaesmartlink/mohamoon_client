@@ -34,7 +34,7 @@ class AppointmentView extends GetView<AppointmentController> {
                   itemBuilder: (context, index) {
                     return Container(
                       margin: const EdgeInsets.only(top: 10),
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.all(Radius.circular(20)),
                           boxShadow: [

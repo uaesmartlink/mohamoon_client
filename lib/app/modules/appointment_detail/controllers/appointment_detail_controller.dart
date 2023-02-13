@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:client_mohamoon/app/service/timeslot_service.dart';
 import 'package:client_mohamoon/app/service/user_service.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -15,6 +16,7 @@ import 'package:client_mohamoon/app/service/videocall_service.dart';
 import 'package:client_mohamoon/app/service/notification_service.dart';
 import 'package:flutter_firebase_chat_core/flutter_firebase_chat_core.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
+
 class AppointmentDetailController extends GetxController
     with StateMixin<TimeSlot> {
   NotificationService notificationService = Get.find<NotificationService>();
@@ -24,7 +26,7 @@ class AppointmentDetailController extends GetxController
   var videoCallStatus = true.obs;
 
   //ParseObject? room;
-  dynamic selectedTimeslot = Get.arguments[0];
+  TimeSlot? selectedTimeslot = Get.arguments[0];
   Lawyer lawyer = Get.arguments[1];
   late Appointment appointment;
   late String token;
@@ -36,11 +38,12 @@ class AppointmentDetailController extends GetxController
   void onInit() async {
     super.onInit();
     if (selectedTimeslot != null) {
-      LawyerService().getLawyerDetail(selectedTimeslot.lawyerid!).then(
-            (doc) {
-          selectedTimeslot.lawyer = doc;
+      print("AAAAAAA");
+      LawyerService().getLawyerDetail(selectedTimeslot!.lawyerid!).then(
+        (doc) {
+          selectedTimeslot!.lawyer = doc;
           change(selectedTimeslot, status: RxStatus.success());
-          if (selectedTimeslot.status == 'refund') {
+          if (selectedTimeslot!.status == 'refund') {
             Get.defaultDialog(
               title: 'Appointment Canceled'.tr,
               content: Text(
@@ -54,8 +57,10 @@ class AppointmentDetailController extends GetxController
         },
       );
     } else {
+      print("BBBBBBB");
       LawyerService().getLawyerById(lawyer.lawyerId.toString()).then(
-            (doc) {
+        (doc) {
+          print("QQQ");
           selectedTimeslot = TimeSlot(
             timeSlot: DateTime.now(),
             lawyer: lawyer,
@@ -65,11 +70,14 @@ class AppointmentDetailController extends GetxController
             duration: 15,
             purchaseTime: DateTime.now(),
           );
+          print("QQQ");
+          print(selectedTimeslot.toString());
+          print(selectedTimeslot!.timeSlot);
+          print(selectedTimeslot?.lawyer!.lawyerName);
           change(selectedTimeslot, status: RxStatus.success());
         },
       );
     }
-
 
     var roomSnapshot = FirebaseFirestore.instance
         .collection('RoomVideoCall')
@@ -95,44 +103,46 @@ class AppointmentDetailController extends GetxController
   }
 
   void startVideoCall() async {
+    print(selectedTimeslot);
     if (videoCallStatus.value) {
-      token =
-      await VideoCallService().getAgoraToken(DateTime.now().hashCode.toString());
+      token = await VideoCallService()
+          .getAgoraToken(DateTime.now().hashCode.toString());
       print(token);
       final roomData = <String, dynamic>{
-        'room': selectedTimeslot.timeSlotId,
+        'room': selectedTimeslot!.timeSlotId,
         'token': token,
         'timestamp': Timestamp.fromDate(DateTime.now())
       };
 
-      await VideoCallService().createRoom(selectedTimeslot.timeSlotId!, roomData);
+      await VideoCallService()
+          .createRoom(selectedTimeslot!.timeSlotId!, roomData);
       String lawyerId = await LawyerService().getUserId(lawyer);
-      print("lawyerId: " + lawyerId);
+      print("lawyerId: $lawyerId");
       notificationService.notificationStartAppointment(
           UserService().currentUser!.displayName!,
           lawyerId,
-          selectedTimeslot.timeSlotId!,
+          selectedTimeslot!.timeSlotId!,
           token,
-          selectedTimeslot.timeSlotId!);
+          selectedTimeslot!.timeSlotId!);
       Get.toNamed('/video-call', arguments: [
         {
           'timeSlot': selectedTimeslot,
-          'room': selectedTimeslot.timeSlotId,
+          'room': selectedTimeslot!.timeSlotId,
           'token': token
         }
       ]);
     } else {
-      if (selectedTimeslot.status == 'refund') {
+      if (selectedTimeslot?.status == 'refund') {
         Fluttertoast.showToast(
             msg:
-            'the lawyer has canceled the appointment, and your payment has been refunded'
-                .tr,
+                'the lawyer has canceled the appointment, and your payment has been refunded'
+                    .tr,
             toastLength: Toast.LENGTH_LONG);
       } else {
         Fluttertoast.showToast(
             msg:
-            'the lawyer has not started the meeting session, this button will automatically turn on when the lawyer has started it'
-                .tr,
+                'the lawyer has not started the meeting session, this button will automatically turn on when the lawyer has started it'
+                    .tr,
             toastLength: Toast.LENGTH_LONG);
       }
     }
@@ -144,7 +154,8 @@ class AppointmentDetailController extends GetxController
 
   Future getOrder() async {
     try {
-      appointment = await AppointmentService().getSuccessAppointment(selectedTimeslot);
+      appointment =
+          await AppointmentService().getSuccessAppointment(selectedTimeslot!);
     } catch (err) {
       Fluttertoast.showToast(msg: err.toString());
     }
@@ -152,7 +163,7 @@ class AppointmentDetailController extends GetxController
 
   void rescheduleAppointment() {
     Get.toNamed('/consultation-date-picker',
-        arguments: [selectedTimeslot.lawyer, selectedTimeslot]);
+        arguments: [selectedTimeslot!.lawyer, selectedTimeslot]);
   }
 
   void toChatDoctor() async {
@@ -175,5 +186,4 @@ class AppointmentDetailController extends GetxController
     );
     Get.toNamed('/chat', arguments: [room, lawyer]);
   }
-
 }

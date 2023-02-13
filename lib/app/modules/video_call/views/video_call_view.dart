@@ -42,16 +42,16 @@ class VideoCallView extends GetView<VideoCallController> {
                               : Icon(Icons.mic_off),
                           heroTag: 'micOff',
                         ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        FloatingActionButton(
-                          onPressed: controller.toggleLocalCamOff,
-                          child: controller.localCamOff == false
-                              ? Icon(Icons.videocam)
-                              : Icon(Icons.videocam_off),
-                          heroTag: 'camOff',
-                        ),
+                        // SizedBox(
+                        //   width: 20,
+                        // ),
+                        // FloatingActionButton(
+                        //   onPressed: controller.toggleLocalCamOff,
+                        //   child: controller.localCamOff == false
+                        //       ? Icon(Icons.videocam)
+                        //       : Icon(Icons.videocam_off),
+                        //   heroTag: 'camOff',
+                        // ),
                         SizedBox(
                           width: 20,
                         ),
