@@ -7,25 +7,35 @@ class TitleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          'Welcome,'.tr,
-          style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-              color: Colors.white),
+    // return Column(
+    //   mainAxisAlignment: MainAxisAlignment.center,
+      // children: [
+      //   Text(
+      //     'Welcome,'.tr,
+      //     style: TextStyle(
+      //         fontSize: 30,
+      //         fontWeight: FontWeight.bold,
+      //         color: Colors.white),
+      //   ),
+      //   const SizedBox(height: 5,),
+      //   Text(
+      //     'You can search a lawyer and book an appointment'.tr,
+      //     style: TextStyle(
+      //         fontSize: 12,
+      //         color: Colors.white),
+      //   ),
+      //
+      // ],);
+      return Container(
+        height: 100,
+        width: 220,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+                'assets/images/logo.png'),
+            fit: BoxFit.fill,
+          ),
         ),
-        const SizedBox(height: 5,),
-        Text(
-          'You can search a lawyer and book an appointment'.tr,
-          style: TextStyle(
-              fontSize: 12,
-              color: Colors.white),
-        ),
-
-      ],
-    );
+      );
   }
 }

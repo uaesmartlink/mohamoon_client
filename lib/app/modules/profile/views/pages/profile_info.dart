@@ -18,17 +18,17 @@ class ProfileInfo extends GetView<ProfileController> {
       body: Obx(
           () => Column(
             children: [
-              const SizedBox(
-                height: 20,
-              ),
-              DisplayImage(
-                imagePath: controller.profilePic.value,
-                onPressed: () {
-                  controller.toEditImage();
-                },
-              ),
+              // const SizedBox(
+              //   height: 20,
+              // ),
+              // DisplayImage(
+              //   imagePath: controller.profilePic.value,
+              //   onPressed: () {
+              //     controller.toEditImage();
+              //   },
+              // ),
               Card(
-                margin: EdgeInsets.only(top: 25, left: 5, right: 5),
+                margin: EdgeInsets.only(top: 5, left: 5, right: 5),
                 elevation: 3,
                 child: Column(
                   children: [

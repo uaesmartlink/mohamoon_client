@@ -8,6 +8,6 @@ class VideoCallBinding extends Bindings {
     Get.lazyPut<VideoCallController>(
       () => VideoCallController(),
     );
-    Get.put(VideoCallService());
+    Get.lazyPut(() => VideoCallService());
   }
 }

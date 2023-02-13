@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:agora_rtc_engine/rtc_local_view.dart' as RtcLocalView;
-import 'package:agora_rtc_engine/rtc_remote_view.dart' as RtcRemoteView;
 import 'package:get/get.dart';
 import '../controllers/video_call_controller.dart';
+import 'package:agora_rtc_engine/rtc_local_view.dart' as RtcLocalView;
+import 'package:agora_rtc_engine/rtc_remote_view.dart' as RtcRemoteView;
+
 
 class VideoCallView extends GetView<VideoCallController> {
+  const VideoCallView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,58 +21,48 @@ class VideoCallView extends GetView<VideoCallController> {
                 ),
                 Align(
                   alignment: Alignment.topLeft,
-                  child: Container(
+                  child: SizedBox(
                     width: 100,
                     height: 150,
                     child: Center(
                       child: controller.localUserJoined
-                          ? RtcLocalView.SurfaceView()
-                          : CircularProgressIndicator(),
+                          ? const RtcLocalView.SurfaceView()
+                          : const CircularProgressIndicator(),
                     ),
                   ),
                 ),
                 Positioned(
                   bottom: 20,
-                  child: Container(
+                  child: SizedBox(
                     width: Get.width,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         FloatingActionButton(
                           onPressed: controller.toggleLocalAudioMuted,
-                          child: controller.localAudioMute == false
-                              ? Icon(Icons.mic)
-                              : Icon(Icons.mic_off),
                           heroTag: 'micOff',
+                          child: controller.localAudioMute == false
+                              ? const Icon(Icons.mic)
+                              : const Icon(Icons.mic_off),
                         ),
-                        // SizedBox(
-                        //   width: 20,
-                        // ),
-                        // FloatingActionButton(
-                        //   onPressed: controller.toggleLocalCamOff,
-                        //   child: controller.localCamOff == false
-                        //       ? Icon(Icons.videocam)
-                        //       : Icon(Icons.videocam_off),
-                        //   heroTag: 'camOff',
-                        // ),
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
                         FloatingActionButton(
                           onPressed: controller.switchCamera,
-                          child: Icon(Icons.switch_camera),
                           heroTag: 'cameraSwitch',
+                          child: const Icon(Icons.switch_camera),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
                         FloatingActionButton(
                           onPressed: () {
                             controller.completedConsultation();
                           },
-                          child: Icon(Icons.call_end),
                           backgroundColor: Colors.red,
                           heroTag: 'endMeeting',
+                          child: const Icon(Icons.call_end),
                         ),
                       ],
                     ),

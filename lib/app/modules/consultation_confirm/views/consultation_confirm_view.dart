@@ -69,7 +69,7 @@ class ConsultationConfirmView extends GetView<ConsultationConfirmController> {
                                 decoration:
                                     InputDecoration(labelText: 'Problem'.tr),
                                 name: 'my_problem',
-                                validator: FormBuilderValidators.required(),
+                                validator: FormBuilderValidators.required(context),
                                 options: [
                                   'Black screen, no consultation happened'.tr,
                                   'No sound'.tr,

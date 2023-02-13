@@ -23,7 +23,7 @@ class LoginView extends GetView<LoginController> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  SizedBox(height: height * .2),
+                  SizedBox(height: height * .1),
                   TitleApp(),
                   SizedBox(height: 50),
                   Form(

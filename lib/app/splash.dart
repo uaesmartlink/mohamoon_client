@@ -12,7 +12,7 @@ class MySplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SplashScreen(
       seconds: 3,
-      photoSize: MediaQuery.of(context).size.width / 2.5,
+      photoSize: MediaQuery.of(context).size.width / 5,
       navigateAfterSeconds: isUserLogin ? AppPages.HOME : AppPages.OnBoarding,
       image: Image.asset("assets/icons/splash.gif"),
       gradientBackground: LinearGradient(

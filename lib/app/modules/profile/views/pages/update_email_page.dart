@@ -38,8 +38,8 @@ class UpdateEmailPage extends GetView<ProfileController> {
                   child: FormBuilderTextField(
                     // Handles Form Validation for First Name
                     validator: FormBuilderValidators.compose([
-                      FormBuilderValidators.required(),
-                      FormBuilderValidators.email()
+                      FormBuilderValidators.required(context),
+                      FormBuilderValidators.email(context)
                     ]),
                     decoration: InputDecoration(labelText: 'New Email Address'),
                     name: 'email',

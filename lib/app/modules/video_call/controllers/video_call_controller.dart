@@ -17,7 +17,6 @@ class VideoCallController extends GetxController {
   bool localAudioMute = false;
   // bool localCamOff = false;
   int? remoteUid;
-
   // Instantiate the client
   late RtcEngine engine;
 
@@ -35,11 +34,12 @@ class VideoCallController extends GetxController {
 
   @override
   void onClose() async {
-    await destroyAgora();
+    await endMeeting();
   }
 
   completedConsultation() async {
     if (videoCallEstablished) {
+      print("Test");
       Get.offNamedUntil(
           '/consultation-confirm', ModalRoute.withName('/appointment-detail'),
           arguments: [timeSlot, room]);
@@ -51,20 +51,26 @@ class VideoCallController extends GetxController {
 
   Future<void> initAgora() async {
     // retrieve permissions
+    engine = await RtcEngine.createWithContext(RtcEngineContext(Environment.agoraAppId));
+    await [Permission.microphone, Permission.camera].request();
+
+    await engine.enableVideo();
+    await engine.setChannelProfile(ChannelProfile.LiveBroadcasting);
+    await engine.setClientRole(ClientRole.Broadcaster);
     await [Permission.microphone, Permission.camera].request();
     //create the engine
-    engine = await RtcEngine.create(Environment.agoraAppId);
-    await engine.enableVideo();
+    // engine = await RtcEngine.create(Environment.agoraAppId);
+    // await engine.enableVideo();
     engine.setEventHandler(
       RtcEngineEventHandler(
         joinChannelSuccess: (String channel, int uid, int elapsed) {
-          //print("local user $uid joined");
+          print("local user $uid joined");
           localUserJoined = true;
           videoCallEstablished = true;
           update();
         },
         userJoined: (int uid, int elapsed) {
-          //print("remote user $uid joined");
+          print("remote user $uid joined");
           remoteUid = uid;
           update();
         },
@@ -80,15 +86,17 @@ class VideoCallController extends GetxController {
   }
 
   Future endMeeting() async {
-    await destroyAgora();
-    Get.back();
-  }
-
-  Future destroyAgora() async {
     await VideoCallService().removeRoom(room);
     await engine.leaveChannel();
     await engine.destroy();
+    Get.back();
   }
+
+  // Future destroyAgora() async {
+  //   await VideoCallService().removeRoom(room);
+  //   await engine.leaveChannel();
+  //   await engine.destroy();
+  // }
 
   Future switchCamera() async {
     try {

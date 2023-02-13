@@ -53,8 +53,8 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
                     decoration: const InputDecoration(
                         border: InputBorder.none, hintText: 'Email'),
                     validator: FormBuilderValidators.compose([
-                      FormBuilderValidators.email(),
-                      FormBuilderValidators.required()
+                      FormBuilderValidators.email(context),
+                      FormBuilderValidators.required(context)
                     ]),
                   ),
                 ),
