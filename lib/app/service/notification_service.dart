@@ -47,7 +47,8 @@ Future<void> _firebaseMessaggingBackgroundHandler(RemoteMessage message) async {
     'textDecline': 'Decline',
     'textMissedCall': 'Missed call',
     'textCallback': 'Call back',
-    'duration': 30000,
+    'duration': 150,
+    // 'duration': 30000,
     'extra': <String, dynamic>{
       'roomName': message.data['roomName'],
       'token': message.data['token'],
@@ -58,10 +59,10 @@ Future<void> _firebaseMessaggingBackgroundHandler(RemoteMessage message) async {
       'isCustomNotification': false,
       'isShowLogo': true,
       'isShowMissedCallNotification': true,
-      'isShowCallback': false,
+      'isShowCallback': true,
       'ringtonePath': 'system_ringtone_default',
       'backgroundColor': '#0955fa',
-      'backgroundUrl': 'https://i.pravatar.cc/500',
+      'backgroundUrl': '',
       'actionColor': '#4CAF50'
     },
     'ios': <String, dynamic>{
@@ -225,7 +226,7 @@ class NotificationService {
       'textDecline': 'Decline',
       'textMissedCall': 'Missed call',
       'textCallback': 'Call back',
-      'duration': 30000,
+      'duration': 300,
       'extra': <String, dynamic>{
         'roomName': roomName,
         'token': token,
@@ -236,7 +237,7 @@ class NotificationService {
         'isCustomNotification': false,
         'isShowLogo': true,
         'isShowMissedCallNotification': true,
-        'isShowCallback': false,
+        'isShowCallback': true,
         'ringtonePath': 'system_ringtone_default',
         'backgroundColor': '#0955fa',
         'actionColor': '#4CAF50'
@@ -341,16 +342,13 @@ class NotificationService {
         'token': token,
         'timeSlotId': timeSlotId
       });
-      printInfo(info: 'notification user id : ' + lawerId);
+      printInfo(info: 'notification user id : $lawerId');
       print('Notification start appointment send');
     } catch (e) {
       return Future.error(e.toString());
     }
   }
 }
-
-
-//import 'package:onesignal_flutter/onesignal_flutter.dart';
 /*
 
 import 'package:cloud_functions/cloud_functions.dart';
@@ -597,3 +595,6 @@ class NotificationService {
   }
 }
 */
+
+
+//import 'package:onesignal_flutter/onesignal_flutter.dart';
