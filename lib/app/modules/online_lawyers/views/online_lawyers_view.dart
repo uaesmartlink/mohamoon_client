@@ -33,9 +33,9 @@ class OnlineLawyersView extends GetView<OnlineLawyersController> {
                         // double price= controller.timeSlotOfLawyers[index].price!;
                         viewBottomSheet(
                           context,
-                          // price,
+                          onlineLawyers[index].lawyerPrice! / 4,
                           // timeslot,
-                          // duration,
+                          15,
                           index,
                         );
                       });
@@ -50,9 +50,9 @@ class OnlineLawyersView extends GetView<OnlineLawyersController> {
 
   viewBottomSheet(
       context,
-      // price,
+      price,
       // timeslot,
-      // timeslotDuration,
+      duration,
       index,
       ) {
     return showModalBottomSheet(
@@ -129,7 +129,7 @@ class OnlineLawyersView extends GetView<OnlineLawyersController> {
                       children: [
                         const Text('Consulting will cost = '),
                         Text(
-                          '${controller.price.toString()} USD',
+                          '${price.toString()} USD to 15 minutes',
                           style: const TextStyle(
                               fontSize: 17, fontWeight: FontWeight.bold),
                         ),
@@ -155,8 +155,8 @@ class OnlineLawyersView extends GetView<OnlineLawyersController> {
                           onTap: () {
                             controller.onTap(
                               index,
-                              controller.price,
-                              controller.duration,
+                              price,
+                              15,
                               /*    timeslot,
                             timeslotDuration,*/
                             );

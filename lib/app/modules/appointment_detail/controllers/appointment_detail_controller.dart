@@ -28,6 +28,7 @@ class AppointmentDetailController extends GetxController
   //ParseObject? room;
   TimeSlot? selectedTimeslot = Get.arguments[0];
   Lawyer lawyer = Get.arguments[1];
+  int duration = Get.arguments[2];
   late Appointment appointment;
   late String token;
   var database = FirebaseDatabase.instance.ref();

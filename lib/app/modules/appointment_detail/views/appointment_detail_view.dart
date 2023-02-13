@@ -94,7 +94,7 @@ class AppointmentDetailView extends GetView<AppointmentDetailController> {
                               SizedBox(
                                   height: 50,
                                   child: Text(
-                                      ': ${controller.selectedTimeslot!.bookedDuration}${' Minute'.tr}')),
+                                      ': ${controller.duration}${' Minute'.tr}')),
                             ]),
                             TableRow(
                               children: [
@@ -105,7 +105,7 @@ class AppointmentDetailView extends GetView<AppointmentDetailController> {
                                 SizedBox(
                                   height: 50,
                                   child: Text(
-                                    ': \$${controller.selectedTimeslot!.bookedAmount}${' (Paid)'.tr}',
+                                    ': \$${controller.lawyer.lawyerPrice! / 4}${' (Paid)'.tr}',
                                   ),
                                 ),
                               ],
@@ -116,10 +116,10 @@ class AppointmentDetailView extends GetView<AppointmentDetailController> {
                                   height: 50,
                                   child: Text('Status'.tr),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 50,
                                   child: Text(
-                                    controller.selectedTimeslot!.status ?? '',
+                                    "Available",
                                   ),
                                 ),
                               ],
