@@ -9,6 +9,7 @@ import '../controllers/detail_lawyer_controller.dart';
 class DetailLawyerView extends GetView<DetailLawyerController> {
   @override
   Widget build(BuildContext context) {
+    print("XXX");
     return Scaffold(
       body: BackgroundContainer(
         text: 'Lawyer'.tr,
@@ -31,7 +32,7 @@ class DetailLawyerView extends GetView<DetailLawyerController> {
                     const SizedBox(height: 34,),
                     Text(
                       'Service'.tr,
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 18,
                           color: Color(0xFF333333),
                           fontWeight: FontWeight.w500),
@@ -41,7 +42,7 @@ class DetailLawyerView extends GetView<DetailLawyerController> {
                     ),
                     Text(
                       lawyer.lawyerShortBiography!,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 13,
                         color: Color(0xFF333333),
                       ),

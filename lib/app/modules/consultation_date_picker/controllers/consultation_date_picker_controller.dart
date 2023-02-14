@@ -32,7 +32,7 @@ class ConsultationDatePickerController extends GetxController
     durations.add('45 minutes\n       \$${price / 4 * 3}');
     durations.add('60 minutes\n       \$${price}');
     print(price);
-    if (Get.arguments[1] != null) isReschedule = true;
+    // if (Get.arguments[1] != null) isReschedule = true;
     //print('is Reschedule $isReschedule');
     LawyerService().getLawyerTimeSlot(lawyer).then((timeSlot) {
       allTimeSlot = timeSlot;

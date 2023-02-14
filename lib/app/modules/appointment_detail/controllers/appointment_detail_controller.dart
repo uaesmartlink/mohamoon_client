@@ -16,6 +16,7 @@ import 'package:client_mohamoon/app/service/videocall_service.dart';
 import 'package:client_mohamoon/app/service/notification_service.dart';
 import 'package:flutter_firebase_chat_core/flutter_firebase_chat_core.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 class AppointmentDetailController extends GetxController
     with StateMixin<TimeSlot> {
@@ -102,6 +103,7 @@ class AppointmentDetailController extends GetxController
   void startVideoCall() async {
     print(selectedTimeslot);
     if (videoCallStatus.value) {
+      EasyLoading.show();
       token = await VideoCallService().getAgoraToken(
         // selectedTimeslot!.timeSlot.hashCode.toString(),
         selectedTimeslot!.timeSlotId!
@@ -122,6 +124,8 @@ class AppointmentDetailController extends GetxController
           selectedTimeslot!.timeSlotId!,
           token,
           selectedTimeslot!.timeSlotId!);
+      EasyLoading.dismiss();
+
       Get.toNamed('/video-call', arguments: [
         {
           'timeSlot': selectedTimeslot,

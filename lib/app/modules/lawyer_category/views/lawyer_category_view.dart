@@ -13,7 +13,7 @@ class LawyerCategoryView extends GetView<LawyerCategoryController> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BackgroundContainer(
-          text: 'Lawyer Specialist'.tr,
+          text: 'Lawyer Specialist in ${controller.country.countryName}'.tr,
           isPadding: 0,
           widget:
               Padding(

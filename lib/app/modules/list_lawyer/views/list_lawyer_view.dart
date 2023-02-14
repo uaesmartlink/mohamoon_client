@@ -33,6 +33,7 @@ class ListLawyerView extends GetView<ListLawyerController> {
                               lawyerPhotoUrl: listLawyer[index].lawyerPicture!,
                               lawyerHospital: listLawyer[index].lawyerHospital!,
                               onTap: () {
+                                print(listLawyer[index].lawyerName);
                                 Get.toNamed('/detail-lawyer',
                                     arguments: listLawyer[index]);
                               });

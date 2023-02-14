@@ -89,7 +89,6 @@ class VideoCallController extends GetxController {
     await VideoCallService().removeRoom(room);
     await engine.leaveChannel();
     await engine.destroy();
-    Get.back();
   }
 
   // Future destroyAgora() async {

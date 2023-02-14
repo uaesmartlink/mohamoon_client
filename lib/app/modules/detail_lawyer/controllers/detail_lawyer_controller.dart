@@ -10,14 +10,21 @@ import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 class DetailLawyerController extends GetxController with StateMixin<Lawyer> {
   final count = 0.obs;
   Lawyer selectedLawyer = Get.arguments;
-  List<ReviewModel> listReview = [];
+  // List<ReviewModel> listReview = [];
+  // List<ReviewModel> listReview = [];
   @override
   void onInit() {
     super.onInit();
-    ReviewService().getLawyerReview(lawyer: selectedLawyer).then((value) {
-      listReview = value;
-      change(selectedLawyer, status: RxStatus.success());
-    });
+    print(selectedLawyer.lawyerName);
+    print(selectedLawyer.accountStatus);
+    print(selectedLawyer.isOnline);
+    print(selectedLawyer.categories.toString());
+    print(selectedLawyer.lawyerPrice);
+    print(selectedLawyer.lawyerPicture);
+    // ReviewService().getLawyerReview(lawyer: selectedLawyer).then((value) {
+    //   listReview = value;
+    //   change(selectedLawyer, status: RxStatus.success());
+    // });
   }
 
   @override

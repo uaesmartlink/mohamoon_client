@@ -36,6 +36,7 @@ class LawyerCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("SSS");
     return Container(
       margin: const EdgeInsets.only(top: 20),
       decoration: const BoxDecoration(
