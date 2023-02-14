@@ -71,10 +71,6 @@ class AppointmentDetailController extends GetxController
             duration: 15,
             purchaseTime: DateTime.now(),
           );
-          print("QQQ");
-          print(selectedTimeslot.toString());
-          print(selectedTimeslot!.timeSlot);
-          print(selectedTimeslot?.lawyer!.lawyerName);
           change(selectedTimeslot, status: RxStatus.success());
         },
       );
@@ -106,9 +102,10 @@ class AppointmentDetailController extends GetxController
   void startVideoCall() async {
     print(selectedTimeslot);
     if (videoCallStatus.value) {
-      token = await VideoCallService()
-          .getAgoraToken(DateTime.now().hashCode.toString());
-      print(token);
+      token = await VideoCallService().getAgoraToken(
+        // selectedTimeslot!.timeSlot.hashCode.toString(),
+        selectedTimeslot!.timeSlotId!
+      );
       final roomData = <String, dynamic>{
         'room': selectedTimeslot!.timeSlotId,
         'token': token,

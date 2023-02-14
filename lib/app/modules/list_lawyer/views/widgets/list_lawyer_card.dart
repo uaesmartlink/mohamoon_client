@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:client_mohamoon/app/utils/constants/style_constants.dart';
+import '../../../../utils/localization.dart';
 
 class LawyerCard extends StatelessWidget {
   final String lawyerPhotoUrl;
@@ -13,7 +14,9 @@ class LawyerCard extends StatelessWidget {
 
   String listToString(List<dynamic> categories){
     String res = "";
+
     for (var element in categories) {
+      // String value = Get.locale == LocalizationService.locales[0]) ? element.categoryName! : element.categoryTranslation!;
       res += "$element, ";
     }
     res = res.substring(0, res.length - 2);
@@ -81,7 +84,7 @@ class LawyerCard extends StatelessWidget {
                         ),
                         TextWithIcon(
                           text: lawyerHospital,
-                          imageAsset: 'assets/icons/hospital_icon.png',
+                          imageAsset: 'assets/icons/global.png',
                         ),
                         Row(
                           children: [

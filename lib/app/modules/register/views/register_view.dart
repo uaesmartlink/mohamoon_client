@@ -12,6 +12,7 @@ import 'package:client_mohamoon/app/utils/constants/style_constants.dart';
 
 class RegisterView extends GetView<RegisterController> {
   static const List<String> gender = ['male', 'female'];
+
   var dropDownGender = gender.map((e) {
     return DropdownMenuItem(
       value: e,

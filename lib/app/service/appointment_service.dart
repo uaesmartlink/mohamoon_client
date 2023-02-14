@@ -7,7 +7,7 @@ class AppointmentService {
   Future<Appointment> getSuccessAppointment(TimeSlot timeSlot) async {
     try {
       var appointmentSnapshot = await FirebaseFirestore.instance
-          .collection('Appointment')
+          .collection('Order')
           .where('timeSlotId', isEqualTo: timeSlot.timeSlotId)
           .where('status', isEqualTo: 'payment_success')
           .limit(1)
@@ -23,13 +23,11 @@ class AppointmentService {
 
   Future<Appointment> getAppointment(TimeSlot timeSlot,String timeSlotId) async {
     try {
-      print("ZZZ1");
       var appointmentData = await FirebaseFirestore.instance
-          .collection('Appointment')
+          .collection('Order')
           .where('userId', isEqualTo: UserService().getUserId())
           .where('timeSlotId', isEqualTo: timeSlotId)
           .get();
-      print("ZZZ2");
 
       //print('appointment length : ${appointmentData.docs.length}');
       var data = appointmentData.docs.elementAt(0).data();
@@ -62,7 +60,7 @@ class AppointmentService {
 
   Future<void> setAppointmentToComplete(Appointment appointment) async {
     await FirebaseFirestore.instance
-        .collection("Appointment")
+        .collection("Order")
         .doc(appointment.appointmentId)
         .update({'status': 'success'});
   }

@@ -32,16 +32,13 @@ class ConsultationConfirmController extends GetxController {
   confirmConsultation() async {
     try {
       EasyLoading.show();
-      print("#####");
-      print(timeSlotId);
-      await TimeSlotService().updateTimeslotAvailable(timeSlotId);
-      print("****");
-      await AppointmentService().confirmAppointment(timeSlot,timeSlotId);
-      print("----");
+      print("timeSlot: ${timeSlot.timeSlotId}");
+      print("timeSlotId: $timeSlotId");
+      // await TimeSlotService().updateTimeslotAvailable(timeSlotId);
+      // await AppointmentService().confirmAppointment(timeSlot,timeSlotId);
       EasyLoading.dismiss();
       Get.offNamedUntil('/review', ModalRoute.withName('/appointment-detail'),
           arguments: timeSlot);
-      print("++++");
     } catch (e) {
       EasyLoading.dismiss();
       Fluttertoast.showToast(msg: e.toString());

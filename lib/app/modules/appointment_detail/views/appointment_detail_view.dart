@@ -139,7 +139,7 @@ class AppointmentDetailView extends GetView<AppointmentDetailController> {
                             'the lawyer has canceled the appointment, and your payment has been refunded'
                                 .tr,
                       )),
-                  controller.selectedTimeslot!.status == 'refund'
+                /*  controller.selectedTimeslot!.status == 'refund'
                       ? Text(
                           'the lawyer has canceled the appointment, and your payment has been refunded'
                               .tr,
@@ -149,7 +149,7 @@ class AppointmentDetailView extends GetView<AppointmentDetailController> {
                           'the start consultation button will be active when the lawyer starts the consultation'
                               .tr,
                           style: Styles.greyTextInfoStyle,
-                        ),
+                        ),*/
                 ],
               ),
             ),
