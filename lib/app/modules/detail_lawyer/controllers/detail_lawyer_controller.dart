@@ -21,9 +21,10 @@ class DetailLawyerController extends GetxController with StateMixin<Lawyer> {
     print(selectedLawyer.categories.toString());
     print(selectedLawyer.lawyerPrice);
     print(selectedLawyer.lawyerPicture);
+    change(selectedLawyer, status: RxStatus.success());
+
     // ReviewService().getLawyerReview(lawyer: selectedLawyer).then((value) {
     //   listReview = value;
-    //   change(selectedLawyer, status: RxStatus.success());
     // });
   }
 
@@ -33,7 +34,7 @@ class DetailLawyerController extends GetxController with StateMixin<Lawyer> {
 
 
 
-  void toChatLawyer() async {
+ /* void toChatLawyer() async {
     String lawyerUserId = await LawyerService().getUserId(selectedLawyer);
     if (lawyerUserId.isEmpty) {
       Fluttertoast.showToast(msg: 'Lawyer no longger exist'.tr);
@@ -43,7 +44,7 @@ class DetailLawyerController extends GetxController with StateMixin<Lawyer> {
         id: lawyerUserId,
         firstName: selectedLawyer.lawyerName,
         imageUrl: selectedLawyer.lawyerPicture);
-    /*   final room = await FirebaseChatCore.instance.createRoom(otherUser);
-    Get.toNamed('/chat', arguments: [room, selectedLawyer]);*/
-  }
+    *//*   final room = await FirebaseChatCore.instance.createRoom(otherUser);
+    Get.toNamed('/chat', arguments: [room, selectedLawyer]);*//*
+  }*/
 }

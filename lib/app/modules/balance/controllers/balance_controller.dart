@@ -22,14 +22,14 @@ class BalanceController extends GetxController {
   AuthService authService = Get.find();
   UserService userService = Get.find();
   String bunlde = Platform.isAndroid
-      ? "com.seventeen.lawyer_client_app"
-      : "dancingwhale.halloLawyer";
+      ? "ae.smartlink.client_mohamoon.client_mohamoon"
+      : "ae.smartlink.clientmohamoon.clientMohamoon";
   String productionSecreteKey = Platform.isAndroid
-      ? "sk_live_OeS9yWvZ6mXTUzwPBhMbQ30F"
-      : "sk_live_MUbB9HVkS6XZzyPQA2LRdlKo";
+      ? "sk_live_wAk2Uj9PrtLfmKG1TblMNZFJ"
+      : "sk_live_Oa9fiGtYIFD58mTPoelhwEu4";
   String sandBoxsecretKey = Platform.isAndroid
-      ? "sk_test_C4Hi2R5y0DVeLZoNY73IgFXJ"
-      : "sk_test_TIJQrGgwxbEZ5SyPfUMRcOvh";
+      ? "sk_test_8GIkirp3fQTmWuEJy1ZtMx9D"
+      : "sk_test_nh1BbHeKPk6pz9YMW2IgDN8c";
   String lang = "en";
   String transactionCurrency = "aed";
   TransactionMode trxMode = TransactionMode.PURCHASE;

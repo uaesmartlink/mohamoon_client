@@ -13,42 +13,47 @@ class DetailLawyerView extends GetView<DetailLawyerController> {
     return Scaffold(
       body: BackgroundContainer(
         text: 'Lawyer'.tr,
-        widget: controller.obx((lawyer) => Container(
-              alignment: Alignment.center,
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    LawyerCard(
-                      lawyerName: lawyer!.lawyerName!,
-                      categories: lawyer.categories!,
-                      lawyerPrice: currencySign + lawyer.lawyerPrice.toString(),
-                      lawyerPhotoUrl: lawyer.lawyerPicture!,
-                      lawyerHospital: lawyer.lawyerHospital!,
-                      onTap: () {
-                        Get.toNamed('/consultation-date-picker',
-                            arguments: [controller.selectedLawyer, null]);
-                      },
-                    ),
-                    const SizedBox(height: 34,),
-                    Text(
-                      'Service'.tr,
-                      style: const TextStyle(
-                          fontSize: 18,
-                          color: Color(0xFF333333),
-                          fontWeight: FontWeight.w500),
-                    ),
-                    const SizedBox(
-                      height: 17,
-                    ),
-                    Text(
-                      lawyer.lawyerShortBiography!,
-                      style: const TextStyle(
-                        fontSize: 13,
-                        color: Color(0xFF333333),
-                      ),
-                    )
-                  ]),
-            )),
+        widget: controller.obx(
+          (lawyer) => Container(
+            alignment: Alignment.center,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                LawyerCard(
+                  lawyerName: lawyer!.lawyerName!,
+                  categories: lawyer.categories!,
+                  lawyerPrice: currencySign + lawyer.lawyerPrice.toString(),
+                  lawyerPhotoUrl: lawyer.lawyerPicture!,
+                  lawyerHospital: lawyer.lawyerHospital!,
+                  onTap: () {
+                    Get.toNamed('/consultation-date-picker',
+                        arguments: [controller.selectedLawyer, null]);
+                  },
+                ),
+                const SizedBox(
+                  height: 34,
+                ),
+                Text(
+                  'Service'.tr,
+                  style: const TextStyle(
+                      fontSize: 18,
+                      color: Color(0xFF333333),
+                      fontWeight: FontWeight.w500),
+                ),
+                const SizedBox(
+                  height: 17,
+                ),
+                Text(
+                  lawyer.lawyerShortBiography!,
+                  style: const TextStyle(
+                    fontSize: 13,
+                    color: Color(0xFF333333),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
       bottomNavigationBar: DashboardView(),
     );
