@@ -162,7 +162,6 @@ class _TapPaymentState extends State<TapPayment> {
 
   // configure app key and bundle-id (You must get those keys from tap)
   Future<void> configureApp() async {
-
     GoSellSdkFlutter.configureApp(
       bundleId: Platform.isAndroid
           ? "ae.smartlink.client_mohamoon.client_mohamoon"
@@ -183,8 +182,81 @@ class _TapPaymentState extends State<TapPayment> {
   Future<void> setupSDKSession(String amount) async {
     try {
       GoSellSdkFlutter.sessionConfigurations(
+        trxMode: TransactionMode.PURCHASE,
+        transactionCurrency: "USD",
+        amount: amount,
+        customer: Customer(
+            customerId: "",
+            // customer id is important to retrieve cards saved for this customer
+            email: "test@test.com",
+            isdNumber: "965",
+            number: "00000000",
+            firstName: "test",
+            middleName: "test",
+            lastName: "test",
+            metaData: null),
+        paymentItems: <PaymentItem>[],
+        // List of taxes
+        taxes: [],
+        // List of shippnig
+        shippings: [],
+        postURL: "https://tap.company",
+        // Payment description
+        paymentDescription: "charge balance",
+        // Payment Metadata
+        paymentMetaData: {},
+        // Payment Reference
+        paymentReference: Reference(
+            acquirer: "acquirer",
+            gateway: "gateway",
+            payment: "payment",
+            track: "track",
+            transaction: "trans_910101",
+            order: "appointment_262625"),
+        // payment Descriptor
+        paymentStatementDescriptor: "paymentStatementDescriptor",
+        // Save Card Switch
+        isUserAllowedToSaveCard: false,
+        // Enable/Disable 3DSecure
+        isRequires3DSecure: true,
+        // Receipt SMS/Email
+        receipt: Receipt(false, false),
+        // Authorize Action [Capture - Void]
+        authorizeAction:
+            AuthorizeAction(type: AuthorizeActionType.CAPTURE, timeInHours: 10),
+        // Destinations
+        destinations: null,
+        // merchant id
+        merchantID: "",
+        // Allowed cards
+        allowedCadTypes: CardType.ALL,
+        applePayMerchantID: "merchant.applePayMerchantID",
+        allowsToSaveSameCardMoreThanOnce: false,
+        // pass the card holder name to the SDK
+        cardHolderName: "Card Holder NAME",
+        // disable changing the card holder name by the user
+        allowsToEditCardHolderName: true,
+        // select payments you need to show [Default is all, and you can choose between WEB-CARD-APPLEPAY ]
+        paymentType: PaymentType.CARD,
+        // Transaction mode
+        sdkMode: SDKMode.Production,
+      );
+    } on PlatformException {
+      // platformVersion = 'Failed to get platform version.';
+    }
+    if (!mounted) return;
+
+    setState(() {
+      tapSDKResult = {};
+    });
+  }
+
+  /* Future<void> setupSDKSession(String amount) async {
+    try {
+      print(amount);
+      GoSellSdkFlutter.sessionConfigurations(
           trxMode: TransactionMode.PURCHASE,
-          transactionCurrency: "usd",
+          transactionCurrency: "USD",
           amount: amount,
           customer: Customer(
               customerId: "",
@@ -196,16 +268,59 @@ class _TapPaymentState extends State<TapPayment> {
               middleName: "test",
               lastName: "test",
               metaData: null),
-          paymentItems: <PaymentItem>[],
+          paymentItems: <PaymentItem>[
+            PaymentItem(
+                name: "item1",
+                amountPerUnit: 1,
+                quantity: Quantity(value: 1),
+                discount: {
+                  "type": "F",
+                  "value": 10,
+                  "maximum_fee": 10,
+                  "minimum_fee": 1,
+                },
+                description: "Item 1 Apple",
+                taxes: [
+                  Tax(
+                      amount: Amount(
+                          type: "F", value: 10, minimumFee: 1, maximumFee: 10),
+                      name: "tax1",
+                      description: "tax describtion")
+                ],
+                totalAmount: 100),
+          ],
           // List of taxes
-          taxes: [],
+          taxes: [
+            Tax(
+                amount:
+                    Amount(type: "F", value: 10, minimumFee: 1, maximumFee: 10),
+                name: "tax1",
+                description: "tax describtion"),
+            Tax(
+                amount:
+                    Amount(type: "F", value: 10, minimumFee: 1, maximumFee: 10),
+                name: "tax1",
+                description: "tax describtion")
+          ],
           // List of shippnig
-          shippings: [],
+          shippings: [
+            Shipping(
+                name: "shipping 1",
+                amount: 100,
+                description: "shiping description 1"),
+            Shipping(
+                name: "shipping 2",
+                amount: 150,
+                description: "shiping description 2")
+          ],
           postURL: "https://tap.company",
           // Payment description
-          paymentDescription: "charge balance",
+          paymentDescription: "paymentDescription",
           // Payment Metadata
-          paymentMetaData: {},
+          paymentMetaData: {
+            "a": "a meta",
+            "b": "b meta",
+          },
           // Payment Reference
           paymentReference: Reference(
               acquirer: "acquirer",
@@ -213,15 +328,15 @@ class _TapPaymentState extends State<TapPayment> {
               payment: "payment",
               track: "track",
               transaction: "trans_910101",
-              order: "appointment_262625"),
+              order: "order_262625"),
           // payment Descriptor
           paymentStatementDescriptor: "paymentStatementDescriptor",
           // Save Card Switch
-          isUserAllowedToSaveCard: false,
+          isUserAllowedToSaveCard: true,
           // Enable/Disable 3DSecure
           isRequires3DSecure: true,
           // Receipt SMS/Email
-          receipt: Receipt(false, false),
+          receipt: Receipt(true, false),
           // Authorize Action [Capture - Void]
           authorizeAction: AuthorizeAction(
               type: AuthorizeActionType.CAPTURE, timeInHours: 10),
@@ -231,25 +346,27 @@ class _TapPaymentState extends State<TapPayment> {
           merchantID: "",
           // Allowed cards
           allowedCadTypes: CardType.ALL,
-          applePayMerchantID: "merchant.applePayMerchantID",
-          allowsToSaveSameCardMoreThanOnce: false,
+          applePayMerchantID: "merchant.2.lift.style",
+          // "merchant.applePayMerchantID",
+          allowsToSaveSameCardMoreThanOnce: true,
           // pass the card holder name to the SDK
           cardHolderName: "Card Holder NAME",
           // disable changing the card holder name by the user
           allowsToEditCardHolderName: true,
           // select payments you need to show [Default is all, and you can choose between WEB-CARD-APPLEPAY ]
-          paymentType: PaymentType.CARD,
+          paymentType: PaymentType.ALL,
           // Transaction mode
-          sdkMode: SDKMode.Sandbox);
+          sdkMode: SDKMode.Production);
     } on PlatformException {
       // platformVersion = 'Failed to get platform version.';
     }
+
     if (!mounted) return;
 
     setState(() {
       tapSDKResult = {};
     });
-  }
+  }*/
 
   Future<void> startSDK(String amount) async {
     setupSDKSession(amount);
@@ -263,7 +380,7 @@ class _TapPaymentState extends State<TapPayment> {
       switch (tapSDKResult['sdk_result']) {
         case "SUCCESS":
           sdkStatus = "SUCCESS";
-          controller.chargeBalance(tapSDKResult,double.parse(amount));
+          controller.chargeBalance(tapSDKResult, double.parse(amount));
           _onAlertWithCustomImagePressed(context);
           this.controller.changeBalance(amount);
           this.controller.update();
@@ -283,28 +400,21 @@ class _TapPaymentState extends State<TapPayment> {
           break;
       }
     });
-    setState(() {
-
-    });
+    setState(() {});
   }
 
 // Alert custom images
   _onAlertWithCustomImagePressed(context) {
-
-
     Alert(
       context: context,
       title: "Charge Successfully",
       desc: "You can now book appointments from the \"Book Appointment\" page.",
       image: Image.asset('assets/images/success.png'),
-
     ).show();
-
   }
+
   @override
   Widget build(BuildContext context) {
-
-
     return Container(
       width: MediaQuery.of(context).size.width,
       padding: const EdgeInsets.all(12),
@@ -331,7 +441,6 @@ class _TapPaymentState extends State<TapPayment> {
           InkWell(
             onTap: () {
               startSDK(this.text);
-
             },
             child: Container(
               padding: const EdgeInsets.all(12),

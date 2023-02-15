@@ -39,7 +39,7 @@ Future<void> _firebaseMessaggingBackgroundHandler(RemoteMessage message) async {
   var params = <String, dynamic>{
     'id': _uuid.v4(),
     'nameCaller': message.data['fromName'],
-    'appName': 'Mohamoon',
+    'appName': 'MOHAMOON',
     'avatar': '',
     'handle': '',
     'type': 1,

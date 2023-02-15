@@ -20,9 +20,9 @@ class ConsultationDatePickerView
           padding: const EdgeInsets.only(bottom: 61),
           child: Column(children: [
             Container(
-              margin: const EdgeInsets.only(top: 20, bottom: 20),
+              margin: const EdgeInsets.only(top: 10, bottom: 0),
               padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.all(Radius.circular(20)),
                   boxShadow: [
@@ -62,19 +62,45 @@ class ConsultationDatePickerView
                 ],
               ),
             ),
-            Column(
-              children: [
-                Container(
-                  margin: EdgeInsets.only(bottom: 10),
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Chose Duration'.tr,
-                    style: Constants.titleTextStyle,
+            Container(
+              margin: const EdgeInsets.only(top: 10, bottom: 10),
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black12,
+                      blurRadius: 40,
+                    )
+                  ]),
+              child: Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(bottom: 10),
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      'Chose Duration'.tr,
+                      style:  Constants.titleTextStyle,
+                    ),
                   ),
-                ),
-                DurationTest(controller),
-              ],
+                  DurationTest(controller),
+                ],
+              ),
             ),
+            // Column(
+            //   children: [
+            //     Container(
+            //       margin: EdgeInsets.only(bottom: 10),
+            //       alignment: Alignment.centerLeft,
+            //       child: Text(
+            //         'Chose Duration'.tr,
+            //         style: Constants.titleTextStyle,
+            //       ),
+            //     ),
+            //     DurationTest(controller),
+            //   ],
+            // ),
             Expanded(
               child: Container(
                 padding: const EdgeInsets.all(20),
@@ -243,7 +269,12 @@ class _DurationTest extends State<DurationTest>{
                   });
                 },
                 child: Container(
-                  padding: const EdgeInsets.all(12),
+                  padding: const EdgeInsets.only(
+                    top: 10,
+                    bottom: 10,
+                    right: 9,
+                    left: 9,
+                  ),
                   color: index == controller.durationSelectedIndex
                       ? Color(0xFF1b4170)
                       : Colors.white,

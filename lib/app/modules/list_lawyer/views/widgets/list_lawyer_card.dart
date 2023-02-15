@@ -117,14 +117,14 @@ class LawyerCard extends StatelessWidget {
               child: Container(
                 alignment: Alignment.center,
                 height: 40,
-                margin: EdgeInsets.all(13),
-                decoration: BoxDecoration(
+                margin: const EdgeInsets.all(13),
+                decoration: const BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(12)),
                   color: Constants.thirdlyColor,
                 ),
                 child: Text(
                   'Book Consultation'.tr,
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                 ),
               ),
             ),

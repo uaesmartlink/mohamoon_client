@@ -37,6 +37,7 @@ class VideoCallController extends GetxController {
     await endMeeting();
   }
 
+
   completedConsultation() async {
     if (videoCallEstablished) {
       print("Test");

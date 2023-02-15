@@ -157,7 +157,7 @@ const Map<String, String> ar = {
   'Don\'t have an account, ': 'ليس لديك حساب،',
   'Register': 'تسجيل',
   'Get Started': 'ابدأ',
-  'Skip': 'تجاوز',
+  'Next': 'التالي',
   'please chose duration': 'الرجاء اختيار مدة زمنية',
   'You cant book this duration,not enough time':
       'لايوجد وقت كاف لحجز هذه المدة',
