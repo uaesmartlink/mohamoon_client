@@ -86,7 +86,7 @@ class AppointmentDetailController extends GetxController
       if (event.data() == null) {
         videoCallStatus.value = true;
       } else {
-        await Future.delayed(const Duration(seconds: 3), () {
+        await Future.delayed(const Duration(seconds: 1), () {
           videoCallStatus.value = true;
           token = event.data()!['token'];
           printInfo(info: 'token : $token');
@@ -168,24 +168,24 @@ class AppointmentDetailController extends GetxController
         arguments: [selectedTimeslot!.lawyer, selectedTimeslot]);
   }
 
-  void toChatDoctor() async {
-    // String lawyerUserId = await LawyerService().getUserId(lawyer);
-    print(lawyer.lawyerId);
-    print(lawyer.lawyerName);
-    print(lawyer.lawyerPicture);
-    if (lawyer.lawyerId!.isEmpty) {
-      Fluttertoast.showToast(msg: 'Lawyer no longger exist'.tr);
-      return;
-    }
-    final otherUser = types.User(
-      id: lawyer.lawyerId!,
-      firstName: lawyer.lawyerName,
-      imageUrl: lawyer.lawyerPicture,
-    );
-
-    final room = await FirebaseChatCore.instance.createRoom(
-      otherUser,
-    );
-    Get.toNamed('/chat', arguments: [room, lawyer]);
-  }
+  // void toChatLawyer() async {
+  //   // String lawyerUserId = await LawyerService().getUserId(lawyer);
+  //   print(lawyer.lawyerId);
+  //   print(lawyer.lawyerName);
+  //   print(lawyer.lawyerPicture);
+  //   if (lawyer.lawyerId!.isEmpty) {
+  //     Fluttertoast.showToast(msg: 'Lawyer no longger exist'.tr);
+  //     return;
+  //   }
+  //   final otherUser = types.User(
+  //     id: lawyer.lawyerId!,
+  //     firstName: lawyer.lawyerName,
+  //     imageUrl: lawyer.lawyerPicture,
+  //   );
+  //
+  //   final room = await FirebaseChatCore.instance.createRoom(
+  //     otherUser,
+  //   );
+  //   Get.toNamed('/chat', arguments: [room, lawyer]);
+  // }
 }

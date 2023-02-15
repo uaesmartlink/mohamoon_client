@@ -9,7 +9,7 @@ import '../controllers/appointment_detail_controller.dart';
 import 'widgets/videocall_button.dart';
 
 class AppointmentDetailView extends GetView<AppointmentDetailController> {
-                  /*InkWell(
+  /*InkWell(
                         onTap: () => controller.toChatDoctor(),
                         child: Container(
                           width: 50,
@@ -58,15 +58,15 @@ class AppointmentDetailView extends GetView<AppointmentDetailController> {
                       style: Styles.appointmentDetailTextStyle,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Container(
-                    margin: EdgeInsets.only(bottom: 8),
+                    margin: const EdgeInsets.only(bottom: 8),
                     height: 240,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             color: Color(0x04000000),
                             blurRadius: 10,
@@ -92,9 +92,10 @@ class AppointmentDetailView extends GetView<AppointmentDetailController> {
                             TableRow(children: [
                               SizedBox(height: 50, child: Text('Duration'.tr)),
                               SizedBox(
-                                  height: 50,
-                                  child: Text(
-                                      ': ${controller.duration}${' Minute'.tr}')),
+                                height: 50,
+                                child: Text(
+                                    ': ${controller.duration}${' Minute'.tr}'),
+                              ),
                             ]),
                             TableRow(
                               children: [
@@ -129,17 +130,19 @@ class AppointmentDetailView extends GetView<AppointmentDetailController> {
                       ],
                     ),
                   ),
-                  Obx(() => VideoCallButton(
-                        function: () {
-                          controller.startVideoCall();
-                        },
-                        text: 'Start Consultation'.tr,
-                        active: controller.videoCallStatus.value,
-                        nonActiveMsg:
-                            'the lawyer has canceled the appointment, and your payment has been refunded'
-                                .tr,
-                      )),
-                /*  controller.selectedTimeslot!.status == 'refund'
+                  Obx(
+                    () => VideoCallButton(
+                      function: () {
+                        controller.startVideoCall();
+                      },
+                      text: 'Start Consultation'.tr,
+                      active: controller.videoCallStatus.value,
+                      nonActiveMsg:
+                          'the lawyer has canceled the appointment, and your payment has been refunded'
+                              .tr,
+                    ),
+                  ),
+                  /*  controller.selectedTimeslot!.status == 'refund'
                       ? Text(
                           'the lawyer has canceled the appointment, and your payment has been refunded'
                               .tr,

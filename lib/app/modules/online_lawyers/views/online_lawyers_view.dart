@@ -1,3 +1,4 @@
+import 'package:client_mohamoon/app/utils/constants/style_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:client_mohamoon/app/modules/online_lawyers/controllers/online_lawyers_controller.dart';
@@ -19,28 +20,28 @@ class OnlineLawyersView extends GetView<OnlineLawyersController> {
         child: BackgroundContainer(
           text: 'Online Lawyers'.tr,
           widget: controller.obx(
-                  (onlineLawyers) => ListView.builder(
-                padding: EdgeInsets.only(top: 10.0),
-                itemCount: onlineLawyers!.length,
-                itemBuilder: (context, index) {
-                  return OnlineLawyerCard(
-                      lawyerPhotoUrl: onlineLawyers[index].lawyerPicture!,
-                      lawyerName: onlineLawyers[index].lawyerName!,
-                      categories: onlineLawyers[index].categories!,
-                      onTap: () {
-                        // var timeslot=controller.timeSlotOfLawyers[index].timeSlot;
-                        // int duration=controller.timeSlotOfLawyers[index].duration!;
-                        // double price= controller.timeSlotOfLawyers[index].price!;
-                        viewBottomSheet(
-                          context,
-                          onlineLawyers[index].lawyerPrice! / 4,
-                          // timeslot,
-                          15,
-                          index,
-                        );
-                      });
-                },
-              ),
+              (onlineLawyers) => ListView.builder(
+                    padding: EdgeInsets.only(top: 10.0),
+                    itemCount: onlineLawyers!.length,
+                    itemBuilder: (context, index) {
+                      return OnlineLawyerCard(
+                          lawyerPhotoUrl: onlineLawyers[index].lawyerPicture!,
+                          lawyerName: onlineLawyers[index].lawyerName!,
+                          categories: onlineLawyers[index].categories!,
+                          onTap: () {
+                            // var timeslot=controller.timeSlotOfLawyers[index].timeSlot;
+                            // int duration=controller.timeSlotOfLawyers[index].duration!;
+                            // double price= controller.timeSlotOfLawyers[index].price!;
+                            viewBottomSheet(
+                              context,
+                              onlineLawyers[index].lawyerPrice! / 4,
+                              // timeslot,
+                              15,
+                              index,
+                            );
+                          });
+                    },
+                  ),
               onEmpty: Center(child: EmptyList(msg: 'No Online Lawyers'.tr))),
         ),
       ),
@@ -49,12 +50,12 @@ class OnlineLawyersView extends GetView<OnlineLawyersController> {
   }
 
   viewBottomSheet(
-      context,
-      price,
-      // timeslot,
-      duration,
-      index,
-      ) {
+    context,
+    price,
+    // timeslot,
+    duration,
+    index,
+  ) {
     return showModalBottomSheet(
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
@@ -162,7 +163,7 @@ class OnlineLawyersView extends GetView<OnlineLawyersController> {
                             );
                           },
                           text: 'Confirm'.tr,
-                          color: Color(0xFF195076),
+                          color: Constants.primaryColor,
                         ),
                       ],
                     )

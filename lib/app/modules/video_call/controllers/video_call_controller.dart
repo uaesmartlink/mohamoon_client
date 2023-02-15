@@ -15,7 +15,7 @@ class VideoCallController extends GetxController {
   VideoCallService videoCallService = Get.find();
   bool localUserJoined = false;
   bool localAudioMute = false;
-  // bool localCamOff = false;
+  bool localCamOff = false;
   int? remoteUid;
   // Instantiate the client
   late RtcEngine engine;
@@ -57,7 +57,6 @@ class VideoCallController extends GetxController {
     await engine.enableVideo();
     await engine.setChannelProfile(ChannelProfile.LiveBroadcasting);
     await engine.setClientRole(ClientRole.Broadcaster);
-    await [Permission.microphone, Permission.camera].request();
     //create the engine
     // engine = await RtcEngine.create(Environment.agoraAppId);
     // await engine.enableVideo();
@@ -105,15 +104,15 @@ class VideoCallController extends GetxController {
     }
   }
 
-  // Future toggleLocalCamOff() async {
-  //   try {
-  //     localCamOff = !localCamOff;
-  //     await engine.muteLocalVideoStream(localCamOff);
-  //     update();
-  //   } catch (e) {
-  //     Fluttertoast.showToast(msg: e.toString());
-  //   }
-  // }
+  Future toggleLocalCamOff() async {
+    try {
+      localCamOff = !localCamOff;
+      await engine.muteLocalVideoStream(localCamOff);
+      update();
+    } catch (e) {
+      Fluttertoast.showToast(msg: e.toString());
+    }
+  }
 
   Future toggleLocalAudioMuted() async {
     try {

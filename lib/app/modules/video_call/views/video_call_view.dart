@@ -49,6 +49,16 @@ class VideoCallView extends GetView<VideoCallController> {
                           width: 20,
                         ),
                         FloatingActionButton(
+                          onPressed: controller.toggleLocalCamOff,
+                          heroTag: 'camOff',
+                          child: controller.localCamOff == false
+                              ? const Icon(Icons.videocam)
+                              : const Icon(Icons.videocam_off),
+                        ),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        FloatingActionButton(
                           onPressed: controller.switchCamera,
                           heroTag: 'cameraSwitch',
                           child: const Icon(Icons.switch_camera),

@@ -31,7 +31,7 @@ class OnlineLawyerCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(top: 20),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(20)),
           boxShadow: [
@@ -111,7 +111,7 @@ class OnlineLawyerCard extends StatelessWidget {
                 alignment: Alignment.center,
                 height: 40,
                 margin: EdgeInsets.all(13),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(12)),
                   color: Color(0xFF125a9a),
                 ),
