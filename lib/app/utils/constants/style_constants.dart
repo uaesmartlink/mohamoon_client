@@ -45,6 +45,8 @@ class Constants {
 // Text Style for Lawyer Card
   static var lawyerNameStyle = GoogleFonts.inter(
       fontWeight: FontWeight.w500, fontSize: 20, color: mTitleColor);
+  static var lawyerCountryStyle = GoogleFonts.inter(
+      fontWeight: FontWeight.w400, fontSize: 16, color: mTitleColor);
   static var priceTextStyle = GoogleFonts.inter(
       fontWeight: FontWeight.w400, fontSize: 15, color: mSubtitleColor);
   static var priceNumberTextStyle = GoogleFonts.inter(

@@ -10,6 +10,7 @@ import 'package:client_mohamoon/app/modules/home/views/components/icon_card.dart
 import 'package:client_mohamoon/app/modules/home/views/components/search_container.dart';
 
 import 'package:client_mohamoon/app/utils/constants/style_constants.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 import '../../../utils/search/search_lawyer_delegate.dart';
 import '../controllers/home_controller.dart';
@@ -18,6 +19,8 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     final CarouselController carouselController = CarouselController();
+    [Permission.microphone, Permission.camera, Permission.phone, Permission.notification].request();
+
     return Scaffold(
       backgroundColor: Constants.mBackgroundColor,
       body: BackgroundHome(

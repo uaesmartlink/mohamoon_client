@@ -53,7 +53,6 @@ class VideoCallController extends GetxController {
   Future<void> initAgora() async {
     // retrieve permissions
     engine = await RtcEngine.createWithContext(RtcEngineContext(Environment.agoraAppId));
-    await [Permission.microphone, Permission.camera].request();
 
     await engine.enableVideo();
     await engine.setChannelProfile(ChannelProfile.LiveBroadcasting);

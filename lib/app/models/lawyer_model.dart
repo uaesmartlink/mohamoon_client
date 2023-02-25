@@ -7,18 +7,19 @@ part 'lawyer_model.g.dart';
 
 @JsonSerializable(ignoreUnannotated: true)
 class Lawyer {
-  Lawyer(
-      {this.id,
-      this.lawyerId,
-      this.lawyerName,
-      this.lawyerPicture,
-      this.lawyerPrice,
-      this.lawyerShortBiography,
-      this.categories,
-      this.lawyerHospital,
-      this.accountStatus,
-      this.isOnline,
-      });
+  Lawyer({
+    this.id,
+    this.lawyerId,
+    this.lawyerName,
+    this.lawyerPicture,
+    this.lawyerPrice,
+    this.lawyerShortBiography,
+    this.categories,
+    this.lawyerHospital,
+    this.accountStatus,
+    this.lawyerCountry,
+    this.isOnline,
+  });
 
   String? id;
   @JsonKey(name: 'lawyerId')
@@ -35,6 +36,8 @@ class Lawyer {
   List<dynamic>? categories;
   @JsonKey(name: 'lawyerHospital')
   String? lawyerHospital;
+  @JsonKey(name: 'lawyerCountry')
+  String? lawyerCountry;
   @JsonKey(name: 'accountStatus')
   String? accountStatus;
   @JsonKey(name: 'isOnline')

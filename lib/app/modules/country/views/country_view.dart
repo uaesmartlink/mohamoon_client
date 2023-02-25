@@ -12,7 +12,7 @@ class CountryView extends GetView<CountryController> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BackgroundContainer(
-        text: 'Countries'.tr,
+        text: 'Select Country'.tr,
         isPadding: 0,
         widget:
             Padding(
@@ -29,7 +29,7 @@ class CountryView extends GetView<CountryController> {
                         crossAxisCount: 2,
                         crossAxisSpacing: 15,
                         mainAxisSpacing: 15,
-                        childAspectRatio: 3 / 4,
+                        childAspectRatio: 1,
                       ),
                       itemBuilder: (context, index) {
                         return InkWell(
@@ -51,7 +51,6 @@ class CountryView extends GetView<CountryController> {
                               children: [
                                 Expanded(
                                     flex: 5,
-
                                     child: Container(
                                       padding: const EdgeInsets.only(top: 20),
                                       child: CachedNetworkImage(

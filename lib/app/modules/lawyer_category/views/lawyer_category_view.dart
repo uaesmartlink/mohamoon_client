@@ -30,7 +30,7 @@ class LawyerCategoryView extends GetView<LawyerCategoryController> {
                           crossAxisCount: 2,
                           crossAxisSpacing: 15,
                           mainAxisSpacing: 15,
-                          childAspectRatio: 3 / 4,
+                          childAspectRatio: 1,
                         ),
                         itemBuilder: (context, index) {
                           return InkWell(
